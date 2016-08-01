@@ -15,6 +15,6 @@ pub = lib.core.publisher()
 
 while(True):
   topic = random.randint(1,10)
-  pub.publish(topic,{'test':'wtf'})
+  pub.publish(topic,{'test':topic})
   time.sleep(0.5)
 
