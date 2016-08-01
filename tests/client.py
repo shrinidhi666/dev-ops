@@ -4,9 +4,13 @@ __author__ = "Shrinidhi Rao"
 __license__ = "GPL"
 __email__ = "shrinidhi666@gmail.com"
 
-import core
+import sys
+import os
+
+sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
+import lib.core
 
 if(__name__ == '__main__'):
-  client = core.client()
+  client = lib.core.client()
 
   client.send(message={'test':'wtf'})
