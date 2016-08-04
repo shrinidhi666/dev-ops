@@ -6,14 +6,17 @@ __email__ = "shrinidhi666@gmail.com"
 
 import multiprocessing
 import time
-
+import sys
 import simplejson
 import zmq
 import uuid
 
 class publisher(object):
-  def __init__(self):
-    self._context = None
+  def __init__(self,context=None):
+    if (not context):
+      self._context = zmq.Context()
+    else:
+      self._context = context
     self._socket = None
     self._start()
 
@@ -28,8 +31,11 @@ class publisher(object):
 
 
 class subscriber(object):
-  def __init__(self,topic="0",ip="127.0.0.1",port=5566):
-    self._context = None
+  def __init__(self,context=None,topic="0",ip="127.0.0.1",port=5566):
+    if (not context):
+      self._context = zmq.Context()
+    else:
+      self._context = context
     self._socket = None
     self._topic = topic
     self._ip = ip
@@ -60,8 +66,11 @@ class subscriber(object):
 
 
 class server(object):
-  def __init__(self):
-    pass
+  def __init__(self,context=None):
+    if(not context):
+      self._context = zmq.Context()
+    else:
+      self._context = context
 
 
   def process(self, msg):
@@ -70,9 +79,9 @@ class server(object):
 
   def _worker(self,worker_url, worker_id=uuid.uuid4()):
     print (worker_url)
-    context = zmq.Context()
+    # context = zmq.Context()
     # Socket to talk to dispatcher
-    socket = context.socket(zmq.REP)
+    socket = self._context.socket(zmq.REP)
     socket.poll(timeout=1)
     socket.connect(worker_url)
 
@@ -94,15 +103,25 @@ class server(object):
     url_client = "tcp://*:{0}".format(server_port)
 
     # Prepare our context and sockets
-    context = zmq.Context()
+    # context = zmq.Context()
 
     # Socket to talk to clients
-    clients = context.socket(zmq.ROUTER)
-    clients.bind(url_client)
+    clients = self._context.socket(zmq.ROUTER)
+    try:
+      clients.bind(url_client)
+    except:
+      print (sys.exc_info())
+      self._context.term()
+      sys.exit(1)
 
     # Socket to talk to workers
-    workers = context.socket(zmq.DEALER)
-    workers.bind(url_worker)
+    workers = self._context.socket(zmq.DEALER)
+    try:
+      workers.bind(url_worker)
+    except:
+      print (sys.exc_info())
+      self._context.term()
+      sys.exit(1)
 
     # Launch pool of worker process
     p = multiprocessing.Pool(processes=pool_size, initializer=self._worker, initargs=(url_worker,))
@@ -112,7 +131,7 @@ class server(object):
     # We never get here but clean up anyhow
     clients.close()
     workers.close()
-    context.term()
+    self._context.term()
 
 
 
