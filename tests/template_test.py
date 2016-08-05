@@ -12,7 +12,9 @@ sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
 import lib.template
 
 if(__name__ == "__main__"):
-  test = lib.template.load()
-  test_state = lib.template.load_state()
-  print (test.get())
-  print (test_state.get())
+  test = lib.template.root()
+  test_state = lib.template.states()
+  print (test.list)
+  print (test_state.list)
+  print (test_state.render("level1.level2.test1"))
+  print ("____")

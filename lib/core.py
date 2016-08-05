@@ -21,7 +21,6 @@ class publisher(object):
     self._start()
 
   def _start(self,pub_port=5566):
-    self._context = zmq.Context()
     self._socket = self._context.socket(zmq.PUB)
     self._socket.bind("tcp://*:{0}".format(pub_port))
 
@@ -44,7 +43,6 @@ class subscriber(object):
 
 
   def _start(self):
-    self._context = zmq.Context()
     self._socket = self._context.socket(zmq.SUB)
     self._socket.connect("tcp://{0}:{1}".format(self._ip,self._port))
     self._socket.setsockopt(zmq.SUBSCRIBE, self._topic)

@@ -13,27 +13,46 @@ import jinja2
 import yaml
 
 
-class load():
+# def list_dirs(startpath):
+#   ret_dirs = [startpath]
+#   for root, dirs, files in os.walk(startpath):
+#     for dir in dirs:
+#       ret_dirs.append(os.path.abspath(os.path.join(root,dir)))
+#   print (ret_dirs)
+#   return(ret_dirs)
+
+
+class root(object):
   def __init__(self,path="./"):
     self._path = path
 
 
-
-  def get(self):
+  @property
+  def list(self):
     loader = jinja2.FileSystemLoader(self._path)
     return(loader.list_templates())
 
+  @list.setter
+  def list(self,value):
+    pass
 
-class load_state(load):
+  def render(self,path):
+    pass
 
 
-  def get(self):
+class states(root):
+
+  @property
+  def list(self):
     loader = jinja2.FileSystemLoader(self._path)
-    j2_env = Environment(loader=loader, trim_blocks=True)
-    ret_loader = []
+    # j2_env = jinja2.Environment(loader=loader, trim_blocks=True)
+    ret_loader = {}
     for x in loader.list_templates():
       if(unicode(x).endswith('.yml')):
-        print (x)
-        ret_loader.append(x)
-
+        ret_loader[((unicode(x).rstrip('.yml')).replace("/","."))] = unicode(x)
     return (ret_loader)
+
+  def render(self,state_path):
+    print (self.list[state_path])
+
+
