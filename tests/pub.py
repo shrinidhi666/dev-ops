@@ -8,10 +8,10 @@ import sys
 import os
 import random
 sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
-import lib.core
+import lib.transport
 import time
 
-pub = lib.core.publisher()
+pub = lib.transport.publisher()
 
 while(True):
   topic = random.randint(1,10)

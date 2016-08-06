@@ -74,8 +74,8 @@ class states(root):
     return_obj = []
     if(template_file.split("/")[-1] == "init.yml"):
       for yml_obj in yml_objs:
-        ret = self.render(yml_obj)
-        return_obj.extend(ret)
+        retured_obj = self.render(yml_obj)
+        return_obj.extend(retured_obj)
     else:
       if(isinstance(yml_objs,dict)):
         return_obj.append(yml_objs)

@@ -8,9 +8,9 @@ import sys
 import os
 
 sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
-import lib.core
+import lib.transport
 
 if(__name__ == '__main__'):
-  client = lib.core.client()
+  client = lib.transport.client()
 
   client.send(message={'test':'wtf'})
