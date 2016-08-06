@@ -78,7 +78,7 @@ class states(root):
         # temp_file = self.list[yml_obj]
         # temp_env = self._env.get_template(temp_file)
         # temp_content = temp_env.render()
-        return_obj.append(ret)
+        return_obj.extend(ret)
     else:
       if(isinstance(yml_objs,dict)):
         return_obj.append(yml_objs)
