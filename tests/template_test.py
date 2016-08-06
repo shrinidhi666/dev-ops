@@ -17,4 +17,5 @@ if(__name__ == "__main__"):
   print (test.list)
   print (test_state.list)
   print (test_state.render("level1.level2.test1"))
+  print (test_state.render("level1.level2.level3.test1"))
   print ("____")

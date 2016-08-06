@@ -49,18 +49,43 @@ class states(root):
 
   @property
   def list(self):
+    """
+    get a list of all the state files in the directory tree
+
+    :return:
+     dictionary
+    """
     self._loader = jinja2.FileSystemLoader(self._path)
     self._env = jinja2.Environment(loader=self._loader, trim_blocks=True)
     ret_loader = {}
     for x in self._loader.list_templates():
       if(unicode(x).endswith('.yml')):
-        ret_loader[((unicode(x).rstrip('.yml')).replace("/","."))] = unicode(x)
+        if(unicode(x).split("/")[-1] == "init.yml"):
+          ret_loader[unicode(x).rstrip('/init.yml').replace("/",".")] = unicode(x)
+        else:
+          ret_loader[unicode(x).rstrip('.yml').replace("/",".")] = unicode(x)
     return (ret_loader)
 
   def render(self,state_path):
     template_file = self.list[state_path]
     template_env = self._env.get_template(template_file)
     yml_content = template_env.render()
-    print (yaml.load(yml_content))
+    yml_objs = yaml.load(yml_content)
+    return_obj = []
+    if(template_file.split("/")[-1] == "init.yml"):
+      for yml_obj in yml_objs:
+        temp_file = self.list[yml_obj]
+        temp_env = self._env.get_template(temp_file)
+        temp_content = temp_env.render()
+        return_obj.append(yaml.load(yml_content))
+    else:
+      if(isinstance(yml_objs,dict)):
+        return_obj.append(yml_objs)
+      else:
+        return_obj = yml_objs
+
+
+
+    return (return_obj)
 
 
