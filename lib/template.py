@@ -75,9 +75,6 @@ class states(root):
     if(template_file.split("/")[-1] == "init.yml"):
       for yml_obj in yml_objs:
         ret = self.render(yml_obj)
-        # temp_file = self.list[yml_obj]
-        # temp_env = self._env.get_template(temp_file)
-        # temp_content = temp_env.render()
         return_obj.extend(ret)
     else:
       if(isinstance(yml_objs,dict)):
