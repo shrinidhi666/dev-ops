@@ -1,10 +1,10 @@
-test1:
-  content:
-    test1: "testing crap"
+- test4:
+    content:
+      test1: "testing crap"
 
-test2:
-  content:
-    - test: "testing shit"
+- test3:
+    content:
+      - test: "testing shit"
 {% for x in range(10,20) %}
-    - test{{ x }}
+      - test{{ x }}
 {% endfor %}

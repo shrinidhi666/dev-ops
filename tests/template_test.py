@@ -14,8 +14,8 @@ import lib.template
 if(__name__ == "__main__"):
   test = lib.template.root()
   test_state = lib.template.states()
-  print (test.list)
-  print (test_state.list)
-  print (test_state.render("level1.level2.test1"))
+  for x in test_state.render("level1"):
+    print (x)
+  print("_____")
   print (test_state.render("level1.level2.level3.test1"))
   print ("____")
