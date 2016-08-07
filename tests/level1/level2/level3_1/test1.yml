@@ -1,4 +1,10 @@
 - level3_1:
-    content:
-      test1: "testing crap"
+    cmd.run:
+      command:
+        - tesing command 1
+        - testing command 2
+        - testing command 3
+      user: shrinidhi
+      path: /tmp/
+      shell: true
 

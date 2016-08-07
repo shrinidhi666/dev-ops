@@ -67,6 +67,7 @@ class states(root):
     return (ret_loader)
 
   def render(self,state_path):
+    # print (state_path)
     template_file = self.list[state_path]
     template_env = self._env.get_template(template_file)
     yml_content = template_env.render()
