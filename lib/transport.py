@@ -22,10 +22,19 @@ class publisher(object):
 
   def _start(self,pub_port=5566):
     self._socket = self._context.socket(zmq.PUB)
+    self._socket.sndhwm = 100000
     self._socket.bind("tcp://*:{0}".format(pub_port))
 
-  def publish(self,topic="0",message={}):
-    self._socket.send("{0}__{1}".format(topic,message))
+  def publish(self,topic="0",message={},publish_id=None):
+
+    self._socket.send_multipart([bytes(unicode(topic)),bytes(unicode(message))])
+    if (publish_id != None):
+      """
+      Update the database tables
+      """
+      pass
+    
+
 
 
 
@@ -45,20 +54,23 @@ class subscriber(object):
   def _start(self):
     self._socket = self._context.socket(zmq.SUB)
     self._socket.connect("tcp://{0}:{1}".format(self._ip,self._port))
-    self._socket.setsockopt(zmq.SUBSCRIBE, self._topic)
+    if(isinstance(self._topic,list)):
+      for topix in self._topic:
+        self._socket.setsockopt(zmq.SUBSCRIBE, bytes(unicode(topix)))
+    else:
+      self._socket.setsockopt(zmq.SUBSCRIBE, bytes(unicode(self._topic)))
     while (True):
-      string = self._socket.recv()
-      (topic, messagedata) = string.split("__")
+      (topic, messagedata) = self._socket.recv_multipart()
+      # (topic, messagedata) = string.split("__")
       print (topic,messagedata)
-      retmsg = self.process(messagedata)
+      retmsg = self.process(unicode(messagedata))
       print (retmsg)
 
 
 
 
   def process(self,msg):
-    return msg
-
+    return ("{0} : {1}".format("processed msg",msg))
 
 
 
@@ -84,16 +96,17 @@ class server(object):
     socket.connect(worker_url)
 
     while True:
-      string = socket.recv()
+      (id ,string) = socket.recv_multipart()
 
       print("Received request: [ {0} ] -> [ {1} ]".format(str(worker_id),string))
 
       # do some 'work'
-      time.sleep(1)
+      # time.sleep(1)
       reply = self.process(string)
 
       # send reply back to client
-      socket.send(reply)
+      socket.send_multipart([bytes(unicode(id)),bytes(unicode(reply))])
+      print("Replied to request: [ {0} ] -> [ {1} ]".format(str(worker_id), string))
 
 
   def start(self, worker_port=5599, server_port=5555, pool_size=2):
@@ -153,13 +166,23 @@ class client(object):
     print("Sending request {0} …".format(request_id))
     send_msg = self._process_message(message)
     timestarted = time.time()
-    socket.send(simplejson.dumps(message))
-    try:
-      recv_message = socket.recv()
-    except:
-      print (sys.exc_info())
 
-    print("Received reply %s [ %s ]" % (recv_message, time.time() - timestarted))
+    socket.send_multipart([bytes(unicode(request_id)),bytes(unicode(message))])
+    while(True):
+      sockets = dict(poller.poll(10000))
+      if(sockets):
+        for s in sockets.keys():
+          if(sockets[s] == zmq.POLLIN):
+            try:
+              (recv_id, recv_message) = s.recv_multipart()
+            except:
+              print (sys.exc_info())
+            break
+        break
+      print ("Reciever Timeout error : Check if the server is running")
+
+
+    print("Received reply %s : %s [ %s ]" % (recv_id,recv_message, time.time() - timestarted))
     socket.close()
 
 

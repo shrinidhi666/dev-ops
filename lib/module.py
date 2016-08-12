@@ -16,5 +16,8 @@ class cmd(object):
   @staticmethod
   def run(self,command,user=None,path=None,shell=True,log=True,env=None):
     try:
-      p = subprocess.Popen(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=shell,cwd=path,universal_newlines=True)
+      p = subprocess.Popen(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=shell,cwd=path,universal_newlines=True,env=env)
+      return (p.communicate()[0])
+    except:
+      return(sys.exc_info())
 

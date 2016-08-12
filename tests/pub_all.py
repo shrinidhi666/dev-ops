@@ -12,7 +12,7 @@ import lib.transport
 import time
 
 pub = lib.transport.publisher()
-topic = 2
+topic = "all"
 pub.publish(2, {'test': 'x'})
 time.sleep(0.5)
 for x in range(0,10):
