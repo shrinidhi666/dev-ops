@@ -11,6 +11,9 @@ sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
 
 import appdirs
 import os
+import sqlite3
+
+
 
 os.environ['XDG_CONFIG_DIRS'] = '/etc'
 configdir = os.path.join(appdirs.site_config_dir(),"dev_ops")
@@ -30,4 +33,19 @@ class pub_q__status():
 class keys__status():
   pending = 0
   accepted = 1
+
+class tasktypes():
+  key_register = "register"
+  cmd_run = "cmd.run"
+  file_sync = "file.sync"
+
+class msg_keys():
+  tasktype = "tasktype"
+  hostname = "hostname"
+  id = "id"
+  payload = "payload"
+
+
+
+
 

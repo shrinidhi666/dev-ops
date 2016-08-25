@@ -10,6 +10,8 @@ import sys
 import simplejson
 import zmq
 import uuid
+import socket
+
 
 class publisher(object):
   def __init__(self,context=None):
@@ -53,7 +55,7 @@ class subscriber(object):
 
   def _start(self):
     self._socket = self._context.socket(zmq.SUB)
-    self._socket.connect("tcp://{0}:{1}".format(self._ip,self._port))
+    self._socket.connect("tcp://{0}:{1}".format(self._ip, self._port))
     if(isinstance(self._topic,list)):
       for topix in self._topic:
         self._socket.setsockopt(zmq.SUBSCRIBE, bytes(unicode(topix)))
@@ -96,17 +98,17 @@ class server(object):
     socket.connect(worker_url)
 
     while True:
-      (id ,string) = socket.recv_multipart()
+      (id ,msg) = socket.recv_multipart()
 
-      print("Received request: [ {0} ] -> [ {1} ]".format(str(worker_id),string))
+      print("Received request: [ {0} ] -> [ {1} ]".format(str(worker_id),msg))
 
       # do some 'work'
       # time.sleep(1)
-      reply = self.process(string)
+      reply = self.process(msg)
 
       # send reply back to client
       socket.send_multipart([bytes(unicode(id)),bytes(unicode(reply))])
-      print("Replied to request: [ {0} ] -> [ {1} ]".format(str(worker_id), string))
+      print("Replied to request: [ {0} ] -> [ {1} ]".format(str(worker_id), msg))
 
 
   def start(self, worker_port=5599, server_port=5555, pool_size=2):
@@ -152,19 +154,19 @@ class client(object):
     self._port = port
 
 
-  def _process_message(self,message):
+  def process(self, message):
     return message
 
 
   def send(self,message={},request_id=uuid.uuid4()):
     context = zmq.Context()
     socket = context.socket(zmq.REQ)
-    socket.connect("tcp://{0}:{1}".format(self._ip,self._port))
+    socket.connect("tcp://{0}:{1}".format(self._ip, self._port))
     socket.poll(timeout=1)
     poller = zmq.Poller()
     poller.register(socket, zmq.POLLIN)
     print("Sending request {0} …".format(request_id))
-    send_msg = self._process_message(message)
+    send_msg = self.process(message)
     timestarted = time.time()
 
     socket.send_multipart([bytes(unicode(request_id)),bytes(unicode(message))])
@@ -174,7 +176,8 @@ class client(object):
         for s in sockets.keys():
           if(sockets[s] == zmq.POLLIN):
             try:
-              (recv_id, recv_message) = s.recv_multipart()
+              (recv_id, recved_msg) = s.recv_multipart()
+              recv_message = self.process(recved_msg)
             except:
               print (sys.exc_info())
             break

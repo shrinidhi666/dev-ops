@@ -9,6 +9,9 @@ import os
 
 sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
 import lib.constants
+import lib.db_sqlite3
+import lib.transport
+
 from Crypto.PublicKey import RSA
 from Crypto import Random
 
@@ -27,6 +30,10 @@ def generate():
     private_key_file.write(key.exportKey("PEM"))
     private_key_file.flush()
     private_key_file.close()
+    client = lib.transport.client()
+    client.send(message={lib.constants.msg_keys.tasktype:lib.constants.tasktypes.key_register,
+
+                         })
     print ("done writing private key")
 
 
