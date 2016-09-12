@@ -16,8 +16,13 @@ from Crypto.PublicKey import RSA
 from Crypto import Random
 
 def generate():
+  client = lib.transport.client()
   if(os.path.exists(lib.constants.private_key_file)):
-    print("key file already present")
+    print("key file already present : {0}".format(lib.constants.private_key_file))
+    f = open(lib.constants.private_key_file,"r")
+    key = RSA.importKey(f.read())
+    public_key = key.publickey().exportKey("PEM")
+
   else:
     if(not os.path.exists(lib.constants.configdir)):
       try:
@@ -30,11 +35,13 @@ def generate():
     private_key_file.write(key.exportKey("PEM"))
     private_key_file.flush()
     private_key_file.close()
-    client = lib.transport.client()
-    client.send(message={lib.constants.msg_keys.tasktype:lib.constants.tasktypes.key_register,
+    public_key = key.publickey().exportKey("PEM")
+
+  client.send(message={lib.constants.msg_keys.tasktype:lib.constants.tasktypes.key_register,
+                       lib.constants.msg_keys.payload:public_key,
 
                          })
-    print ("done writing private key")
+  print ("done writing private key")
 
 
 

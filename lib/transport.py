@@ -107,7 +107,7 @@ class server(object):
       reply = self.process(msg)
 
       # send reply back to client
-      socket.send_multipart([bytes(unicode(id)),bytes(unicode(reply))])
+      socket.send_multipart([bytes(id),bytes(reply)])
       print("Replied to request: [ {0} ] -> [ {1} ]".format(str(worker_id), msg))
 
 
@@ -169,7 +169,7 @@ class client(object):
     send_msg = self.process(message)
     timestarted = time.time()
 
-    socket.send_multipart([bytes(unicode(request_id)),bytes(unicode(message))])
+    socket.send_multipart([bytes(request_id),bytes(message)])
     while(True):
       sockets = dict(poller.poll(10000))
       if(sockets):

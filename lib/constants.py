@@ -35,7 +35,7 @@ class keys__status():
   accepted = 1
 
 class tasktypes():
-  key_register = "register"
+  key_register = "key.register"
   cmd_run = "cmd.run"
   file_sync = "file.sync"
 

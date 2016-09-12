@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:/CRAP/codungs/dev_ops/.idea/dev_ops.iml" filepath="C:/CRAP/codungs/dev_ops/.idea/dev_ops.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/dev-ops.iml" filepath="$PROJECT_DIR$/.idea/dev-ops.iml" />
     </modules>
   </component>
 </project>
