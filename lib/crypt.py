@@ -15,11 +15,11 @@ import lib.transport
 from Crypto.PublicKey import RSA
 from Crypto import Random
 
-def generate():
+def generate_master():
   client = lib.transport.client()
-  if(os.path.exists(lib.constants.private_key_file)):
-    print("key file already present : {0}".format(lib.constants.private_key_file))
-    f = open(lib.constants.private_key_file,"r")
+  if(os.path.exists(lib.constants.master_private_key_file)):
+    print("key file already present : {0}".format(lib.constants.master_private_key_file))
+    f = open(lib.constants.master_private_key_file, "r")
     key = RSA.importKey(f.read())
     public_key = key.publickey().exportKey("PEM")
 
@@ -31,7 +31,7 @@ def generate():
         print (sys.exc_info())
     random_generator = Random.new().read
     key = RSA.generate(2048, random_generator)
-    private_key_file = open(lib.constants.private_key_file,"w")
+    private_key_file = open(lib.constants.master_private_key_file, "w")
     private_key_file.write(key.exportKey("PEM"))
     private_key_file.flush()
     private_key_file.close()
@@ -49,4 +49,4 @@ def generate():
 
 
 if(__name__ == "__main__"):
-  generate()
+  generate_master()

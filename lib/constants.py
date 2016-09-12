@@ -17,9 +17,12 @@ import sqlite3
 
 os.environ['XDG_CONFIG_DIRS'] = '/etc'
 configdir = os.path.join(appdirs.site_config_dir(),"dev_ops")
-private_key_file = os.path.join(configdir,"private_key.pem")
-master_config_file = os.path.join(configdir,"master.conf")
-slave_config_file = os.path.join(configdir,"slave.conf")
+masterdir = os.path.join(configdir,"master")
+slavedir = os.path.join(configdir,"slave")
+master_private_key_file = os.path.join(masterdir, "private_key.pem")
+slave_private_key_file = os.path.join(slavedir, "private_key.pem")
+master_config_file = os.path.join(masterdir,"master.conf")
+slave_config_file = os.path.join(slavedir,"slave.conf")
 
 class pub_q__status():
   pending = 0
