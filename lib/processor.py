@@ -13,6 +13,6 @@ import lib.transport
 import lib.debug
 
 def process(kwargs):
-  lib.debug.info ("in process function")
+  # lib.debug.info ("in process function")
   lib.debug.info (kwargs)
 
