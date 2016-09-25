@@ -26,4 +26,4 @@ class master(lib.transport.server):
 
 
 if(__name__ == "__main__"):
-  master().start()
+  master().start(pool_size=5)

@@ -7,11 +7,14 @@ __email__ = "shrinidhi666@gmail.com"
 import multiprocessing
 import time
 import sys
+import os
 import simplejson
 import zmq
 import uuid
 import socket
 
+sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
+import lib.debug
 
 class publisher(object):
   def __init__(self,context=None):
@@ -64,9 +67,9 @@ class subscriber(object):
     while (True):
       (topic, messagedata) = self._socket.recv_multipart()
       # (topic, messagedata) = string.split("__")
-      print (topic,messagedata)
+      lib.debug.info (topic,messagedata)
       retmsg = self.process(unicode(messagedata))
-      print (retmsg)
+      lib.debug.info (retmsg)
 
 
 
@@ -90,7 +93,7 @@ class server(object):
 
 
   def _worker(self,worker_url, worker_id=uuid.uuid4()):
-    print (worker_url)
+    lib.debug.info (worker_url)
     # context = zmq.Context()
     # Socket to talk to dispatcher
     socket = self._context.socket(zmq.REP)
@@ -100,7 +103,7 @@ class server(object):
     while True:
       (id ,msg) = socket.recv_multipart()
 
-      print("Received request: [ {0} ] -> [ {1} ]".format(str(worker_id),msg))
+      lib.debug.info("Received request: [ {0} ] -> [ {1} ]".format(str(worker_id),msg))
 
       # do some 'work'
       # time.sleep(1)
@@ -108,7 +111,7 @@ class server(object):
 
       # send reply back to client
       socket.send_multipart([bytes(id),bytes(reply)])
-      print("Replied to request: [ {0} ] -> [ {1} ]".format(str(worker_id), msg))
+      lib.debug.info("Replied to request: [ {0} ] -> [ {1} ]".format(str(worker_id), msg))
 
 
   def start(self, worker_port=5599, server_port=5555, pool_size=2):
@@ -123,7 +126,7 @@ class server(object):
     try:
       clients.bind(url_client)
     except:
-      print (sys.exc_info())
+      lib.debug.info (sys.exc_info())
       self._context.term()
       sys.exit(1)
 
@@ -132,7 +135,7 @@ class server(object):
     try:
       workers.bind(url_worker)
     except:
-      print (sys.exc_info())
+      lib.debug.info (sys.exc_info())
       self._context.term()
       sys.exit(1)
 
@@ -165,7 +168,7 @@ class client(object):
     socket.poll(timeout=1)
     poller = zmq.Poller()
     poller.register(socket, zmq.POLLIN)
-    print("Sending request {0} …".format(request_id))
+    lib.debug.info("Sending request {0} …".format(request_id))
     send_msg = self.process(message)
     timestarted = time.time()
 
@@ -179,13 +182,13 @@ class client(object):
               (recv_id, recved_msg) = s.recv_multipart()
               recv_message = self.process(recved_msg)
             except:
-              print (sys.exc_info())
+              lib.debug.info (sys.exc_info())
             break
         break
-      print ("Reciever Timeout error : Check if the server is running")
+      lib.debug.info ("Reciever Timeout error : Check if the server is running")
 
 
-    print("Received reply %s : %s [ %s ]" % (recv_id,recv_message, time.time() - timestarted))
+    lib.debug.info("Received reply %s : %s [ %s ]" % (recv_id,recv_message, time.time() - timestarted))
     socket.close()
 
 

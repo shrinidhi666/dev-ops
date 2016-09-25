@@ -14,7 +14,7 @@ import sqlite3
 
 
 module_path = os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2])
-print("module path = {0}".format(module_path))
+# print("module path = {0}".format(module_path))
 
 class db(object):
 
