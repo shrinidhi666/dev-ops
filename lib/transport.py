@@ -11,7 +11,8 @@ import os
 import simplejson
 import zmq
 import uuid
-import socket
+if(sys.platform.lower().find("linux") >= 0):
+  import setproctitle
 
 sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
 import lib.debug
@@ -67,7 +68,7 @@ class subscriber(object):
     while (True):
       (topic, messagedata) = self._socket.recv_multipart()
       # (topic, messagedata) = string.split("__")
-      lib.debug.info (topic,messagedata)
+      lib.debug.info ("{0} : {1} ".format(topic,messagedata))
       retmsg = self.process(unicode(messagedata))
       lib.debug.info (retmsg)
 
@@ -75,7 +76,7 @@ class subscriber(object):
 
 
   def process(self,msg):
-    return ("{0} : {1}".format("processed msg",msg))
+    return (msg)
 
 
 
@@ -93,12 +94,15 @@ class server(object):
 
 
   def _worker(self,worker_url, worker_id=uuid.uuid4()):
+    if (sys.platform.lower().find("linux") >= 0):
+      setproctitle.setproctitle("server-worker")
     lib.debug.info (worker_url)
-    # context = zmq.Context()
+    context = zmq.Context()
     # Socket to talk to dispatcher
-    socket = self._context.socket(zmq.REP)
+    socket = context.socket(zmq.REP)
     socket.poll(timeout=1)
     socket.connect(worker_url)
+
 
     while True:
       (id ,msg) = socket.recv_multipart()
@@ -114,7 +118,9 @@ class server(object):
       lib.debug.info("Replied to request: [ {0} ] -> [ {1} ]".format(str(worker_id), msg))
 
 
-  def start(self, worker_port=5599, server_port=5555, pool_size=2):
+  def start(self, worker_port=55999, server_port=55555, pool_size=2):
+    if (sys.platform.lower().find("linux") >= 0):
+      setproctitle.setproctitle("server-server")
     url_worker = "tcp://127.0.0.1:{0}".format(worker_port)
     url_client = "tcp://*:{0}".format(server_port)
 
@@ -152,7 +158,7 @@ class server(object):
 
 
 class client(object):
-  def __init__(self,ip='localhost',port=5555):
+  def __init__(self,ip='localhost',port=55555):
     self._ip = ip
     self._port = port
 
@@ -172,7 +178,7 @@ class client(object):
     send_msg = self.process(message)
     timestarted = time.time()
 
-    socket.send_multipart([bytes(request_id),bytes(message)])
+    socket.send_multipart([bytes(unicode(request_id)),bytes(unicode(send_msg))])
     while(True):
       sockets = dict(poller.poll(10000))
       if(sockets):
