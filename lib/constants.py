@@ -41,6 +41,7 @@ class tasktypes():
   key_register = "key.register"
   cmd_run = "cmd.run"
   file_sync = "file.sync"
+  host_register = "host.register"
 
 class msg_keys():
   tasktype = "tasktype"

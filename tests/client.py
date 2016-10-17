@@ -16,4 +16,4 @@ if(__name__ == '__main__'):
   client = lib.transport.client()
 
   client.send(message={lib.constants.msg_keys.tasktype:lib.constants.tasktypes.key_register,
-                       lib.constants.msg_keys.payload: unicode(uuid.uuid4())})
+                       lib.constants.msg_keys.payload: unicode(uuid.uuid4())},message_type=lib.constants.tasktypes.host_register)

@@ -17,17 +17,19 @@ import simplejson
 
 class master(lib.transport.server):
 
-  def process(self, msg):
+  def process(self, message, message_type=None):
     # msgdict = eval(msg)
-    lib.debug.info(msg)
-    return (msg)
-    # if(msgdict[lib.constants.msg_keys.tasktype] == lib.constants.tasktypes.key_register):
-    #
-    #   # conn = lib.db_sqlite3.db.connect()
-    #   # rows = conn.execute("select * from pub_q")
-    #   print (msgdict[lib.constants.msg_keys.payload])
+    # lib.debug.info(message)
+    # return (msg)
+    if(message_type == lib.constants.tasktypes.host_register):
+      msgdict = simplejson.loads(message)
+      lib.debug.info(msgdict)
+      conn = lib.db_sqlite3.db.connect()
+      rows = conn.execute("insert into slaves")
+      # print (msgdict[lib.constants.msg_keys.payload])
+    return(message)
 
 
 if(__name__ == "__main__"):
   a = master()
-  a.start(pool_size=10)
+  a.start(pool_size=1)

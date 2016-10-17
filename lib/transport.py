@@ -89,8 +89,8 @@ class server(object):
       self._context = context
 
 
-  def process(self, msg):
-    return msg
+  def process(self, message,message_type=None):
+    return message
 
 
   def _worker(self,worker_url, worker_id=uuid.uuid4()):
@@ -105,16 +105,16 @@ class server(object):
 
 
     while True:
-      (id ,msg) = socket.recv_multipart()
+      (id ,msg_type, msg) = socket.recv_multipart()
 
       lib.debug.info("Received request: [ {0} ] -> [ {1} ]".format(str(worker_id),msg))
 
       # do some 'work'
       # time.sleep(1)
-      reply = self.process(msg)
+      reply = self.process(msg,message_type=msg_type)
 
       # send reply back to client
-      socket.send_multipart([bytes(id),bytes(reply)])
+      socket.send_multipart([bytes(id),bytes(msg_type),bytes(reply)])
       lib.debug.info("Replied to request: [ {0} ] -> [ {1} ]".format(str(worker_id), msg))
 
 
@@ -163,11 +163,11 @@ class client(object):
     self._port = port
 
 
-  def process(self, message):
-    return message
+  def process(self, message,message_type=None):
+    return simplejson.dumps(message)
 
 
-  def send(self,message={},request_id=uuid.uuid4()):
+  def send(self, message={}, message_type=None, request_id=uuid.uuid4()):
     context = zmq.Context()
     socket = context.socket(zmq.REQ)
     socket.connect("tcp://{0}:{1}".format(self._ip, self._port))
@@ -175,17 +175,17 @@ class client(object):
     poller = zmq.Poller()
     poller.register(socket, zmq.POLLIN)
     lib.debug.info("Sending request {0} …".format(request_id))
-    send_msg = self.process(message)
+    send_msg = self.process(message,message_type=message_type)
     timestarted = time.time()
 
-    socket.send_multipart([bytes(unicode(request_id)),bytes(unicode(send_msg))])
+    socket.send_multipart([bytes(unicode(request_id)), bytes(unicode(message_type)), bytes(unicode(send_msg))])
     while(True):
       sockets = dict(poller.poll(10000))
       if(sockets):
         for s in sockets.keys():
           if(sockets[s] == zmq.POLLIN):
             try:
-              (recv_id, recved_msg) = s.recv_multipart()
+              (recv_id, msg_type,recved_msg) = s.recv_multipart()
               recv_message = self.process(recved_msg)
             except:
               lib.debug.info (sys.exc_info())
