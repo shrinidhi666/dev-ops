@@ -1,4 +1,5 @@
 test6:
-  content:
-    test1: "testing 666"
+  cmd.run:
+    command:
+      -
 

@@ -1,10 +1,10 @@
-- level3_1:
+{% if slaveconst['wtf'] == "wtf1" %}
+- level3_8:
     cmd.run:
       command:
-        - tesing command 1
-        - testing command 2
-        - testing command 3
+        - echo "test2"
       user: shrinidhi
       path: /tmp/
       shell: true
+{% endif %}
 

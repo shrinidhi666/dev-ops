@@ -12,3 +12,9 @@
 - test000:
     content:
       - wtf
+
+- test2:
+    cmd.run:
+      command:
+        - wtf command "1"
+

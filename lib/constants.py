@@ -9,11 +9,15 @@ import os
 
 sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
 
+import lib.debug
 import appdirs
 import os
 import sqlite3
+import socket
 
 
+# DO NOT PUT ANYTHING THATS SUPPOSED TO BE IN A CONFIG FILE HERE
+# IE: NOTHING SHOULD BE HERE THAT GENERATED DYNAMICALLY.
 
 os.environ['XDG_CONFIG_DIRS'] = '/etc'
 configdir = os.path.join(appdirs.site_config_dir(),"dev_ops")
@@ -23,6 +27,11 @@ master_private_key_file = os.path.join(masterdir, "private_key.pem")
 slave_private_key_file = os.path.join(slavedir, "private_key.pem")
 master_config_file = os.path.join(masterdir,"master.conf")
 slave_config_file = os.path.join(slavedir,"slave.conf")
+master_sqlite3_file = os.path.join(masterdir,"sqlite","master.sqlite3")
+slave_slaveconst_dir = os.path.join(slavedir,"slaveconst")
+hostname = socket.gethostname()
+ip = socket.gethostbyname(hostname)
+
 
 class pub_q__status():
   pending = 0
@@ -42,6 +51,7 @@ class tasktypes():
   cmd_run = "cmd.run"
   file_sync = "file.sync"
   host_register = "host.register"
+  rule_get = "rule.get"
 
 class msg_keys():
   tasktype = "tasktype"

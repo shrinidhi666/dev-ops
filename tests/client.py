@@ -15,5 +15,5 @@ import uuid
 if(__name__ == '__main__'):
   client = lib.transport.client()
 
-  client.send(message={lib.constants.msg_keys.tasktype:lib.constants.tasktypes.key_register,
-                       lib.constants.msg_keys.payload: unicode(uuid.uuid4())},message_type=lib.constants.tasktypes.host_register)
+  client.send(message_type=lib.constants.tasktypes.host_register,message_type_args={lib.constants.msg_keys.tasktype:lib.constants.tasktypes.key_register,
+                                 lib.constants.msg_keys.payload : unicode(uuid.uuid4())})

@@ -8,10 +8,11 @@ import sys
 import os
 
 sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
+import lib.debug
 
 import jinja2
 import yaml
-
+import copy
 
 # def list_dirs(startpath):
 #   ret_dirs = [startpath]
@@ -66,22 +67,26 @@ class states(root):
           ret_loader[unicode(x).rstrip('.yml').replace("/",".")] = unicode(x)
     return (ret_loader)
 
-  def render(self,state_path):
-    # print (state_path)
-    template_file = self.list[state_path]
-    template_env = self._env.get_template(template_file)
-    yml_content = template_env.render()
-    yml_objs = yaml.load(yml_content)
-    return_obj = []
-    if(template_file.split("/")[-1] == "init.yml"):
-      for yml_obj in yml_objs:
-        retured_obj = self.render(yml_obj)
-        return_obj.extend(retured_obj)
-    else:
-      if(isinstance(yml_objs,dict)):
-        return_obj.append(yml_objs)
+  def render(self,state_path,slaveconst={},masterconst={}):
+    if(self.list.has_key(state_path)):
+      template_file = self.list[state_path]
+      template_env = self._env.get_template(template_file)
+      # lib.debug.info(slaveconst)
+      yml_content = template_env.render(slaveconst=slaveconst,masterconst=masterconst)
+      yml_objs = yaml.safe_load(yml_content)
+      return_obj = []
+      if(template_file.split("/")[-1] == "init.yml"):
+        for yml_obj in yml_objs:
+          retured_obj = self.render(yml_obj,slaveconst=slaveconst,masterconst=masterconst)
+          if(retured_obj):
+            return_obj.extend(retured_obj)
       else:
-        return_obj = yml_objs
-    return (return_obj)
+        if(isinstance(yml_objs,dict)):
+          return_obj.append(yml_objs)
+        else:
+          return_obj = yml_objs
+      return (return_obj)
+    else:
+      return(None)
 
 

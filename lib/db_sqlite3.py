@@ -28,7 +28,7 @@ class db(object):
   @staticmethod
   def connect():
     global module_path
-    db_file = os.path.join(module_path,"data","db","sqlite","master.sqlite3")
+    db_file = os.path.join(module_path,"install","master","sqlite","master.sqlite3")
     print (db_file)
     try:
       conn = sqlite3.connect(db_file)

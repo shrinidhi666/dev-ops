@@ -1,7 +1,7 @@
 - level3_1:
     cmd.run:
       command:
-        - tesing command 1
+        - tesing command "1"
         - testing command 2
         - testing command 3
       user: shrinidhi
