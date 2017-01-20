@@ -8,13 +8,11 @@ import sys
 import os
 
 sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
-
+import lib.constants
+import lib.debug
 import sqlite3
 
 
-
-module_path = os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2])
-# print("module path = {0}".format(module_path))
 
 class db(object):
 
@@ -27,9 +25,8 @@ class db(object):
 
   @staticmethod
   def connect():
-    global module_path
-    db_file = os.path.join(module_path,"install","master","sqlite","master.sqlite3")
-    print (db_file)
+    db_file = lib.constants.master_sqlite3_file
+    lib.debug.debug("connecting to sqlite file :"+ db_file)
     try:
       conn = sqlite3.connect(db_file)
       conn.isolation_level = None

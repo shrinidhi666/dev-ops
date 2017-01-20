@@ -15,10 +15,9 @@ import lib.constants
 import lib.db_sqlite3
 import lib.modules
 import lib.debug
-import yaml
 import simplejson
-import copy
 import lib.config
+
 
 
 
@@ -38,10 +37,30 @@ def states_list():
   all_states = lib.template.states(path="/home/shrinidhi/bin/gitHub/dev-ops/tests")
   return simplejson.dumps(all_states.list)
 
-@app.route('/register/<hostid>',methods=['POST'])
-def register_host(hostid):
-  lib.debug.info(hostid)
-  return("thippi")
+@app.route('/register',methods=['POST'])
+def register_host():
+  slavedets = simplejson.loads(flask.request.json)
+  lib.debug.debug(slavedets)
+  conn = lib.db_sqlite3.db.connect()
+  try:
+    conn.execute("insert into slaves (hostid,ip,hostname) values (\"{0}\",\"{1}\",\"{2}\")".format(slavedets['hostid'],slavedets['ip'],slavedets['hostname']))
+  except:
+    return simplejson.dumps(str(sys.exc_info()))
+  return simplejson.dumps("host registered")
+
+@app.route('/register',methods=['POST'])
+def register_host():
+  slavedets = simplejson.loads(flask.request.json)
+  lib.debug.debug(slavedets)
+  conn = lib.db_sqlite3.db.connect()
+  try:
+    conn.execute("insert into slaves (hostid,ip,hostname) values (\"{0}\",\"{1}\",\"{2}\")".format(slavedets['hostid'],slavedets['ip'],slavedets['hostname']))
+  except:
+    return simplejson.dumps(str(sys.exc_info()))
+  return simplejson.dumps("host registered")
+
+
+
 
 @app.route('/masterconf',methods=['GET'])
 def master_conf():

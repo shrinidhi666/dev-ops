@@ -9,6 +9,10 @@ import sys
 import os
 
 sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
+import lib.db_sqlite3
+conn = lib.db_sqlite3.db.connect()
 
-import sqlite3
-conn = sqlite3.connect()
+rows = conn.execute("select * from slaves")
+for x in rows:
+  print(x)
+

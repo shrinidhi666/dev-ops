@@ -16,6 +16,7 @@ if(os.path.exists(lib.constants.slave_slaveconst_dir)):
 
 import glob
 import platform
+import hashlib
 
 class slaveconst(object):
   def __init__(self):
@@ -56,6 +57,14 @@ class slaveconst(object):
 
 
 
+def hostid():
+  if(lib.config.slave_conf.has_key('id')):
+    return(lib.config.slave_conf['hostid'])
+  else:
+    return(hashlib.sha512(lib.constants.ip).hexdigest())
+
+
 if __name__ == '__main__':
   consts = slaveconst()
   print(consts.slaveconst())
+  print(hostid())
