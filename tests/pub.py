@@ -13,12 +13,12 @@ import time
 import lib.constants
 
 pub = lib.transport.publisher()
-topic = 2
+topic = "blue0007"
 state = "level1.level2.level3_1"
-pub.publish(2, {'test': 'x'})
+pub.publish(topic, {'test': 'x'})
 time.sleep(0.5)
 for x in range(0,10):
   print (x)
-  pub.publish(topic,state)
-  time.sleep(0.5)
+  pub.publish(topic,x)
+  # time.sleep(0.5)
 

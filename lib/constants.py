@@ -14,7 +14,7 @@ import appdirs
 import os
 import sqlite3
 import socket
-
+import tempfile
 
 # DO NOT PUT ANYTHING THATS SUPPOSED TO BE IN A CONFIG FILE HERE
 # IE: NOTHING SHOULD BE HERE THAT GENERATED DYNAMICALLY.
@@ -23,14 +23,17 @@ os.environ['XDG_CONFIG_DIRS'] = '/etc'
 configdir = os.path.join(appdirs.site_config_dir(),"dev_ops")
 masterdir = os.path.join(configdir,"master")
 slavedir = os.path.join(configdir,"slave")
-master_private_key_file = os.path.join(masterdir, "private_key.pem")
-slave_private_key_file = os.path.join(slavedir, "private_key.pem")
-master_config_file = os.path.join(masterdir,"master.conf")
-slave_config_file = os.path.join(slavedir,"slave.conf")
-master_sqlite3_file = os.path.join(masterdir,"sqlite","master.sqlite3")
-slave_slaveconst_dir = os.path.join(slavedir,"slaveconst")
+m_private_key_file = os.path.join(masterdir, "private_key.pem")
+s_private_key_file = os.path.join(slavedir, "private_key.pem")
+m_config_file = os.path.join(masterdir, "master.conf")
+s_config_file = os.path.join(slavedir, "slave.conf")
+m_sqlite3_file = os.path.join(masterdir, "sqlite", "master.sqlite3")
+s_slaveconst_dir = os.path.join(slavedir, "slaveconst")
 hostname = socket.gethostname()
 ip = socket.gethostbyname(hostname)
+m_result_logs_dir = tempfile.gettempdir()
+m_result_logs_prefix = "devops.result"
+m_result_logs_delimiter = "__"
 
 
 class pub_q__status():
@@ -42,9 +45,17 @@ class pub_q__status():
   failed = 5
   killed = 6
 
-class keys__status():
+class slaves_status():
   pending = 0
   accepted = 1
+  rejected = 2
+
+  def __getitem__(self, item):
+    a = {}
+    a[0] = "pending"
+    a[1] = "accepted"
+    a[2] = "rejected"
+    return(a[item])
 
 class tasktypes():
   key_register = "key.register"
@@ -63,3 +74,5 @@ class msg_keys():
 
 
 
+if __name__ == '__main__':
+  lib.debug.warn(slaves_status()[slaves_status.accepted])

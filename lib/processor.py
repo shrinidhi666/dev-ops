@@ -13,8 +13,11 @@ import lib.transport
 import lib.debug
 import lib.modules
 import simplejson
+import lib.config
+import requests
+import lib.constants
 
-def process(kwargs):
+def process(request_id,state_name,kwargs):
   for x in kwargs.keys():
     lib.debug.debug(x)
     for y in kwargs[x].keys():
@@ -30,12 +33,18 @@ def process(kwargs):
         module_to_load_args.append("{0}={1}".format(key,value))
         lib.debug.debug("\t\_ {0} : {1}".format(key,value))
       module_final_run = "cmd_ret = "+ module_to_load +"("+ ",".join(module_to_load_args) +")"
-      lib.debug.info(module_final_run)
+      lib.debug.debug(module_final_run)
       try:
         exec(module_final_run)
-        for x in cmd_ret:
-          lib.debug.info("{0} : {1}".format(x,cmd_ret[x]))
+        for w in cmd_ret:
+          lib.debug.debug("{0} : {1}".format(w,cmd_ret[w]))
+          to_rest = {}
+          to_rest[request_id] = {lib.constants.hostname :{state_name :{x :{y :{w : cmd_ret[w]}}}}}
+          r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/slaves/return/result", data=simplejson.dumps(to_rest))
+          lib.debug.debug(r.content)
       except:
+        to_rest = {}
+        to_rest[request_id] = {state_name : {lib.constants.hostname : {unicode(sys.exc_info())}}}
         lib.debug.warning(sys.exc_info())
 
 

@@ -22,8 +22,8 @@ ip = socket.gethostbyname(hostname)
 testdata = lib.slave_utils.slaveconst().slaveconst()
 testdata['wtf'] = 'wtf'
 testdata['punk'] = 'punk'
-r = requests.post("http://devops:"+ str(lib.config.master_port) +"/states/"+ hostname +"/level1.level2.level3_1",json=simplejson.dumps(testdata))
+r = requests.post("http://devops:"+ str(lib.config.slave_conf['master_rest_port']) +"/states/"+ hostname +"/level1.level2.level3_1",data=simplejson.dumps(testdata))
 work = simplejson.loads(r.content)
 lib.debug.info(work)
-for x in work:
-  lib.processor.process(x)
+# for x in work:
+#   lib.processor.process(x)

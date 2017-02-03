@@ -11,6 +11,7 @@ sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
 import lib.debug
 import lib.db_sqlite3
 import subprocess
+import simplejson
 
 class cmd(object):
 
@@ -36,36 +37,16 @@ class cmd(object):
       lib.debug.info("running : {0}".format(cmd))
       try:
         p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=shell,cwd=path,universal_newlines=True,env=env)
-        returner[cmd] = (p.communicate(), p.returncode)
+        (stdout, stderr) = p.communicate()
+        returner[cmd] = [(stdout,stderr), p.returncode]
       except:
-        returner[cmd] = (sys.exc_info(), 1)
+        returner[cmd] = [unicode(sys.exc_info()), 1]
+        break
     if(path):
       os.chdir(cwd)
     return (returner)
 
 
-
-class host(object):
-
-  @staticmethod
-  def register(hostdetails):
-    """
-
-    :param hostdetails:
-    :return:
-    """
-    try:
-      conn = lib.db_sqlite3.db.connect()
-      conn.execute("insert into slaves (ip, hostname) values (\"{0}\",\"{1}\")".format(hostdetails['ip'], hostdetails['hostname']))
-      conn.close()
-      return(1)
-    except:
-      lib.debug.error(sys.exc_info())
-      try:
-        conn.close()
-      except:
-        lib.debug.warn(sys.exc_info())
-      return(0)
 
 class file(object):
 

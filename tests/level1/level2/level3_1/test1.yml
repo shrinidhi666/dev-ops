@@ -18,11 +18,3 @@ wtf:
     path: /home/shrinidhi
     shell: true
 {% endif %}
-#  file.sync:
-#    command:
-#      - tesing command "4"
-#      - testing command 5
-#      - testing command 6
-#    user: shrinidhi
-#    path: /tmp/
-#    shell: true

@@ -11,12 +11,16 @@ import os
 import simplejson
 import zmq
 import uuid
+import socket
+import requests
+
 if(sys.platform.lower().find("linux") >= 0):
   import setproctitle
 
 sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
 import lib.debug
 import lib.constants
+import lib.config
 
 class publisher(object):
   def __init__(self,context=None):
@@ -24,49 +28,117 @@ class publisher(object):
       self._context = zmq.Context()
     else:
       self._context = context
-    self._socket = None
+    self._socket_pub = None
+    self._socket_rep = None
+    self._port = lib.config.master_conf['slave_port']
     self._start()
 
-  def _start(self,pub_port=5566):
-    self._socket = self._context.socket(zmq.PUB)
-    self._socket.sndhwm = 100000
-    self._socket.bind("tcp://*:{0}".format(pub_port))
+  def _start(self):
+    self._socket_rep = self._context.socket(zmq.REP)
+    self._socket_rep.bind("tcp://*:" + str(lib.config.master_conf['master_ping_port']))
+    self._socket_pub = self._context.socket(zmq.PUB)
+    self._socket_pub.sndhwm = 100000
+    self._socket_pub.bind("tcp://*:{0}".format(self._port))
+    self.poller = zmq.Poller()
+    self.poller.register(self._socket_rep, zmq.POLLIN)
 
-  def publish(self, topic, state_name, request_id=uuid.uuid4()):
-    self._socket.send_multipart([bytes(unicode(topic)),bytes(unicode(request_id)), bytes(unicode(state_name))])
+  def publish(self, topic, state_name, request_id=None):
+    if(not request_id):
+      request_id = uuid.uuid4()
+
+    lib.debug.debug("pinging : "+ str(topic) +" : "+ str(state_name))
+    self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode("ping.wtf"))])
+    rep_socks = dict(self.poller.poll(1*1000)) # 10s timeout in milliseconds
+    if(rep_socks):
+      for rep_sock in rep_socks:
+        (request_id_rep,state_name_rep,msg_rep) = rep_sock.recv_multipart()
+        rep_sock.send_multipart([request_id_rep,state_name,msg_rep])
+
+    else:
+      lib.debug.error(str(topic) +" : Timeout processing auth request")
+      return("timeout")
+    if(state_name != "ping.wtf"):
+      self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode(state_name))])
+    return("success")
+
+  def __del__(self):
+    try:
+      self._socket_pub.close()
+    except:
+      lib.debug.warn(str(sys.exc_info()))
+    try:
+      self._socket_rep.close()
+    except:
+      lib.debug.warn(str(sys.exc_info()))
+    try:
+      self._context.term()
+    except:
+      lib.debug.warn(str(sys.exc_info()))
 
 
 
 
 
 class subscriber(object):
-  def __init__(self,context=None,topic="0",ip="127.0.0.1",port=5566):
+  def __init__(self,context=None,topic="0",q=None):
     if (not context):
       self._context = zmq.Context()
     else:
       self._context = context
-    self._socket = None
+    self._q = q
+    self._socket_sub = None
+    self._socket_req = None
     self._topic = topic
-    self._ip = ip
-    self._port = port
+    self._ip = socket.gethostbyname(lib.config.slave_conf['master'])
+    self._port = lib.config.slave_conf['slave_port']
+    lib.debug.debug("connecting to : "+ str(self._ip) +" : "+ str(self._port))
     self._start()
 
   def process(self, topic, request_id,state_name):
     return state_name
 
+
   def _start(self):
-    self._socket = self._context.socket(zmq.SUB)
-    self._socket.connect("tcp://{0}:{1}".format(self._ip, self._port))
+    self._start_sub()
+
+  def _start_sub(self):
+    self._socket_sub = self._context.socket(zmq.SUB)
+
+    self._socket_sub.connect("tcp://{0}:{1}".format(self._ip, self._port))
     if(isinstance(self._topic,list)):
       for topix in self._topic:
-        self._socket.setsockopt(zmq.SUBSCRIBE, bytes(unicode(topix)))
+        self._socket_sub.setsockopt(zmq.SUBSCRIBE, bytes(unicode(topix)))
+        lib.debug.debug("connecting to topic : "+ str(topix))
     else:
-      self._socket.setsockopt(zmq.SUBSCRIBE, bytes(unicode(self._topic)))
+      self._socket_sub.setsockopt(zmq.SUBSCRIBE, bytes(unicode(self._topic)))
+      lib.debug.debug("connecting to topic : " + str(self._topic))
     while (True):
-      (topic, request_id, state_name) = self._socket.recv_multipart()
-      lib.debug.info ("{0} : {1} : {2}".format(topic,request_id,state_name))
-      retmsg = self.process(topic, request_id, state_name)
-      lib.debug.info (retmsg)
+      (topic, request_id, state_name) = self._socket_sub.recv_multipart()
+      if(state_name == "ping.wtf"):
+        lib.debug.debug("got ping.wtf priority msg!")
+        self._socket_req = self._context.socket(zmq.REQ)
+        self._socket_req.connect("tcp://{0}:{1}".format(lib.config.slave_conf['master'], lib.config.slave_conf['master_ping_port']))
+        self._socket_req.send_multipart([bytes(unicode(request_id)), bytes(unicode(state_name)), bytes(unicode("ack"))])
+        (request_id_recved) = self._socket_req.recv_multipart()
+        self._socket_req.close()
+      else:
+        lib.debug.info ("{0} : {1} : {2}".format(topic,request_id,state_name))
+        retmsg = self.process(topic, request_id, state_name)
+        lib.debug.debug(retmsg)
+
+  def __del__(self):
+    try:
+      self._socket_req.close()
+    except:
+      lib.debug.warn(str(sys.exc_info()))
+    try:
+      self._socket_sub.close()
+    except:
+      lib.debug.warn(str(sys.exc_info()))
+    try:
+      self._context.term()
+    except:
+      lib.debug.warn(str(sys.exc_info()))
 
 
 
@@ -78,10 +150,11 @@ class server(object):
       self._context = zmq.Context()
     else:
       self._context = context
+    self._port = lib.config.master_conf['master_ping_returner_port']
 
 
-  def process(self, message_type,message_type_args,hostdetails):
-    return message_type_args
+  def process(self,received):
+    return (received)
 
 
   def _worker(self,worker_url, worker_id=uuid.uuid4()):
@@ -96,15 +169,17 @@ class server(object):
 
 
     while True:
-      (id, hostdetails, msg_type, msg_type_args) = socket.recv_multipart()
+      received = socket.recv_multipart()
       lib.debug.info("Received request: [ {0} ] -> [ {1} ]".format(str(worker_id),msg_type_args))
-      reply = self.process(msg_type,simplejson.loads(msg_type_args),simplejson.loads(hostdetails))
+      reply = self.process(received)
       reply_to_send = simplejson.dumps(reply)
-      socket.send_multipart([bytes(unicode(id)),bytes(unicode(hostdetails)),bytes(unicode(msg_type)),bytes(unicode(reply_to_send))])
+      socket.send_multipart([bytes(unicode(hostid)),bytes(unicode(request_id)),bytes(unicode(reply_to_send))])
       lib.debug.info("Replied to request: [ {0} ] -> [ {1} ]".format(str(worker_id), msg_type_args))
 
 
-  def start(self, worker_port=55999, server_port=55555, pool_size=2):
+  def start(self, pool_size=2):
+    worker_port = 55999
+    server_port = self._port
     if (sys.platform.lower().find("linux") >= 0):
       setproctitle.setproctitle("server-server")
     url_worker = "tcp://127.0.0.1:{0}".format(worker_port)
@@ -148,7 +223,9 @@ class client(object):
     return message_type_args
 
 
-  def send(self, message_type=None, message_type_args={}, request_id=uuid.uuid4()):
+  def send(self, message_type=None, message_type_args={}, request_id=None):
+    if(not request_id):
+      request_id = uuid.uuid4()
     context = zmq.Context()
     socket = context.socket(zmq.REQ)
     socket.connect("tcp://{0}:{1}".format(self._ip, self._port))
@@ -179,6 +256,7 @@ class client(object):
 
 
     socket.close()
+    context.term()
 
 
 if __name__ == "__main__":

@@ -17,6 +17,7 @@ import lib.modules
 import lib.debug
 import simplejson
 import lib.config
+import time
 
 
 
@@ -25,7 +26,7 @@ app = flask.Flask(__name__)
 
 @app.route('/states/<hostid>/<state>',methods=['POST'])
 def states(hostid,state):
-  slaveconst = simplejson.loads(flask.request.json)
+  slaveconst = simplejson.loads(flask.request.data)
   all_states = lib.template.states(path="/home/shrinidhi/bin/gitHub/dev-ops/tests")
   ret_state_details = all_states.render(unicode(state),slaveconst=slaveconst)
   # lib.debug.debug(hostid)
@@ -37,29 +38,30 @@ def states_list():
   all_states = lib.template.states(path="/home/shrinidhi/bin/gitHub/dev-ops/tests")
   return simplejson.dumps(all_states.list)
 
-@app.route('/register',methods=['POST'])
-def register_host():
-  slavedets = simplejson.loads(flask.request.json)
+@app.route('/slaves/register',methods=['POST'])
+def slaves_register():
+  slavedets = simplejson.loads(flask.request.data)
   lib.debug.debug(slavedets)
-  conn = lib.db_sqlite3.db.connect()
   try:
-    conn.execute("insert into slaves (hostid,ip,hostname) values (\"{0}\",\"{1}\",\"{2}\")".format(slavedets['hostid'],slavedets['ip'],slavedets['hostname']))
-  except:
-    return simplejson.dumps(str(sys.exc_info()))
-  return simplejson.dumps("host registered")
-
-@app.route('/register',methods=['POST'])
-def register_host():
-  slavedets = simplejson.loads(flask.request.json)
-  lib.debug.debug(slavedets)
-  conn = lib.db_sqlite3.db.connect()
-  try:
-    conn.execute("insert into slaves (hostid,ip,hostname) values (\"{0}\",\"{1}\",\"{2}\")".format(slavedets['hostid'],slavedets['ip'],slavedets['hostname']))
+    lib.db_sqlite3.execute("insert into slaves (hostid,ip,hostname) values (\"{0}\",\"{1}\",\"{2}\")".format(slavedets['hostid'],slavedets['ip'],slavedets['hostname']))
   except:
     return simplejson.dumps(str(sys.exc_info()))
   return simplejson.dumps("host registered")
 
 
+@app.route('/slaves/list',methods=['GET'])
+def slaves_list():
+  try:
+    data = lib.db_sqlite3.execute("select * from slaves where status={0}".format(lib.constants.slaves_status.accepted),dictionary=True)
+    if(data):
+      if(isinstance(data,int)):
+        return simplejson.dumps(0)
+      else:
+        return simplejson.dumps(data)
+    else:
+      return simplejson.dumps(0)
+  except:
+    return simplejson.dumps(str(sys.exc_info()))
 
 
 @app.route('/masterconf',methods=['GET'])
@@ -67,6 +69,19 @@ def master_conf():
   return simplejson.dumps(lib.config.master_conf)
 
 
+@app.route('/slaves/return/result',methods=['POST'])
+def slaves_returner():
+  result = simplejson.loads(flask.request.data)
+  key = result.keys()[-1]
+  logfile = "/tmp/devops.result__" + key +"__"+ str(time.time())
+  fd = open(logfile,"w")
+  fd.write(simplejson.dumps(result[key],indent=4))
+  fd.flush()
+  fd.close()
+  # lib.debug.info(simplejson.dumps(result,indent=4))
+  return("ack")
+
+
 
 if __name__ == "__main__":
-  app.run(host="0.0.0.0",port=lib.config.master_port)
+  app.run(host="0.0.0.0",port=lib.config.master_conf['master_rest_port'])

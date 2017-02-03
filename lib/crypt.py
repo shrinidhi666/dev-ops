@@ -18,9 +18,9 @@ from Crypto import Random
 
 def generate_key_pair():
   # client = lib.transport.client()
-  if(os.path.exists(lib.constants.master_private_key_file)):
-    print("key file already present : {0}".format(lib.constants.master_private_key_file))
-    f = open(lib.constants.master_private_key_file, "r")
+  if(os.path.exists(lib.constants.m_private_key_file)):
+    print("key file already present : {0}".format(lib.constants.m_private_key_file))
+    f = open(lib.constants.m_private_key_file, "r")
     key = RSA.importKey(f.read())
     public_key = key.publickey().exportKey("PEM")
     lib.debug.debug(public_key)
@@ -33,7 +33,7 @@ def generate_key_pair():
         print (sys.exc_info())
     random_generator = Random.new().read
     key = RSA.generate(2048, random_generator)
-    private_key_file = open(lib.constants.master_private_key_file, "w")
+    private_key_file = open(lib.constants.m_private_key_file, "w")
     private_key_file.write(key.exportKey("PEM"))
     private_key_file.flush()
     private_key_file.close()

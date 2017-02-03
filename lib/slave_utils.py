@@ -10,9 +10,9 @@ import sys
 sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
 import lib.config
 import lib.constants
-
-if(os.path.exists(lib.constants.slave_slaveconst_dir)):
-  sys.path.append(lib.constants.slave_slaveconst_dir)
+import lib.debug
+if(os.path.exists(lib.constants.s_slaveconst_dir)):
+  sys.path.append(lib.constants.s_slaveconst_dir)
 
 import glob
 import platform
@@ -26,6 +26,7 @@ class slaveconst(object):
 
 
   def slaveconst(self):
+    lib.debug.debug(self.__retdict)
     return(self.__retdict)
 
 
@@ -40,8 +41,8 @@ class slaveconst(object):
 
   def __update_slaveconst(self):
     userconsts = {}
-    if (os.path.exists(lib.constants.slave_slaveconst_dir)):
-      pyfiles = glob.glob(os.path.join(lib.constants.slave_slaveconst_dir, "*.py"))
+    if (os.path.exists(lib.constants.s_slaveconst_dir)):
+      pyfiles = glob.glob(os.path.join(lib.constants.s_slaveconst_dir, "*.py"))
       if (pyfiles):
         for x in pyfiles:
           module_to_load = ".".join(x.split(os.sep)[-1].split(".")[:-1])
@@ -62,6 +63,7 @@ def hostid():
     return(lib.config.slave_conf['hostid'])
   else:
     return(hashlib.sha512(lib.constants.ip).hexdigest())
+
 
 
 if __name__ == '__main__':

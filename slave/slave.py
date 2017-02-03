@@ -15,23 +15,25 @@ import lib.modules
 import lib.debug
 import lib.config
 import lib.slave_utils
+import lib.processor
 import simplejson
 import requests
 import multiprocessing
-import socket
-import platform
+
 
 
 
 
 class slave_sub(lib.transport.subscriber):
+
   def process(self, topic, request_id,state_name):
     slaveconst = lib.slave_utils.slaveconst().slaveconst()
-    r = requests.post("http://"+ lib.config.slave_conf['master'] +":"+ str(lib.config.master_port) + "/states/" + lib.constants.hostname + "/"+ state_name , json=simplejson.dumps(testdata))
+    r = requests.post("http://"+ lib.config.slave_conf['master'] +":"+ str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.constants.hostname + "/"+ state_name , data=simplejson.dumps(slaveconst))
     work = simplejson.loads(r.content)
-    lib.debug.info(work)
-    for x in work:
-      lib.processor.process(x)
+    if(work):
+      for x in work:
+        lib.debug.info(x)
+        lib.processor.process(request_id,state_name,x)
 
 
 def register_host():
@@ -41,17 +43,19 @@ def register_host():
   slavedata['ip'] = lib.constants.ip
 
   lib.debug.info(slavedata)
-  r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.master_port) + "/register",json=simplejson.dumps(slavedata))
+  r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/slaves/register",data=simplejson.dumps(slavedata))
   lib.debug.info(r.content)
 
 
-def main():
+def start_sub(q=None):
 
-  sub = slave_sub(topic=[lib.constants.hostname])
+  sub = slave_sub(topic=[lib.constants.hostname,lib.constants.ip])
 
 
 if __name__ == '__main__':
+  qu = multiprocessing.Queue()
   register_host()
+  start_sub()
 
 
 

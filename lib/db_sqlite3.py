@@ -25,7 +25,7 @@ class db(object):
 
   @staticmethod
   def connect():
-    db_file = lib.constants.master_sqlite3_file
+    db_file = lib.constants.m_sqlite3_file
     lib.debug.debug("connecting to sqlite file :"+ db_file)
     try:
       conn = sqlite3.connect(db_file)
@@ -36,3 +36,43 @@ class db(object):
       return (0)
     return (conn)
 
+
+def execute(query,dictionary=False):
+  con = db.connect()
+  if(con):
+    if(dictionary):
+      try:
+        rows = con.execute(query)
+        data = rows.fetchall()
+      except:
+        lib.debug.error(str(sys.exc_info()))
+        try:
+          con.close()
+        except:
+          lib.debug.error(str(sys.exc_info()))
+        raise
+
+      try:
+        con.close()
+      except:
+        lib.debug.error(str(sys.exc_info()))
+      if(not isinstance(data,int)):
+        return(data)
+      else:
+        return(0)
+    else:
+      try:
+        con.execute(query)
+      except:
+        lib.debug.error(str(sys.exc_info()))
+        try:
+          con.close()
+        except:
+          lib.debug.error(str(sys.exc_info()))
+        raise
+
+      try:
+        con.close()
+      except:
+        lib.debug.error(str(sys.exc_info()))
+      return(1)
