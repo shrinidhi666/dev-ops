@@ -32,7 +32,7 @@ class slave_sub(lib.transport.subscriber):
     work = simplejson.loads(r.content)
     if(work):
       for x in work:
-        lib.debug.info(x)
+        lib.debug.debug(x)
         lib.processor.process(request_id,state_name,x)
 
 

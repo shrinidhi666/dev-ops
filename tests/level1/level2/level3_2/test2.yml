@@ -15,3 +15,10 @@
       path: /tmp/
       shell: true
 
+- test1:
+    cmd.run:
+      command:
+        - THIS IS TEST1
+      user: shrinidhi
+      path: /tmp/
+      shell: true
