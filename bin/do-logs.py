@@ -15,6 +15,7 @@ import simplejson
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-l","--list",dest="list",action="store_true",help="list all the logs")
+parser.add_argument("-c","--clean",dest="clean",action="store_true",help="clean all the logs")
 parser.add_argument("-o","--order",dest="order",help="asc or dsc order")
 parser.add_argument("-s","--show",dest="id",help="show the logs for id ...")
 parser.add_argument("-t","--tail",dest="tail",action="store_true",help="tail the logs")
@@ -23,10 +24,11 @@ args = parser.parse_args()
 logs = glob.glob(os.path.join(lib.constants.m_result_logs_dir,lib.constants.m_result_logs_prefix + lib.constants.m_result_logs_delimiter +"*"))
 ulogs = {}
 for x in logs:
-  ulogs[x.split(lib.constants.m_result_logs_delimiter)[1]] = x
+  ulogs[x.split(lib.constants.m_result_logs_delimiter)[-2]] = x
 if(args.list):
   for x in ulogs:
-    print(x)
+    for y in logs:
+    print(x )
 else:
   if(args.id):
     files_to_open = glob.glob(os.path.join(lib.constants.m_result_logs_dir,lib.constants.m_result_logs_prefix + lib.constants.m_result_logs_delimiter +"*"+ args.id +"*"))
@@ -52,9 +54,9 @@ else:
                           if (isinstance(data[n][o][p][q][r][0], list)):
                             print("        " + str(r) + " : \n" + str(data[n][o][p][q][r][0][0]))
                           if(data[n][o][p][q][r][-1] != 0):
-                            print ("          ERROR")
+                            print ("          FAIL")
                           else:
-                            print ("          PASS")
+                            print ("          SUCCESS")
 
 
 

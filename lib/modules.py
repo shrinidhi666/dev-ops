@@ -26,7 +26,9 @@ class cmd(object):
     :param shell:
     :param log:
     :param env: dict of environment variables to set
-    :return: (msg, errorcode)
+    :return: ([msg, errorcode])
+
+    ALL MODULES SHOULD RETURN LIST WITH -1 INDEX AS THE RETURN CODE : 0 -> SUCCESS else FAIL
     """
     returner = {}
     cwd = os.getcwd()
