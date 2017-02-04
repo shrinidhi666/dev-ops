@@ -53,7 +53,7 @@ class cmd(object):
 class file(object):
 
   @staticmethod
-  def sync(user=None,group=None,mode=None,source=str,dest=None,backup=True):
+  def sync(user=None,group=None,mode=None,source=str,dest=None,backup=True,template=True):
     if(source.startswith("devops://")):
       pass
 

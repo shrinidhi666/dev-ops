@@ -1,5 +1,5 @@
 #!/usr/bin/env python2.7
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 __author__ = "Shrinidhi Rao"
 __license__ = "GPL"
 __email__ = "shrinidhi666@gmail.com"
@@ -14,6 +14,7 @@ import jinja2
 import yaml
 import copy
 
+
 # def list_dirs(startpath):
 #   ret_dirs = [startpath]
 #   for root, dirs, files in os.walk(startpath):
@@ -24,30 +25,26 @@ import copy
 
 
 class root(object):
-  def __init__(self,path="./"):
+  def __init__(self, path="./"):
     self._path = os.path.abspath(path)
     self._loader = None
     self._env = None
-
-
-
 
   @property
   def list(self):
     self._loader = jinja2.FileSystemLoader(self._path)
     self._env = jinja2.Environment(loader=self._loader, trim_blocks=True)
-    return(self._loader.list_templates())
+    return (self._loader.list_templates())
 
   @list.setter
-  def list(self,value):
+  def list(self, value):
     pass
 
-  def render(self,path):
+  def render(self, path):
     pass
 
 
 class states(root):
-
   @property
   def list(self):
     """
@@ -60,33 +57,35 @@ class states(root):
     self._env = jinja2.Environment(loader=self._loader, trim_blocks=True)
     ret_loader = {}
     for x in self._loader.list_templates():
-      if(unicode(x).endswith('.yml')):
-        if(unicode(x).split("/")[-1] == "init.yml"):
-          ret_loader[unicode(x).rstrip('/init.yml').replace("/",".")] = unicode(x)
+      if (unicode(x).endswith('.yml')):
+        if (unicode(x).split("/")[-1] == "init.yml"):
+          ret_loader[unicode(x).rstrip('/init.yml').replace("/", ".")] = unicode(x)
         else:
-          ret_loader[unicode(x).rstrip('.yml').replace("/",".")] = unicode(x)
+          ret_loader[unicode(x).rstrip('.yml').replace("/", ".")] = unicode(x)
     return (ret_loader)
 
-  def render(self,state_path,slaveconst={},masterconst={}):
-    if(self.list.has_key(state_path)):
-      template_file = self.list[state_path]
+  def render(self, path, slaveconst={}, masterconst={}, is_file=False):
+    if (is_file):
+      template_env = self._env.get_template(path)
+      filecontent = template_env.render(slaveconst=slaveconst, masterconst=masterconst)
+      return (filecontent)
+    if (self.list.has_key(path)):
+      template_file = self.list[path]
       template_env = self._env.get_template(template_file)
       # lib.debug.info(slaveconst)
-      yml_content = template_env.render(slaveconst=slaveconst,masterconst=masterconst)
+      yml_content = template_env.render(slaveconst=slaveconst, masterconst=masterconst)
       yml_objs = yaml.safe_load(yml_content)
       return_obj = []
-      if(template_file.split("/")[-1] == "init.yml"):
+      if (template_file.split("/")[-1] == "init.yml"):
         for yml_obj in yml_objs:
-          retured_obj = self.render(yml_obj,slaveconst=slaveconst,masterconst=masterconst)
-          if(retured_obj):
+          retured_obj = self.render(yml_obj, slaveconst=slaveconst, masterconst=masterconst)
+          if (retured_obj):
             return_obj.extend(retured_obj)
       else:
-        if(isinstance(yml_objs,dict)):
+        if (isinstance(yml_objs, dict)):
           return_obj.append(yml_objs)
         else:
           return_obj = yml_objs
       return (return_obj)
     else:
-      return(None)
-
-
+      return (None)
