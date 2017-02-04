@@ -12,12 +12,20 @@ sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
 import lib.template
 import lib.processor
 
+env1 = {}
+env2 = {}
+env1["test"] = "we are mad"
+env2["wtf"] = False
+
+env1["u"] = "testing strings"
+slaveconst = {}
+slaveconst.update(env2)
+slaveconst.update(env1)
+
 if(__name__ == "__main__"):
   # test = lib.template.root()
-  test_state = lib.template.states(path="/home/shrinidhi/bin/gitHub/dev-ops/tests")
-  for x in test_state.render("level1.level2.level3_1.test1"):
-    # print (x)
-    lib.processor.process(x)
-  # print("_____")
-  # print (test_state.render("level1.level2.level3_1"))
-  # print ("____")
+  test_state = lib.template.states()
+  rendered_file = test_state.render("jinjafile.jinja",slaveconst=slaveconst,is_file=True)
+  rendered_state = test_state.render("level1.level2.level3_1.test1")
+  print(rendered_file)
+  print (rendered_state)

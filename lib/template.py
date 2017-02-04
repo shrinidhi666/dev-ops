@@ -27,13 +27,11 @@ import copy
 class root(object):
   def __init__(self, path="./"):
     self._path = os.path.abspath(path)
-    self._loader = None
-    self._env = None
+    self._loader = jinja2.FileSystemLoader(self._path)
+    self._env = jinja2.Environment(loader=self._loader, trim_blocks=True)
 
   @property
   def list(self):
-    self._loader = jinja2.FileSystemLoader(self._path)
-    self._env = jinja2.Environment(loader=self._loader, trim_blocks=True)
     return (self._loader.list_templates())
 
   @list.setter
@@ -53,8 +51,8 @@ class states(root):
     :return:
      dictionary
     """
-    self._loader = jinja2.FileSystemLoader(self._path)
-    self._env = jinja2.Environment(loader=self._loader, trim_blocks=True)
+    # self._loader = jinja2.FileSystemLoader(self._path)
+    # self._env = jinja2.Environment(loader=self._loader, trim_blocks=True)
     ret_loader = {}
     for x in self._loader.list_templates():
       if (unicode(x).endswith('.yml')):

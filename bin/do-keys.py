@@ -16,9 +16,10 @@ import lib.config
 import lib.db_sqlite3
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-l","--list",dest="list",action="store_true",help="destination hosts to run the states on")
-parser.add_argument("-a","--accept",dest="accept",help="state to run on the hosts")
-parser.add_argument("-r","--reject",dest="reject",help="state to run on the hosts")
+parser.add_argument("-l","--list",dest="list",action="store_true",help="list all the keys")
+parser.add_argument("-a","--accept",dest="accept",help="accept comma seperated keys")
+parser.add_argument("-r","--reject",dest="reject",help="reject comma seperated keys")
+parser.add_argument("-d","--delete",dest="delete",help="delete comma seperated keys")
 args = parser.parse_args()
 
 if(args.list):
