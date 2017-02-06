@@ -32,7 +32,7 @@ if(__name__ == "__main__"):
   test_state = lib.template.states()
   rendered_file = test_state.render("jinjafile.jinja",slaveconst=slaveconst,is_file=True)
   try:
-    rendered_state = test_state.render(state)
+    rendered_state = test_state.render(state,slaveconst=slaveconst)
     print rendered_state
     for x in rendered_state:
       t = lib.processor.process(rid,state,x,is_local=True)
