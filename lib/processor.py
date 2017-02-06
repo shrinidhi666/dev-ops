@@ -17,7 +17,7 @@ import lib.config
 import requests
 import lib.constants
 
-def process(request_id,state_name,kwargs):
+def process(request_id,state_name,kwargs,is_local = False):
   for x in kwargs.keys():
     lib.debug.debug(x)
     for y in kwargs[x].keys():
@@ -40,15 +40,21 @@ def process(request_id,state_name,kwargs):
           lib.debug.debug("{0} : {1}".format(w,cmd_ret[w]))
           to_rest = {}
           to_rest[request_id] = {lib.constants.hostname :{state_name :{x :{y :{w : cmd_ret[w]}}}}}
-          r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/slaves/return/result", data=simplejson.dumps(to_rest))
-          lib.debug.debug(r.content)
+          if(is_local):
+            print(simplejson.dumps(to_rest,indent=4))
+          else:
+            r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/slaves/return/result", data=simplejson.dumps(to_rest))
+            lib.debug.debug(r.content)
           if(cmd_ret[w][-1] != 0):
             return(0)
       except:
         to_rest = {}
         to_rest[request_id] = {lib.constants.hostname: {state_name: {x: {y: [str(sys.exc_info()),1]}}}}
-        r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/slaves/return/result", data=simplejson.dumps(to_rest))
-        lib.debug.debug(r.content)
+        if(is_local):
+          print(simplejson.dumps(to_rest,indent=4))
+        else:
+          r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/slaves/return/result", data=simplejson.dumps(to_rest))
+          lib.debug.debug(r.content)
         lib.debug.error(sys.exc_info())
         return(0)
   return(1)

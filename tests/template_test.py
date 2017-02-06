@@ -11,6 +11,9 @@ sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
 
 import lib.template
 import lib.processor
+import uuid
+
+rid = str(uuid.uuid4())
 
 env1 = {}
 env2 = {}
@@ -21,15 +24,18 @@ env1["u"] = "testing strings"
 slaveconst = {}
 slaveconst.update(env2)
 slaveconst.update(env1)
+state = "level1.level2.test1"
 
 if(__name__ == "__main__"):
   # test = lib.template.root()
   test_state = lib.template.states()
   rendered_file = test_state.render("jinjafile.jinja",slaveconst=slaveconst,is_file=True)
   try:
-    rendered_state = test_state.render("level1.level2.test1")
+    rendered_state = test_state.render(state)
+    for x in rendered_state:
+      t = lib.processor.process(rid,state,x,is_local=True)
   except:
-    print (sys.exc_info())
+    # print (sys.exc_info())
     sys.exit(1)
-  print(rendered_file)
-  print (rendered_state)
+  # print(rendered_file)
+  # print (rendered_state)

@@ -21,6 +21,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-l","--list",dest="list",action="store_true",help="list all the states that are available")
 parser.add_argument("-n","--hosts",dest="hosts",help="destination hosts to run the states on")
 parser.add_argument("-s","--state",dest="state",help="state to run on the hosts")
+
 # parser.add_argument("-j","--jobs",dest="jobs")
 args = parser.parse_args()
 
