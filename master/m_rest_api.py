@@ -79,7 +79,7 @@ def master_conf():
 def slaves_returner():
   result = simplejson.loads(flask.request.data)
   key = result.keys()[-1]
-  logfile = "/tmp/devops.result__" + str(flask.request.remote_addr) +"__"+ key +"__"+ str(time.time())
+  logfile = os.path.join(lib.constants.m_result_logs_dir,lib.constants.m_result_logs_prefix + lib.constants.m_result_logs_delimiter + str(flask.request.remote_addr) + lib.constants.m_result_logs_delimiter + key + lib.constants.m_result_logs_delimiter + str(time.time())
   fd = open(logfile,"w")
   fd.write(simplejson.dumps(result[key],indent=4))
   fd.flush()
