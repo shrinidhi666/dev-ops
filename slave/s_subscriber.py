@@ -33,7 +33,9 @@ class slave_sub(lib.transport.subscriber):
     if(work):
       for x in work:
         lib.debug.debug(x)
-        lib.processor.process(request_id,state_name,x)
+        done = lib.processor.process(request_id,state_name,x)
+        if(not done):
+          return(0)
     return(1)
 
 
