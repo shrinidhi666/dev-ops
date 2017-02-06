@@ -32,10 +32,11 @@ if(__name__ == "__main__"):
   rendered_file = test_state.render("jinjafile.jinja",slaveconst=slaveconst,is_file=True)
   try:
     rendered_state = test_state.render(state)
+    print rendered_state
     for x in rendered_state:
       t = lib.processor.process(rid,state,x,is_local=True)
   except:
-    # print (sys.exc_info())
+    print (sys.exc_info())
     sys.exit(1)
   # print(rendered_file)
   # print (rendered_state)
