@@ -1,11 +1,8 @@
 testing env:
   cmd.run:
     command:
-#{% if sys.platform.find("win") >= 0 %}
       - echo %test%
-#{% else %}
       - echo $test
-#{% endif %}
     env:
       test: my name is test env
       wtf: my name is wtf env

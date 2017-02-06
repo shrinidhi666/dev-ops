@@ -1,24 +1,17 @@
-{% if slaveconst['wtf'] == "wtf1" %}
+{% if slaveconst['wtf'] == 'wtf1' %}
 - level3_8:
     cmd.run:
       command:
         - echo "test2"
+        - echo {{ slaveconst['wtf'] }}
       user: shrinidhi
-      path: /tmp/
       shell: true
 {% endif %}
+
 - level3_8_def:
     cmd.run:
       command:
         - echoo "test2 def"
       user: shrinidhi
-      path: /tmp/
       shell: true
 
-- test1:
-    cmd.run:
-      command:
-        - THIS IS TEST1
-      user: shrinidhi
-      path: /tmp/
-      shell: true

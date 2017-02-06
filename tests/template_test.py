@@ -18,13 +18,14 @@ rid = str(uuid.uuid4())
 env1 = {}
 env2 = {}
 env1["test"] = "we are mad"
-env2["wtf"] = False
+env2["wtf"] = "wtf1"
 
 env1["u"] = "testing strings"
 slaveconst = {}
 slaveconst.update(env2)
 slaveconst.update(env1)
-state = "level1.level2.test1"
+state = "level1.level2.level3_2.test2"
+print (slaveconst)
 
 if(__name__ == "__main__"):
   # test = lib.template.root()

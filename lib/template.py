@@ -82,7 +82,7 @@ class states(root):
   def render(self, path, slaveconst={}, masterconst={}, is_file=False,cyclic_test={}):
     if (is_file):
       template_env = self._env.get_template(path)
-      filecontent = template_env.render(slaveconst=slaveconst, masterconst=masterconst)
+      filecontent = template_env.render(slaveconst=slaveconst, masterconst=masterconst,sys=sys)
       return (filecontent)
     if (self.list.has_key(path)):
       template_file = self.list[path]
@@ -96,7 +96,7 @@ class states(root):
       return_obj = []
       if (template_file.split("/")[-1] == "init.yml"):
         for yml_obj in yml_objs:
-          retured_obj = self.render(yml_obj, slaveconst=slaveconst, masterconst=masterconst)
+          retured_obj = self.render(yml_obj,slaveconst=slaveconst, masterconst=masterconst)
           if (retured_obj):
             return_obj.extend(retured_obj)
       else:
