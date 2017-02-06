@@ -79,15 +79,16 @@ class states(root):
           ret_loader[unicode(x).rstrip('.yml').replace("/", ".")] = unicode(x)
     return (ret_loader)
 
-  def render(self, path, slaveconst={}, masterconst={}, is_file=False,cyclic_test={}):
+  def render(self, path, slaveconst={}, masterconst={}, is_file=False,cyclic_test={},is_recursive=False):
     if (is_file):
       template_env = self._env.get_template(path)
-      filecontent = template_env.render(slaveconst=slaveconst, masterconst=masterconst,sys=sys)
+      filecontent = template_env.render(slaveconst=slaveconst, masterconst=masterconst)
       return (filecontent)
     if (self.list.has_key(path)):
       template_file = self.list[path]
-      if (cyclic_test.has_key(template_file)):
-        raise Exception("cyclic redundancy : " + str(template_file))
+      if(is_recursive):
+        if (cyclic_test.has_key(template_file)):
+          raise Exception("cyclic redundancy : " + str(template_file))
       cyclic_test[template_file] = 1
       template_env = self._env.get_template(template_file)
       # lib.debug.info(slaveconst)
@@ -96,7 +97,7 @@ class states(root):
       return_obj = []
       if (template_file.split("/")[-1] == "init.yml"):
         for yml_obj in yml_objs:
-          retured_obj = self.render(yml_obj,slaveconst=slaveconst, masterconst=masterconst)
+          retured_obj = self.render(yml_obj,slaveconst=slaveconst, masterconst=masterconst,is_recursive=True)
           if (retured_obj):
             return_obj.extend(retured_obj)
       else:
@@ -104,6 +105,8 @@ class states(root):
           return_obj.append(yml_objs)
         else:
           return_obj = yml_objs
+        if(not is_recursive):
+          cyclic_test.clear()
       return (return_obj)
     else:
       return (None)

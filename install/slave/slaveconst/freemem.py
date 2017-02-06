@@ -17,12 +17,13 @@ def update_consts():
   mem['ram']['free'] = vm.free
   mem['swap']['total'] = sw.total
   mem['swap']['free'] = sw.free
-  # mem['wtf'] = "wtf1"
-  print("wtf")
+  mem['wtf'] = "wtf1"
+  mem['cpu_count'] = psutil.cpu_count()
   return(mem)
 
 
 
 
 if __name__ == '__main__':
-    print (updateconst())
+    det = update_consts()
+    print (det)

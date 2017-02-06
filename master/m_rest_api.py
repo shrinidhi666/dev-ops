@@ -28,9 +28,13 @@ app = flask.Flask(__name__)
 def states(hostid,state,isfile):
   slaveconst = simplejson.loads(flask.request.data)
   all_states = lib.template.states(path="../tests")
+  lib.debug.debug(hostid)
+  lib.debug.debug(state)
+  lib.debug.debug(isfile)
+  lib.debug.debug(slaveconst)
   if(int(isfile)):
     try:
-      ret_state_details = all_states.render(unicode(state),slaveconst=slaveconst,isfile=True)
+      ret_state_details = all_states.render(unicode(state),slaveconst=slaveconst,is_file=True)
     except:
       return (unicode(sys.exc_info()))
     return unicode(ret_state_details)
@@ -79,7 +83,7 @@ def master_conf():
 def slaves_returner():
   result = simplejson.loads(flask.request.data)
   key = result.keys()[-1]
-  logfile = os.path.join(lib.constants.m_result_logs_dir,lib.constants.m_result_logs_prefix + lib.constants.m_result_logs_delimiter + str(flask.request.remote_addr) + lib.constants.m_result_logs_delimiter + key + lib.constants.m_result_logs_delimiter + str(time.time())
+  logfile = os.path.join(lib.constants.m_result_logs_dir,lib.constants.m_result_logs_prefix + lib.constants.m_result_logs_delimiter + str(flask.request.remote_addr) + lib.constants.m_result_logs_delimiter + key + lib.constants.m_result_logs_delimiter + str(time.time()))
   fd = open(logfile,"w")
   fd.write(simplejson.dumps(result[key],indent=4))
   fd.flush()

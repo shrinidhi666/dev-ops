@@ -19,11 +19,10 @@ wtf:
     shell: true
 {% endif %}
 
-test1:
-  cmd.run:
-    command:
-      - ls /home/
-
+test4:
+  file.sync:
+    source: devops://jinjafile.jinja
+    dest: /tmp/jinja_testing_from_server.jinja
     user: shrinidhi
-    path: /home/shrinidhi
-    shell: true
+    group: artist
+    mode: 777

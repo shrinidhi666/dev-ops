@@ -29,6 +29,7 @@ class slave_sub(lib.transport.subscriber):
   def process(self, topic, request_id,state_name):
     slaveconst = lib.slave_utils.slaveconst().slaveconst()
     r = requests.post("http://"+ lib.config.slave_conf['master'] +":"+ str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.constants.hostname + "/"+ state_name +"/0" , data=simplejson.dumps(slaveconst))
+    print(r.content)
     work = simplejson.loads(r.content)
     if(work):
       for x in work:
@@ -56,7 +57,6 @@ def start_sub(q=None):
 
 
 if __name__ == '__main__':
-  qu = multiprocessing.Queue()
   register_host()
   start_sub()
 

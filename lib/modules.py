@@ -69,20 +69,24 @@ class file(object):
       if(source.startswith("devops://")):
         try:
           slaveconst = lib.slave_utils.slaveconst().slaveconst()
-          r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.constants.hostname + "/" + state_name +"/1", data=simplejson.dumps(slaveconst))
+          source_dry = str(source).replace("devops://","")
+          r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.constants.hostname + "/" + source_dry +"/1", data=simplejson.dumps(slaveconst))
           file_data = r.content
           if(backup):
             if(os.path.exists(dest)):
-              os.makedirs(lib.constants.s_backup_dir)
-              shutil.copy(dest,os.path.join(lib.constants.s_backup_dir,dest + lib.constants.default_delimiter + time.time()))
+              try:
+                os.makedirs(lib.constants.s_backup_dir)
+              except:
+                lib.debug.debug(sys.exc_info())
+              shutil.copy(dest,os.path.join(lib.constants.s_backup_dir,dest + lib.constants.default_delimiter + str(time.time())))
           fd = open(dest,"w")
           fd.write(file_data)
           fd.flush()
           fd.close()
           if(mode):
-            os.chmod(dest,mode=mode)
+            os.chmod(dest,mode)
           if(user and group):
-            os.chown(dest,uid= pwd.getpwnam(user).pw_uid, gid=grp.getgrnam(group).gr_gid)
+            os.chown(dest,pwd.getpwnam(user).pw_uid, grp.getgrnam(group).gr_gid)
           returner[dest] = ["file updated",0]
           return (returner)
         except:

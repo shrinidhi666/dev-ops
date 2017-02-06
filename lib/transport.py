@@ -125,6 +125,13 @@ class subscriber(object):
         else:
           lib.debug.info ("{0} : {1} : {2}".format(topic,request_id,state_name))
           retmsg = self.process(topic, request_id, state_name)
+      except KeyboardInterrupt:
+        # print((str(sys.exc_info()[0]).lower()))
+        # if(str(sys.exc_info()).lower().find("KeyboardInterrupt") >= 0):
+        lib.debug.error(sys.exc_info())
+        sys.exit(1)
+        # lib.debug.error(sys.exc_info(
+        # ))
       except:
         lib.debug.error(sys.exc_info())
 

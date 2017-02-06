@@ -36,6 +36,7 @@ def process(request_id,state_name,kwargs,is_local = False):
       lib.debug.debug(module_final_run)
       try:
         exec(module_final_run)
+        lib.debug.debug(cmd_ret)
         for w in cmd_ret:
           lib.debug.debug("{0} : {1}".format(w,cmd_ret[w]))
           to_rest = {}
