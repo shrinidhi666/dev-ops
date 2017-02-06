@@ -27,7 +27,6 @@ for x in logs:
   ulogs[x.split(lib.constants.m_result_logs_delimiter)[-2]] = x
 if(args.list):
   for x in ulogs:
-    for y in logs:
     print(x )
 else:
   if(args.id):

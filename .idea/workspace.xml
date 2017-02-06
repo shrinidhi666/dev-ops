@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="8ffd20f8-fa0d-4638-80e5-fd08e74815d2" name="Default" comment="" />
+=======
     <list default="true" id="8ffd20f8-fa0d-4638-80e5-fd08e74815d2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slave/s_subscriber.py" afterPath="$PROJECT_DIR$/slave/s_subscriber.py" />
     </list>
+>>>>>>> 1e4f16d953457b7979bc7054e1085399f1fbd92d
     <ignored path="dev-ops.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -69,12 +73,18 @@
       <file leaf-file-name="transport.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/transport.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="72">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+=======
             <state relative-caret-position="1496">
               <caret line="96" column="6" lean-forward="false" selection-start-line="96" selection-start-column="6" selection-end-line="96" selection-end-column="6" />
               <folding>
                 <element signature="e#135#157#0" expanded="true" />
                 <element signature="e#6746#6770#0" expanded="false" />
               </folding>
+>>>>>>> 1e4f16d953457b7979bc7054e1085399f1fbd92d
             </state>
           </provider>
         </entry>
@@ -82,8 +92,13 @@
       <file leaf-file-name="test1.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/level1/level2/level3_1/test1.yml">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="360">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+=======
             <state relative-caret-position="170">
               <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+>>>>>>> 1e4f16d953457b7979bc7054e1085399f1fbd92d
               <folding />
             </state>
           </provider>
@@ -92,6 +107,11 @@
       <file leaf-file-name="m_rest_api.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/master/m_rest_api.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="342">
+              <caret line="20" column="14" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+              <folding />
+=======
             <state relative-caret-position="681">
               <caret line="75" column="74" lean-forward="false" selection-start-line="75" selection-start-column="74" selection-end-line="75" selection-end-column="74" />
               <folding>
@@ -99,6 +119,7 @@
                 <marker date="1486184819516" expanded="true" signature="1211:1283" ph="insert into slaves... " />
                 <marker date="1486184819516" expanded="true" signature="1562:1596" ph="select * fro... slaves" />
               </folding>
+>>>>>>> 1e4f16d953457b7979bc7054e1085399f1fbd92d
             </state>
           </provider>
         </entry>
@@ -116,8 +137,13 @@
       <file leaf-file-name="test2.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/level1/level2/level3_2/test2.yml">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="72">
+              <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+=======
             <state relative-caret-position="340">
               <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+>>>>>>> 1e4f16d953457b7979bc7054e1085399f1fbd92d
               <folding />
             </state>
           </provider>
@@ -126,9 +152,17 @@
       <file leaf-file-name="test1.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/level1/level2/level3_2/test1.yml">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="180">
+              <caret line="55" column="12" lean-forward="false" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+              <folding>
+                <element signature="e#133#142#0" expanded="true" />
+              </folding>
+=======
             <state relative-caret-position="68">
               <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
               <folding />
+>>>>>>> 1e4f16d953457b7979bc7054e1085399f1fbd92d
             </state>
           </provider>
         </entry>
@@ -136,8 +170,13 @@
       <file leaf-file-name="template.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/template.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="552">
+              <caret line="46" column="92" lean-forward="false" selection-start-line="46" selection-start-column="92" selection-end-line="46" selection-end-column="92" />
+=======
             <state relative-caret-position="1360">
               <caret line="81" column="11" lean-forward="false" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="11" />
+>>>>>>> 1e4f16d953457b7979bc7054e1085399f1fbd92d
               <folding />
             </state>
           </provider>
@@ -146,8 +185,13 @@
       <file leaf-file-name="template_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/template_test.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="116">
+              <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+=======
             <state relative-caret-position="459">
               <caret line="28" column="66" lean-forward="false" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
+>>>>>>> 1e4f16d953457b7979bc7054e1085399f1fbd92d
               <folding />
             </state>
           </provider>
@@ -1294,25 +1338,51 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/bin/do-states.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="55" column="12" lean-forward="false" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+          <folding>
+            <element signature="e#133#142#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/level1/level2/level3_2/test1.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+=======
     <entry file="file://$PROJECT_DIR$/lib/template.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1360">
           <caret line="81" column="11" lean-forward="false" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="11" />
+>>>>>>> 1e4f16d953457b7979bc7054e1085399f1fbd92d
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/level1/level2/level3_2/test1.yml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="116">
+          <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+=======
         <state relative-caret-position="68">
           <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+>>>>>>> 1e4f16d953457b7979bc7054e1085399f1fbd92d
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/level1/level2/level3_1/init.yml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="72">
+=======
         <state relative-caret-position="68">
+>>>>>>> 1e4f16d953457b7979bc7054e1085399f1fbd92d
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
@@ -1328,16 +1398,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/template_test.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="342">
+          <caret line="20" column="14" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+=======
         <state relative-caret-position="459">
           <caret line="28" column="66" lean-forward="false" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
+>>>>>>> 1e4f16d953457b7979bc7054e1085399f1fbd92d
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/level1/level2/level3_1/test1.yml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="360">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+=======
         <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+>>>>>>> 1e4f16d953457b7979bc7054e1085399f1fbd92d
           <folding />
         </state>
       </provider>
@@ -1356,8 +1436,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/slave/s_subscriber.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="552">
+          <caret line="46" column="92" lean-forward="false" selection-start-line="46" selection-start-column="92" selection-end-line="46" selection-end-column="92" />
+=======
         <state relative-caret-position="166">
           <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+>>>>>>> 1e4f16d953457b7979bc7054e1085399f1fbd92d
           <folding />
         </state>
       </provider>

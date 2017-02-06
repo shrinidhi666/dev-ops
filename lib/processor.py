@@ -44,7 +44,7 @@ def process(request_id,state_name,kwargs):
           lib.debug.debug(r.content)
       except:
         to_rest = {}
-        to_rest[request_id] = {lib.constants.hostname: {state_name: {x: {y: [cmd_ret[w]]}}}}
+        to_rest[request_id] = {lib.constants.hostname: {state_name: {x: {y: [str(sys.exc_info()),1]}}}}
         lib.debug.warning(sys.exc_info())
 
 
