@@ -79,12 +79,19 @@ class file(object):
         fd.flush()
         fd.close()
         if(mode):
-          os.chmod(dest,mode=mode)
+          try:
+            os.chmod(dest,mode=mode)
+          except:
+            returner[dest] = [unicode(sys.exc_info()), 1]
+            return (returner)
         if(user and group):
           try:
             os.chown(dest,uid= pwd.getpwnam(user).pw_uid, gid=grp.getgrnam(group).gr_gid)
           except:
-            lib.debug.error(sys.exc_info())
+            returner[dest] = [unicode(sys.exc_info()), 1]
+            return (returner)
+        returner[dest] = ["file updated",0]
+        return (returner)
 
 
 
