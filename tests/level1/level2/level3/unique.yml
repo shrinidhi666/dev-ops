@@ -1,0 +1,7 @@
+- include 2:
+    - test1
+    - test2
+
+- include 1:
+    - test3
+    - test4

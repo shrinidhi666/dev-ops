@@ -42,10 +42,16 @@ def process(request_id,state_name,kwargs):
           to_rest[request_id] = {lib.constants.hostname :{state_name :{x :{y :{w : cmd_ret[w]}}}}}
           r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/slaves/return/result", data=simplejson.dumps(to_rest))
           lib.debug.debug(r.content)
+          if(cmd_ret[w][-1] != 0):
+            return(0)
       except:
         to_rest = {}
         to_rest[request_id] = {lib.constants.hostname: {state_name: {x: {y: [str(sys.exc_info()),1]}}}}
-        lib.debug.warning(sys.exc_info())
+        r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/slaves/return/result", data=simplejson.dumps(to_rest))
+        lib.debug.debug(r.content)
+        lib.debug.error(sys.exc_info())
+        return(0)
+  return(1)
 
 
   # lib.debug.info(simplejson.dumps(kwargs))

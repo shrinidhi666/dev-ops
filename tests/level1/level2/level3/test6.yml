@@ -1,7 +1,12 @@
-test6:
-  cmd.run:
-    command:
-      - echo "holy this is test6"
-    user: shrinidhi
-    path: /tmp/
-    shell: true
+- test6:
+    cmd.run:
+      command:
+        - echo "holy this is test6"
+      user: shrinidhi
+      path: /tmp/
+      shell: true
+
+- wtf:
+    cmd.run:
+      command:
+        - ls /tmp/

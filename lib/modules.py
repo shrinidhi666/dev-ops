@@ -67,31 +67,27 @@ class file(object):
     returner = {}
     if(source):
       if(source.startswith("devops://")):
-        slaveconst = lib.slave_utils.slaveconst().slaveconst()
-        r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.constants.hostname + "/" + state_name +"/1", data=simplejson.dumps(slaveconst))
-        file_data = r.content
-        if(backup):
-          if(os.path.exists(dest)):
-            os.makedirs(lib.constants.s_backup_dir)
-            shutil.copy(dest,os.path.join(lib.constants.s_backup_dir,dest + lib.constants.default_delimiter + time.time()))
-        fd = open(dest,"w")
-        fd.write(file_data)
-        fd.flush()
-        fd.close()
-        if(mode):
-          try:
+        try:
+          slaveconst = lib.slave_utils.slaveconst().slaveconst()
+          r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.constants.hostname + "/" + state_name +"/1", data=simplejson.dumps(slaveconst))
+          file_data = r.content
+          if(backup):
+            if(os.path.exists(dest)):
+              os.makedirs(lib.constants.s_backup_dir)
+              shutil.copy(dest,os.path.join(lib.constants.s_backup_dir,dest + lib.constants.default_delimiter + time.time()))
+          fd = open(dest,"w")
+          fd.write(file_data)
+          fd.flush()
+          fd.close()
+          if(mode):
             os.chmod(dest,mode=mode)
-          except:
-            returner[dest] = [unicode(sys.exc_info()), 1]
-            return (returner)
-        if(user and group):
-          try:
+          if(user and group):
             os.chown(dest,uid= pwd.getpwnam(user).pw_uid, gid=grp.getgrnam(group).gr_gid)
-          except:
-            returner[dest] = [unicode(sys.exc_info()), 1]
-            return (returner)
-        returner[dest] = ["file updated",0]
-        return (returner)
+          returner[dest] = ["file updated",0]
+          return (returner)
+        except:
+          returner[dest] = [unicode(sys.exc_info()), 1]
+          return(returner)
 
 
 
