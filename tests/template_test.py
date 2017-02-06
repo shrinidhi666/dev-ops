@@ -26,6 +26,10 @@ if(__name__ == "__main__"):
   # test = lib.template.root()
   test_state = lib.template.states()
   rendered_file = test_state.render("jinjafile.jinja",slaveconst=slaveconst,is_file=True)
-  rendered_state = test_state.render("level1.level2.level3_1.test1")
+  try:
+    rendered_state = test_state.render("level1.level2.level3_1")
+  except:
+    print (sys.exc_info())
+    sys.exit(1)
   print(rendered_file)
   print (rendered_state)

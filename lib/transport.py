@@ -113,18 +113,20 @@ class subscriber(object):
       self._socket_sub.setsockopt(zmq.SUBSCRIBE, bytes(unicode(self._topic)))
       lib.debug.debug("connecting to topic : " + str(self._topic))
     while (True):
-      (topic, request_id, state_name) = self._socket_sub.recv_multipart()
-      if(state_name == "ping.wtf"):
-        lib.debug.debug("got ping.wtf priority msg!")
-        self._socket_req = self._context.socket(zmq.REQ)
-        self._socket_req.connect("tcp://{0}:{1}".format(lib.config.slave_conf['master'], lib.config.slave_conf['master_ping_port']))
-        self._socket_req.send_multipart([bytes(unicode(request_id)), bytes(unicode(state_name)), bytes(unicode("ack"))])
-        (request_id_recved) = self._socket_req.recv_multipart()
-        self._socket_req.close()
-      else:
-        lib.debug.info ("{0} : {1} : {2}".format(topic,request_id,state_name))
-        retmsg = self.process(topic, request_id, state_name)
-        lib.debug.debug(retmsg)
+      try:
+        (topic, request_id, state_name) = self._socket_sub.recv_multipart()
+        if(state_name == "ping.wtf"):
+          lib.debug.debug("got ping.wtf priority msg!")
+          self._socket_req = self._context.socket(zmq.REQ)
+          self._socket_req.connect("tcp://{0}:{1}".format(lib.config.slave_conf['master'], lib.config.slave_conf['master_ping_port']))
+          self._socket_req.send_multipart([bytes(unicode(request_id)), bytes(unicode(state_name)), bytes(unicode("ack"))])
+          (request_id_recved) = self._socket_req.recv_multipart()
+          self._socket_req.close()
+        else:
+          lib.debug.info ("{0} : {1} : {2}".format(topic,request_id,state_name))
+          retmsg = self.process(topic, request_id, state_name)
+      except:
+        lib.debug.error(sys.exc_info())
 
   def __del__(self):
     try:

@@ -1,5 +1,7 @@
 test6:
   cmd.run:
     command:
-      -
-
+      - echo "holy this is test6"
+    user: shrinidhi
+    path: /tmp/
+    shell: true

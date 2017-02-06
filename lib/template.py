@@ -27,12 +27,29 @@ import copy
 class root(object):
   def __init__(self, path="./"):
     self._path = os.path.abspath(path)
-    self._loader = jinja2.FileSystemLoader(self._path)
-    self._env = jinja2.Environment(loader=self._loader, trim_blocks=True)
+
 
   @property
   def list(self):
     return (self._loader.list_templates())
+
+  @property
+  def _loader(self):
+    return jinja2.FileSystemLoader(self._path)
+
+  @_loader.setter
+  def _loader(self,value):
+    pass
+
+  @property
+  def _env(self):
+    return jinja2.Environment(loader=self._loader, trim_blocks=True)
+
+
+  @_env.setter
+  def _env(self,value):
+    pass
+
 
   @list.setter
   def list(self, value):
@@ -62,13 +79,16 @@ class states(root):
           ret_loader[unicode(x).rstrip('.yml').replace("/", ".")] = unicode(x)
     return (ret_loader)
 
-  def render(self, path, slaveconst={}, masterconst={}, is_file=False):
+  def render(self, path, slaveconst={}, masterconst={}, is_file=False,cyclic_test={}):
     if (is_file):
       template_env = self._env.get_template(path)
       filecontent = template_env.render(slaveconst=slaveconst, masterconst=masterconst)
       return (filecontent)
     if (self.list.has_key(path)):
       template_file = self.list[path]
+      if (cyclic_test.has_key(template_file)):
+        raise Exception("cyclic redundancy : " + str(template_file))
+      cyclic_test[template_file] = 1
       template_env = self._env.get_template(template_file)
       # lib.debug.info(slaveconst)
       yml_content = template_env.render(slaveconst=slaveconst, masterconst=masterconst)

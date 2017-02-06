@@ -24,14 +24,20 @@ import time
 
 app = flask.Flask(__name__)
 
-@app.route('/states/<hostid>/<state>',methods=['POST'])
-def states(hostid,state):
+@app.route('/states/<hostid>/<state>/<isfile>',methods=['POST'])
+def states(hostid,state,isfile):
   slaveconst = simplejson.loads(flask.request.data)
-  all_states = lib.template.states(path="/home/shrinidhi/bin/gitHub/dev-ops/tests")
-  ret_state_details = all_states.render(unicode(state),slaveconst=slaveconst)
-  # lib.debug.debug(hostid)
-  # lib.debug.debug(ret_state_details)
-  return simplejson.dumps(ret_state_details)
+  all_states = lib.template.states(path="../tests")
+  if(int(isfile)):
+    try:
+      ret_state_details = all_states.render(unicode(state),slaveconst=slaveconst,isfile=True)
+    except:
+      return (unicode(sys.exc_info()))
+    return unicode(ret_state_details)
+  else:
+    ret_state_details = all_states.render(unicode(state), slaveconst=slaveconst)
+    return simplejson.dumps(ret_state_details)
+
 
 @app.route('/states/list',methods=['GET'])
 def states_list():

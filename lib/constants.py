@@ -23,17 +23,20 @@ os.environ['XDG_CONFIG_DIRS'] = '/etc'
 configdir = os.path.join(appdirs.site_config_dir(),"dev_ops")
 masterdir = os.path.join(configdir,"master")
 slavedir = os.path.join(configdir,"slave")
+default_delimiter = "__"
 m_private_key_file = os.path.join(masterdir, "private_key.pem")
 s_private_key_file = os.path.join(slavedir, "private_key.pem")
 m_config_file = os.path.join(masterdir, "master.conf")
 s_config_file = os.path.join(slavedir, "slave.conf")
 m_sqlite3_file = os.path.join(masterdir, "sqlite", "master.sqlite3")
 s_slaveconst_dir = os.path.join(slavedir, "slaveconst")
+s_backup_dir = os.path.join(slavedir, "backup")
 hostname = socket.gethostname()
 ip = socket.gethostbyname(hostname)
 m_result_logs_dir = tempfile.gettempdir()
 m_result_logs_prefix = "devops.result"
-m_result_logs_delimiter = "__"
+m_result_logs_delimiter = default_delimiter
+
 
 
 class pub_q__status():

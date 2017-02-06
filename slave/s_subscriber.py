@@ -28,12 +28,13 @@ class slave_sub(lib.transport.subscriber):
 
   def process(self, topic, request_id,state_name):
     slaveconst = lib.slave_utils.slaveconst().slaveconst()
-    r = requests.post("http://"+ lib.config.slave_conf['master'] +":"+ str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.constants.hostname + "/"+ state_name , data=simplejson.dumps(slaveconst))
+    r = requests.post("http://"+ lib.config.slave_conf['master'] +":"+ str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.constants.hostname + "/"+ state_name +"/0" , data=simplejson.dumps(slaveconst))
     work = simplejson.loads(r.content)
     if(work):
       for x in work:
         lib.debug.debug(x)
         lib.processor.process(request_id,state_name,x)
+    return(1)
 
 
 def register_host():

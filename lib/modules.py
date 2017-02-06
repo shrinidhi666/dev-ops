@@ -9,10 +9,20 @@ import os
 
 sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
 import lib.debug
+import lib.slave_utils
 import lib.db_sqlite3
+import lib.config
+import lib.constants
 import subprocess
 import simplejson
-
+import requests
+import shutil
+import time
+try:
+  import pwd
+  import grp
+except:
+  lib.debug.error(sys.exc_info())
 class cmd(object):
 
   @staticmethod
@@ -53,9 +63,30 @@ class cmd(object):
 class file(object):
 
   @staticmethod
-  def sync(user=None,group=None,mode=None,source=str,dest=None,backup=True,template=True):
-    if(source.startswith("devops://")):
-      pass
+  def sync(user=None,group=None,mode=None,source=None,dest=None,backup=True,template=True):
+    returner = {}
+    if(source):
+      if(source.startswith("devops://")):
+        slaveconst = lib.slave_utils.slaveconst().slaveconst()
+        r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.constants.hostname + "/" + state_name +"/1", data=simplejson.dumps(slaveconst))
+        file_data = r.content
+        if(backup):
+          if(os.path.exists(dest)):
+            os.makedirs(lib.constants.s_backup_dir)
+            shutil.copy(dest,os.path.join(lib.constants.s_backup_dir,dest + lib.constants.default_delimiter + time.time()))
+        fd = open(dest,"w")
+        fd.write(file_data)
+        fd.flush()
+        fd.close()
+        if(mode):
+          os.chmod(dest,mode=mode)
+        if(user and group):
+          try:
+            os.chown(dest,uid= pwd.getpwnam(user).pw_uid, gid=grp.getgrnam(group).gr_gid)
+          except:
+            lib.debug.error(sys.exc_info())
+
+
 
 
 
