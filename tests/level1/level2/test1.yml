@@ -1,20 +1,6 @@
-- test1:
-    content:
-      test1: "testing crap"
-
-- test2:
-    content:
-      - test: "testing shit"
-{% for x in range(0,10) %}
-      - test{{ x }}
-{% endfor %}
-
-- test000:
-    content:
-      - wtf
-
-- test2:
-    cmd.run:
-      command:
-        - wtf command "1"
-
+testing env:
+  cmd.run:
+    - echo $test
+  env:
+    test: my name is test env
+    wtf: my name is wtf env
