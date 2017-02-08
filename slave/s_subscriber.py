@@ -78,9 +78,6 @@ def app_lock():
     f.flush()
     fcntl.flock(f, fcntl.LOCK_UN)
     f.close()
-    # lib.debug.debug(os.getpid())
-    # p = psutil.Process(os.getpid())
-    # lib.debug.info(p.cmdline())
 
 
 
