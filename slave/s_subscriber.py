@@ -40,6 +40,7 @@ def quit():
     os.remove(app_lock_file)
   except:
     lib.debug.error(sys.exc_info())
+  sys.exit(0)
 
 
 def app_lock():
