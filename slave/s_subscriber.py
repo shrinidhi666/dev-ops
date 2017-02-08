@@ -52,9 +52,7 @@ def app_lock():
     try:
       p = psutil.Process(int(pid))
       lib.debug.error("seems like a different process is running")
-      sys.exit(1)
-    except SystemExit:
-      sys.exit(1)
+      os._exit(0)
     except:
       lib.debug.warn(sys.exc_info())
       f = open(app_lock_file,"w")
