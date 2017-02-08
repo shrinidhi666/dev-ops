@@ -129,11 +129,11 @@ class subscriber(object):
         # print((str(sys.exc_info()[0]).lower()))
         # if(str(sys.exc_info()).lower().find("KeyboardInterrupt") >= 0):
         lib.debug.error(sys.exc_info())
-        sys.exit(1)
+        break
         # lib.debug.error(sys.exc_info(
         # ))
       except SystemExit:
-        sys.exit(0)
+        break
       except:
         lib.debug.error(sys.exc_info())
 
