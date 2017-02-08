@@ -7,10 +7,14 @@ __email__ = "shrinidhi666@gmail.com"
 import sys
 import os
 import argparse
-sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-1]))
-import lib.constants
-import lib.debug
 import subprocess
+import appdirs
+
+
+os.environ['XDG_CONFIG_DIRS'] = '/etc'
+configdir = os.path.join(appdirs.site_config_dir(),"dev_ops")
+masterdir = os.path.join(configdir,"master")
+slavedir = os.path.join(configdir,"slave")
 
 
 supervisorpath = "/etc/supervisor/conf.d/"
@@ -20,7 +24,7 @@ source_master_path = os.path.join(progpath,"install","master")
 source_slave_path = os.path.join(progpath,"install","slave")
 slave_supervisorconf = os.path.join(progpath,"install","supervisor","slave")
 master_supervisorconf = os.path.join(progpath,"install","supervisor","master")
-lib.debug.info(progpath)
+print(progpath)
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--slave",dest="slave",action="store_true",help="install config files for slave")
@@ -57,14 +61,19 @@ if(args.master):
 
 
   try:
-    os.makedirs(lib.constants.masterdir)
+    os.makedirs(masterdir)
   except:
-    lib.debug.warn(sys.exc_info())
+    print(sys.exc_info())
 
   try:
-    os.system("rsync -av "+ source_master_path.rstrip(os.sep) +"/ "+ lib.constants.masterdir.rstrip(os.sep) +"/")
+    os.system("rsync -av "+ source_master_path.rstrip(os.sep) +"/ "+ masterdir.rstrip(os.sep) +"/")
   except:
-    lib.debug.warn(sys.exc_info())
+    print(sys.exc_info())
+
+  try:
+    os.system("rsync -av "+ master_supervisorconf.rstrip(os.sep) +"/ "+ supervisorpath.rstrip(os.sep) +"/")
+  except:
+    print(sys.exc_info())
 
 
 if(args.slave):
@@ -77,14 +86,19 @@ if(args.slave):
     sys.exit(1)
 
   try:
-    os.makedirs(lib.constants.slavedir)
+    os.makedirs(slavedir)
   except:
-    lib.debug.warn(sys.exc_info())
+    print(sys.exc_info())
 
   try:
-    os.system("rsync -av "+ source_slave_path.rstrip(os.sep) +"/ "+ lib.constants.slavedir.rstrip(os.sep) +"/")
+    os.system("rsync -av "+ source_slave_path.rstrip(os.sep) +"/ "+ slavedir.rstrip(os.sep) +"/")
   except:
-    lib.debug.warn(sys.exc_info())
+    print(sys.exc_info())
+
+  try:
+    os.system("rsync -av "+ slave_supervisorconf.rstrip(os.sep) +"/ "+ supervisorpath.rstrip(os.sep) +"/")
+  except:
+    print(sys.exc_info())
 
 
 
