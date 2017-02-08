@@ -132,6 +132,8 @@ class subscriber(object):
         sys.exit(1)
         # lib.debug.error(sys.exc_info(
         # ))
+      except SystemExit:
+        sys.exit(0)
       except:
         lib.debug.error(sys.exc_info())
 
