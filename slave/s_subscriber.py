@@ -36,6 +36,7 @@ signal.signal(signal.SIGHUP, receive_signal)
 signal.signal(signal.SIGSEGV, receive_signal)
 
 def quit():
+  lib.debug.warn("killing m_subcriber")
   # try:
   #   os.remove(app_lock_file)
   # except:
