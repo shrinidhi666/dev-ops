@@ -24,7 +24,7 @@ import psutil
 import fcntl
 import time
 
-app_lock_file = os.path.join(tempfile.gettempdir(),"devops-{0}.lock".format(os.environ['USER']))
+app_lock_file = os.path.join(tempfile.gettempdir(),"devops-slave.lock")
 
 def receive_signal(signum, stack):
   quit()
