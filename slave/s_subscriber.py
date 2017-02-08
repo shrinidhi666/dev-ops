@@ -36,29 +36,24 @@ signal.signal(signal.SIGHUP, receive_signal)
 signal.signal(signal.SIGSEGV, receive_signal)
 
 def quit():
-  try:
-    os.remove(app_lock_file)
-  except:
-    lib.debug.error(sys.exc_info())
+  # try:
+  #   os.remove(app_lock_file)
+  # except:
+  #   lib.debug.error(sys.exc_info())
   sys.exit(0)
 
 
 def app_lock():
-  import random
-  time.sleep(random.uniform(0.000,0.500))
   if(os.path.exists(app_lock_file)):
     f = open(app_lock_file,"r")
     pid = f.read().strip()
     f.close()
     try:
       p = psutil.Process(int(pid))
-      lib.debug.info(p.cmdline()[1])
-      if(os.path.abspath(p.cmdline()[1]) == os.path.abspath(__file__)):
-        lib.debug.warning("already an instance of the app is running.")
-        lib.debug.warning("delete the file {0}".format(app_lock_file))
-        os._exit(1)
-      else:
-        raise Exception("seems like a different process has the same pid")
+      lib.debug.error("seems like a different process is running")
+      sys.exit(1)
+    except SystemExit:
+      sys.exit(1)
     except:
       lib.debug.warn(sys.exc_info())
       f = open(app_lock_file,"w")
@@ -82,6 +77,9 @@ def app_lock():
     f.flush()
     fcntl.flock(f, fcntl.LOCK_UN)
     f.close()
+    # lib.debug.debug(os.getpid())
+    # p = psutil.Process(os.getpid())
+    # lib.debug.info(p.cmdline())
 
 
 
@@ -118,7 +116,10 @@ def start_sub(q=None):
 
 
 if __name__ == '__main__':
-  app_lock()
+  try:
+    app_lock()
+  except:
+    sys.exit(0)
   register_host()
   start_sub()
 
