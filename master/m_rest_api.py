@@ -27,7 +27,7 @@ app = flask.Flask(__name__)
 @app.route('/states/<hostid>/<state>/<isfile>',methods=['POST'])
 def states(hostid,state,isfile):
   slaveconst = simplejson.loads(flask.request.data)
-  all_states = lib.template.states(path="../tests")
+  all_states = lib.template.states(path="../tests/states_test/")
   lib.debug.debug(hostid)
   lib.debug.debug(state)
   lib.debug.debug(isfile)
