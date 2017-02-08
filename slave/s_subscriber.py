@@ -90,8 +90,8 @@ class slave_sub(lib.transport.subscriber):
       for x in work:
         lib.debug.debug(x)
         done = lib.processor.process(request_id,state_name,x)
-        if(not done):
-          return(0)
+        # if(not done):
+        #   return(0)
     return(1)
 
 
