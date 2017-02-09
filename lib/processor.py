@@ -46,8 +46,8 @@ def process(request_id,state_name,kwargs,is_local = False):
           else:
             r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/slaves/return/result", data=simplejson.dumps(to_rest))
             lib.debug.debug(r.content)
-          if(cmd_ret[w][-1] != 0):
-            return(0)
+          # if(cmd_ret[w][-1] != 0):
+          #   return(0)
       except:
         to_rest = {}
         to_rest[request_id] = {lib.constants.hostname: {state_name: {x: {y: [str(sys.exc_info()),1]}}}}
