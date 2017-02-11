@@ -34,7 +34,7 @@ def states(hostid,state,isfile):
   lib.debug.debug(slaveconst)
   if(int(isfile)):
     try:
-      ret_state_details = all_states.render(unicode(state),slaveconst=slaveconst,is_file=True)
+      ret_state_details = all_states.render(unicode(state), slaveconst=slaveconst,is_file=True)
     except:
       return (unicode(sys.exc_info()))
     return unicode(ret_state_details)

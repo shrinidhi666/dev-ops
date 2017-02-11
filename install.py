@@ -19,6 +19,7 @@ slavedir = os.path.join(configdir,"slave")
 
 supervisorpath = "/etc/supervisor/conf.d/"
 installdir = "/opt/dev-ops"
+states_path = "/srv/devops/states/"
 progpath = installdir
 source_master_path = os.path.join(progpath,"install","master")
 source_slave_path = os.path.join(progpath,"install","slave")
@@ -64,6 +65,13 @@ if(args.master):
     os.makedirs(masterdir)
   except:
     print(sys.exc_info())
+
+
+  try:
+    os.makedirs(states_path)
+  except:
+    print(sys.exc_info())
+
 
   try:
     os.system("rsync -av "+ source_master_path.rstrip(os.sep) +"/ "+ masterdir.rstrip(os.sep) +"/")
