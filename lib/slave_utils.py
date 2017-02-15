@@ -32,8 +32,8 @@ class slaveconst(object):
 
   def __get_preset_consts(self):
     retdict = {}
-    retdict['hostname'] = lib.constants.ip
-    retdict['ip'] = lib.constants.hostname
+    retdict['hostname'] = lib.constants.hostname
+    retdict['ip'] = lib.constants.ip
     retdict['platform'] = platform.system()
     retdict['architecture'] = platform.architecture()
     retdict['os'] = platform.dist()

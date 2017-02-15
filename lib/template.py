@@ -9,10 +9,12 @@ import os
 
 sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
 import lib.debug
+import lib.config
 
 import jinja2
 import yaml
 import copy
+import simplejson
 
 
 # def list_dirs(startpath):
@@ -25,8 +27,11 @@ import copy
 
 
 class root(object):
-  def __init__(self, path="./"):
-    self._path = os.path.abspath(path)
+  def __init__(self, path=None):
+    if(path):
+      self._path = os.path.abspath(path)
+    else:
+      self._path = lib.config.master_conf['states_root']
 
 
   @property
@@ -110,3 +115,7 @@ class states(root):
       return (return_obj)
     else:
       return (None)
+
+
+
+

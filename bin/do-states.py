@@ -16,62 +16,37 @@ import lib.config
 import lib.transport
 import lib.template
 import lib.master_utils
+import simplejson
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-l","--list",dest="list",action="store_true",help="list all the states that are available")
 parser.add_argument("-n","--hosts",dest="hosts",help="destination hosts to run the states on")
 parser.add_argument("-s","--state",dest="state",help="state to run on the hosts")
-
-# parser.add_argument("-j","--jobs",dest="jobs")
+parser.add_argument("-t","--test",dest="test",help="state to test")
 args = parser.parse_args()
 
-
-# pub = lib.transport.publisher()
-# topic = 2
-# state = "level1.level2.level3_1"
-# pub.publish(2, {'test': 'x'})
-# time.sleep(0.5)
-# for x in range(0,10):
-#   print (x)
-#   pub.publish(topic,state)
-#   time.sleep(0.5)
-
-# def
 
 if(args.list):
   for x in lib.template.states(path="/home/shrinidhi/bin/gitHub/dev-ops/tests/states_test").list:
     print(x)
 
 else:
+  if(args.state):
+    lib.debug.debug("running state : "+ args.state)
+    uid = str(uuid.uuid4())
+    context = zmq.Context()
+    socket = context.socket(zmq.REQ)
+    socket.connect("ipc:///tmp/publisher.zmq.sock")
+    socket.send_multipart([uid,args.hosts,args.state])
+    validhosts = socket.recv_pyobj()
+    for x in validhosts:
+      print (x +" : "+ validhosts[x])
+    socket.close()
+    print(uid)
 
-  uid = str(uuid.uuid4())
-  context = zmq.Context()
-  socket = context.socket(zmq.REQ)
-  socket.connect("ipc:///tmp/publisher.zmq.sock")
-  socket.send_multipart([uid,args.hosts,args.state])
-  validhosts = socket.recv_pyobj()
-  for x in validhosts:
-    print (x +" : "+ validhosts[x])
-  socket.close()
+  elif(args.test):
+    lib.debug.debug("testing state : " + args.test)
+    test_state = lib.template.states(path="/home/shrinidhi/bin/gitHub/dev-ops/tests/states_test")
+    rendered_state = test_state.render(args.test)
+    print (simplejson.dumps(rendered_state,indent=4))
 
-  print(uid)
-
-  #
-  # if(args.hosts):
-  #   hosts = []
-  #   for h in args.hosts.split(","):
-  #     hostemp = lib.master_utils.get_slaves_match(h)
-  #     if(hostemp):
-  #       hosts.extend(hostemp)
-  #   # lib.debug.debug(hosts)
-  #   if (args.state):
-  #     request_id = uuid.uuid4()
-  #     pub = lib.transport.publisher()
-  #
-  #
-  #     for x in hosts:
-  #       # print(x['hostname'] + " : " + x['ip'] + " : " + lib.constants.slaves_status()[int(x['status'])])
-  #       # pub.publish(x['hostname'], args.state,request_id)
-  #       time.sleep(1)
-  #       pub.publish(x['hostname'], args.state, request_id)
-  #       # time.sleep(1)

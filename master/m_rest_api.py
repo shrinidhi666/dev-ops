@@ -17,8 +17,9 @@ import lib.modules
 import lib.debug
 import simplejson
 import lib.config
+import lib.master_utils
 import time
-
+import fnmatch
 
 
 
@@ -41,6 +42,60 @@ def states(hostid,state,isfile):
   else:
     ret_state_details = all_states.render(unicode(state), slaveconst=slaveconst)
     return simplejson.dumps(ret_state_details)
+
+
+@app.route('/high/<hostid>',methods=['POST'])
+def high(hostid):
+  slaveconst = simplejson.loads(flask.request.data)
+  all_states = lib.template.states(path="../tests/states_test")
+  lib.debug.debug(slaveconst)
+  high_state_obj = all_states.render("high", slaveconst=slaveconst)
+  validStatesList = []
+
+  for hs in high_state_obj:
+    for fn_exp in hs.keys():
+      (const_key, const_exp) = (fn_exp.split(":")[:-1], fn_exp.split(":")[-1])
+      states_list = hs[fn_exp]['states']
+      if(hs[fn_exp].has_key("match")):
+        match = hs[fn_exp]["match"]
+
+        if(match == "slaveconst"):
+          formatch = slaveconst
+          for sc in const_key:
+            formatch = formatch[sc]
+
+          if(hs[fn_exp].has_key("compare")):
+            comp_obj = hs[fn_exp]['compare']
+            if(isinstance(comp_obj,dict)):
+              comp_op = comp_obj['operator']
+              comp_type = comp_obj['type']
+              comp_str = "is_match = True if(" + comp_type +"(formatch) "+ comp_op +" "+ comp_type +"(const_exp)) else False"
+              lib.debug.debug(comp_str)
+              exec comp_str
+              if(is_match):
+                lib.debug.debug("matched : " + unicode(formatch) + " : " + unicode(const_exp))
+                validStatesList.extend(states_list)
+            else:
+              return("compare object is not a dict : "+ str(comp_obj))
+          else:
+            if(fnmatch.fnmatch(unicode(formatch),unicode(const_exp))):
+              lib.debug.debug("matched : "+ unicode(formatch) +" : "+ unicode(const_exp))
+              validStatesList.extend(states_list)
+          # lib.debug.debug(str(const_key) + " : " + str(const_exp) + " : " + str(formatch))
+        elif(match == "cidr"):
+          ipset = netaddr.IPSet(netaddr.IPNetwork("192.168.1.0/29"))
+          if(slaveconst['ip'] in ipset):
+            validStatesList.extend(states_list)
+      else:
+        lib.debug.debug(fn_exp)
+        validhosts = lib.master_utils.get_slaves_match(fn_exp)
+        lib.debug.debug(validhosts)
+        if((slaveconst['ip'] in [x['ip'] for x in validhosts])):
+          lib.debug.debug("found valid host")
+          validStatesList.extend(states_list)
+
+  lib.debug.debug(validStatesList)
+  return simplejson.dumps(high_state_obj)
 
 
 @app.route('/states/list',methods=['GET'])

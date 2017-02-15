@@ -1,0 +1,17 @@
+ram:total:100 :
+  compare:
+    operator: '>'
+    type: int
+  match: slaveconst
+  states:
+    - level1.level2
+
+platform:Linux :
+  match: slaveconst
+  states:
+    - level1.level2.level3_1
+
+
+blue00* :
+  states:
+    - level1.level2.level3_2
