@@ -57,8 +57,8 @@ if(args.master):
   else:
     ret = gitnew()
 
-  if(ret):
-    sys.exit(1)
+  # if(ret):
+  #   sys.exit(1)
 
 
   try:
@@ -90,8 +90,8 @@ if(args.slave):
   else:
     ret = gitnew()
 
-  if (ret):
-    sys.exit(1)
+  # if (ret):
+  #   sys.exit(1)
 
   try:
     os.makedirs(slavedir)

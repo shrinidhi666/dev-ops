@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e072f42f-b1e1-47d6-868c-ed9aebc0cf0c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/states_test/level1/test1.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/test_master_event.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/do-states.py" afterPath="$PROJECT_DIR$/bin/do-states.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install.py" afterPath="$PROJECT_DIR$/install.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/master/master.conf" afterPath="$PROJECT_DIR$/install/master/master.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/slave/slaveconst/freemem.py" afterPath="$PROJECT_DIR$/install/slave/slaveconst/freemem.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/template.py" afterPath="$PROJECT_DIR$/lib/template.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/master/m_rest_api.py" afterPath="$PROJECT_DIR$/master/m_rest_api.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slave/s_subscriber.py" afterPath="$PROJECT_DIR$/slave/s_subscriber.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/states_test/high.yml" afterPath="$PROJECT_DIR$/tests/states_test/high.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/states_test/level1/init.yml" afterPath="$PROJECT_DIR$/tests/states_test/level1/init.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/states_test/level1/level2/level3/init.yml" afterPath="$PROJECT_DIR$/tests/states_test/level1/level2/level3/init.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/states_test/level1/level2/level3/unique.yml" afterPath="$PROJECT_DIR$/tests/states_test/level1/level2/level3/unique.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/states_test/level1/level2/level3_1/test1.yml" afterPath="$PROJECT_DIR$/tests/states_test/level1/level2/level3_1/test1.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/states_test/level1/level2/level3_2/test1.yml" afterPath="$PROJECT_DIR$/tests/states_test/level1/level2/level3_2/test1.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_master.py" afterPath="$PROJECT_DIR$/tests/test_master.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,10 +22,12 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/dev-ops$m_publisher.coverage" NAME="m_publisher Coverage Results" MODIFIED="1486722858861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/master" />
-    <SUITE FILE_PATH="coverage/dev-ops$template_test.coverage" NAME="template_test Coverage Results" MODIFIED="1487047093950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/dev-ops$test_master.coverage" NAME="test_master Coverage Results" MODIFIED="1487306792869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/dev-ops$m_rest_api.coverage" NAME="m_rest_api Coverage Results" MODIFIED="1487306790747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/master" />
+    <SUITE FILE_PATH="coverage/dev-ops$template_test.coverage" NAME="template_test Coverage Results" MODIFIED="1487307195331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/dev-ops$test_master.coverage" NAME="test_master Coverage Results" MODIFIED="1487324130923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/dev-ops$m_rest_api.coverage" NAME="m_rest_api Coverage Results" MODIFIED="1487324127919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/master" />
+    <SUITE FILE_PATH="coverage/dev-ops$slave_utils.coverage" NAME="slave_utils Coverage Results" MODIFIED="1487324440722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
     <SUITE FILE_PATH="coverage/dev-ops$freemem.coverage" NAME="freemem Coverage Results" MODIFIED="1486402111352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/install/slave/slaveconst" />
+    <SUITE FILE_PATH="coverage/dev-ops$test_master_event.coverage" NAME="test_master_event Coverage Results" MODIFIED="1487321878823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -35,41 +35,34 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="template.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/template.py">
+      <file leaf-file-name="m_rest_api.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/master/m_rest_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2124">
-              <caret line="119" column="35" lean-forward="true" selection-start-line="119" selection-start-column="35" selection-end-line="119" selection-end-column="35" />
+            <state relative-caret-position="395">
+              <caret line="86" column="61" lean-forward="true" selection-start-line="86" selection-start-column="61" selection-end-line="86" selection-end-column="61" />
+              <folding>
+                <marker date="1487324123390" expanded="true" signature="4226:4298" ph="insert into slaves... " />
+                <marker date="1487324123390" expanded="true" signature="4577:4611" ph="select * fro... slaves" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_master.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/test_master.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test1.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3_1/test1.yml">
+      <file leaf-file-name="test_master_event.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/test_master_event.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="unique.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3/unique.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="init.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/states_test/level1/init.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="461">
+              <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -85,11 +78,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test6.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3/test6.yml">
+      <file leaf-file-name="test1.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3_1/test1.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="162">
+              <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="freemem.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/install/slave/slaveconst/freemem.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="install.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/install.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="38" column="4" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="slave_utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/slave_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="551">
+              <caret line="70" column="26" lean-forward="true" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -105,31 +128,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test1.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/test1.yml">
+      <file leaf-file-name="processor.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/processor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test1.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/states_test/level1/test1.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="init.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3/init.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+            <state relative-caret-position="263">
+              <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -144,6 +147,7 @@
       <find>lib.constants.</find>
       <find>lib.debug</find>
       <find>lib.debug.[a-z 0-9]*</find>
+      <find>render</find>
     </findStrings>
     <replaceStrings>
       <replace>print</replace>
@@ -162,26 +166,28 @@
         <option value="$PROJECT_DIR$/tests/level1/level2/level3/init.yml" />
         <option value="$PROJECT_DIR$/lib/modules.py" />
         <option value="$PROJECT_DIR$/tests/level1/level2/level3_1/test1.yml" />
-        <option value="$PROJECT_DIR$/bin/do-logs.py" />
         <option value="$PROJECT_DIR$/install/supervisor/slave/devops-slave.conf" />
         <option value="$PROJECT_DIR$/install/supervisor/master/devops-master.conf" />
         <option value="$PROJECT_DIR$/lib/processor.py" />
         <option value="$PROJECT_DIR$/lib/transport.py" />
-        <option value="$PROJECT_DIR$/install.py" />
-        <option value="$PROJECT_DIR$/bin/do-states.py" />
-        <option value="$PROJECT_DIR$/install/slave/slaveconst/freemem.py" />
         <option value="$PROJECT_DIR$/tests/template_test.py" />
         <option value="$PROJECT_DIR$/lib/slave_utils.py" />
         <option value="$PROJECT_DIR$/tests/states_test/high.yml" />
         <option value="$PROJECT_DIR$/tests/states_test/level1/level2/level3/init.yml" />
-        <option value="$PROJECT_DIR$/master/m_rest_api.py" />
-        <option value="$PROJECT_DIR$/tests/test_master.py" />
         <option value="$PROJECT_DIR$/slave/s_subscriber.py" />
         <option value="$PROJECT_DIR$/tests/states_test/level1/init.yml" />
-        <option value="$PROJECT_DIR$/tests/states_test/level1/level2/level3_1/test1.yml" />
         <option value="$PROJECT_DIR$/tests/states_test/level1/level2/level3/unique.yml" />
         <option value="$PROJECT_DIR$/tests/states_test/level1/level2/level3_2/test1.yml" />
+        <option value="$PROJECT_DIR$/bin/do-logs.py" />
+        <option value="$PROJECT_DIR$/install/master/master.conf" />
         <option value="$PROJECT_DIR$/lib/template.py" />
+        <option value="$PROJECT_DIR$/bin/do-states.py" />
+        <option value="$PROJECT_DIR$/tests/test_master_event.py" />
+        <option value="$PROJECT_DIR$/tests/test_master.py" />
+        <option value="$PROJECT_DIR$/tests/states_test/level1/level2/level3_1/test1.yml" />
+        <option value="$PROJECT_DIR$/master/m_rest_api.py" />
+        <option value="$PROJECT_DIR$/install/slave/slaveconst/freemem.py" />
+        <option value="$PROJECT_DIR$/install.py" />
       </list>
     </option>
   </component>
@@ -573,6 +579,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests" />
       <recent name="$PROJECT_DIR$/tests/states_test/level1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -580,7 +587,7 @@
       <recent name="$PROJECT_DIR$/tests/states_test/level1" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test_master">
+  <component name="RunManager" selected="Python.slave_utils">
     <configuration default="false" name="m_rest_api" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -595,42 +602,6 @@
       <module name="dev-ops" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/master/m_rest_api.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="m_publisher" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/master" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="dev-ops" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/master/m_publisher.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="freemem" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/install/slave/slaveconst" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="dev-ops" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/install/slave/slaveconst/freemem.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -667,6 +638,42 @@
       <module name="dev-ops" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/template_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test_master_event" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="dev-ops" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_master_event.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="slave_utils" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="dev-ops" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/slave_utils.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -887,18 +894,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.m_rest_api" />
-      <item index="1" class="java.lang.String" itemvalue="Python.m_publisher" />
-      <item index="2" class="java.lang.String" itemvalue="Python.freemem" />
-      <item index="3" class="java.lang.String" itemvalue="Python.test_master" />
-      <item index="4" class="java.lang.String" itemvalue="Python.template_test" />
+      <item index="1" class="java.lang.String" itemvalue="Python.test_master" />
+      <item index="2" class="java.lang.String" itemvalue="Python.template_test" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test_master_event" />
+      <item index="4" class="java.lang.String" itemvalue="Python.slave_utils" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test_master" />
-        <item index="1" class="java.lang.String" itemvalue="Python.m_rest_api" />
-        <item index="2" class="java.lang.String" itemvalue="Python.template_test" />
-        <item index="3" class="java.lang.String" itemvalue="Python.m_publisher" />
-        <item index="4" class="java.lang.String" itemvalue="Python.freemem" />
+        <item index="0" class="java.lang.String" itemvalue="Python.slave_utils" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test_master" />
+        <item index="2" class="java.lang.String" itemvalue="Python.m_rest_api" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test_master_event" />
+        <item index="4" class="java.lang.String" itemvalue="Python.template_test" />
       </list>
     </recent_temporary>
   </component>
@@ -1049,7 +1056,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487157704224</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fixing">
+      <created>1487306813673</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1487306813673</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1101,14 +1115,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/transport.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1728">
-          <caret line="96" column="6" lean-forward="false" selection-start-line="96" selection-start-column="6" selection-end-line="96" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/template.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1728">
@@ -1121,6 +1127,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="42" lean-forward="false" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1143,8 +1150,8 @@
         <state relative-caret-position="486">
           <caret line="29" column="61" lean-forward="false" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
           <folding>
-            <marker date="1487225197891" expanded="true" signature="4233:4305" ph="insert into slaves... " />
-            <marker date="1487225197891" expanded="true" signature="4584:4618" ph="select * fro... slaves" />
+            <marker date="1487324123390" expanded="true" signature="4226:4298" ph="insert into slaves... " />
+            <marker date="1487324123390" expanded="true" signature="4577:4611" ph="select * fro... slaves" />
           </folding>
         </state>
       </provider>
@@ -1191,6 +1198,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="16" column="42" lean-forward="false" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1213,8 +1221,8 @@
         <state relative-caret-position="486">
           <caret line="29" column="61" lean-forward="false" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
           <folding>
-            <marker date="1487225197891" expanded="true" signature="4233:4305" ph="insert into slaves... " />
-            <marker date="1487225197891" expanded="true" signature="4584:4618" ph="select * fro... slaves" />
+            <marker date="1487324123390" expanded="true" signature="4226:4298" ph="insert into slaves... " />
+            <marker date="1487324123390" expanded="true" signature="4577:4611" ph="select * fro... slaves" />
           </folding>
         </state>
       </provider>
@@ -1226,7 +1234,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/do-logs.py" />
     <entry file="file://$PROJECT_DIR$/lib/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-162">
@@ -1236,24 +1243,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/install/supervisor/slave/devops-slave.conf" />
     <entry file="file://$PROJECT_DIR$/install/supervisor/master/devops-master.conf" />
-    <entry file="file://$PROJECT_DIR$/lib/modules.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="51" column="42" lean-forward="false" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/do-keys.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/processor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
-          <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1272,31 +1265,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/install.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1296">
-          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/master/m_publisher.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/install/master/master.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/do-states.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1307,47 +1279,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/install/slave/slaveconst/freemem.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/template_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/slave_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="35" column="36" lean-forward="false" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/master_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="29" column="11" lean-forward="false" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_master.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="22" column="23" lean-forward="false" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/slave/s_subscriber.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="114" column="18" lean-forward="false" selection-start-line="114" selection-start-column="18" selection-end-line="114" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1364,17 +1299,6 @@
         <state relative-caret-position="342">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/master/m_rest_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding>
-            <marker date="1487225197891" expanded="true" signature="4233:4305" ph="insert into slaves... " />
-            <marker date="1487225197891" expanded="true" signature="4584:4618" ph="select * fro... slaves" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1410,22 +1334,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3_2/test2.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3_1/test1.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3/init.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -1442,14 +1350,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3_2/test1.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3/unique.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1458,10 +1358,141 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bin/do-logs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-543">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install/master/master.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/template.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2124">
-          <caret line="119" column="35" lean-forward="true" selection-start-line="119" selection-start-column="35" selection-end-line="119" selection-end-column="35" />
+        <state relative-caret-position="533">
+          <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/template_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/do-states.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="20" column="79" lean-forward="true" selection-start-line="20" selection-start-column="79" selection-end-line="20" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slave/s_subscriber.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1242">
+          <caret line="130" column="17" lean-forward="true" selection-start-line="130" selection-start-column="17" selection-end-line="130" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/modules.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="51" column="42" lean-forward="false" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/processor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_master_event.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3_2/test2.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3_2/test1.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3_1/test1.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/master/m_rest_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="86" column="61" lean-forward="true" selection-start-line="86" selection-start-column="61" selection-end-line="86" selection-end-column="61" />
+          <folding>
+            <marker date="1487324123390" expanded="true" signature="4226:4298" ph="insert into slaves... " />
+            <marker date="1487324123390" expanded="true" signature="4577:4611" ph="select * fro... slaves" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_master.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/slave_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="70" column="26" lean-forward="true" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install/slave/slaveconst/freemem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="38" column="4" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
           <folding />
         </state>
       </provider>

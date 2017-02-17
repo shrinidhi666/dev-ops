@@ -18,7 +18,7 @@ import lib.template
 import lib.master_utils
 import simplejson
 
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(description="Command should be run on master")
 parser.add_argument("-l","--list",dest="list",action="store_true",help="list all the states that are available")
 parser.add_argument("-n","--hosts",dest="hosts",help="destination hosts to run the states on")
 parser.add_argument("-s","--state",dest="state",help="state to run on the hosts")

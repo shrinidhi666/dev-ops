@@ -17,7 +17,7 @@ def update_consts():
   mem['ram']['free'] = vm.free
   mem['swap']['total'] = sw.total
   mem['swap']['free'] = sw.free
-  mem['test'] = True
+  mem['test'] = "True"
   mem['cpu_count'] = psutil.cpu_count()
   return(mem)
 

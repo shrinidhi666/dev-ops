@@ -17,12 +17,14 @@ import lib.slave_utils
 import socket
 import simplejson
 
-hostname =  socket.gethostname()
-ip = socket.gethostbyname(hostname)
+event_name =  "test/wtf/ways"
+event_data = "garbage"
 testdata = lib.slave_utils.slaveconst().slaveconst()
-testdata['wtf'] = 'wtf1'
-r = requests.post("http://devops:"+ str(lib.config.slave_conf['master_rest_port']) +"/high/"+ hostname ,data=simplejson.dumps(testdata))
-# lib.debug.debug(r.content)
+testdata['event'] = {}
+testdata['event']['name'] = event_name
+testdata['event']['data'] = event_data
+r = requests.post("http://devops:"+ str(lib.config.slave_conf['master_rest_port']) +"/event" ,data=simplejson.dumps(testdata))
+lib.debug.debug(r.content)
 try:
   work = simplejson.loads(r.content)
   for x in work:

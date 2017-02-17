@@ -84,7 +84,7 @@ def high(hostid):
               valid_states_list.extend(states_list)
           # lib.debug.debug(str(const_key) + " : " + str(const_exp) + " : " + str(formatch))
         elif(match == "cidr"):
-          ipset = netaddr.IPSet(netaddr.IPNetwork("192.168.1.0/29"))
+          ipset = netaddr.IPSet(netaddr.IPNetwork(const_key))
           if(slaveconst['ip'] in ipset):
             valid_states_list.extend(states_list)
         else:
@@ -162,6 +162,11 @@ def slaves_returner():
   # lib.debug.info(simplejson.dumps(result,indent=4))
   return("ack")
 
+@app.route('/event',methods=['POST'])
+def event():
+  slaveconst = simplejson.loads(flask.request.data)
+  lib.debug.debug(slaveconst['event'])
+  return (simplejson.dumps([slaveconst['event']]))
 
 
 if __name__ == "__main__":

@@ -7,14 +7,15 @@ test1:
     path: /home/shrinidhi
     shell: true
 
-{% if slaveconst['wtf'] == 'wtf1' %}
-wtf:
+{% if slaveconst['test'] == True %}
+wtf_test:
   cmd.run:
     command:
       - echo "shit" | tee -a /tmp/shit
     user: shrinidhi
     path: /home/shrinidhi
     shell: true
+
 {% endif %}
 
 include:
