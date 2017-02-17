@@ -20,6 +20,7 @@ import lib.config
 import lib.master_utils
 import time
 import fnmatch
+import collections
 
 
 
@@ -50,7 +51,7 @@ def high(hostid):
   all_states = lib.template.states(path="../tests/states_test")
   lib.debug.debug(slaveconst)
   high_state_obj = all_states.render("high", slaveconst=slaveconst)
-  validStatesList = []
+  valid_states_list = []
 
   for hs in high_state_obj:
     for fn_exp in hs.keys():
@@ -74,28 +75,43 @@ def high(hostid):
               exec comp_str
               if(is_match):
                 lib.debug.debug("matched : " + unicode(formatch) + " : " + unicode(const_exp))
-                validStatesList.extend(states_list)
+                valid_states_list.extend(states_list)
             else:
               return("compare object is not a dict : "+ str(comp_obj))
           else:
             if(fnmatch.fnmatch(unicode(formatch),unicode(const_exp))):
               lib.debug.debug("matched : "+ unicode(formatch) +" : "+ unicode(const_exp))
-              validStatesList.extend(states_list)
+              valid_states_list.extend(states_list)
           # lib.debug.debug(str(const_key) + " : " + str(const_exp) + " : " + str(formatch))
         elif(match == "cidr"):
           ipset = netaddr.IPSet(netaddr.IPNetwork("192.168.1.0/29"))
           if(slaveconst['ip'] in ipset):
-            validStatesList.extend(states_list)
+            valid_states_list.extend(states_list)
+        else:
+          return("match should be either cidr or slaveconst")
       else:
         lib.debug.debug(fn_exp)
         validhosts = lib.master_utils.get_slaves_match(fn_exp)
         lib.debug.debug(validhosts)
         if((slaveconst['ip'] in [x['ip'] for x in validhosts])):
           lib.debug.debug("found valid host")
-          validStatesList.extend(states_list)
+          valid_states_list.extend(states_list)
 
-  lib.debug.debug(validStatesList)
-  return simplejson.dumps(high_state_obj)
+  dupcheck = collections.OrderedDict()
+  if(valid_states_list):
+    for x in valid_states_list:
+      dupcheck[x] = 1
+  valid_states_list = [x for x in dupcheck.keys()]
+
+  state_contents = []
+  for x in valid_states_list:
+    state_x_content = all_states.render(x,slaveconst=slaveconst)
+    if(state_x_content):
+      state_contents.extend(state_x_content)
+
+
+  lib.debug.debug(state_contents)
+  return simplejson.dumps(state_contents)
 
 
 @app.route('/states/list',methods=['GET'])

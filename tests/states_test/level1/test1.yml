@@ -1,0 +1,8 @@
+testing env:
+  cmd.run:
+    command:
+      - echo %test%
+      - echo $test
+    env:
+      test: my name is test env
+      wtf: my name is wtf env

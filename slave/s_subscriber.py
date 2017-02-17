@@ -106,8 +106,15 @@ def register_host():
   slavedata['ip'] = lib.constants.ip
 
   lib.debug.info(slavedata)
-  r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/slaves/register",data=simplejson.dumps(slavedata))
-  lib.debug.info(r.content)
+  while(True):
+    try:
+      r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/slaves/register",data=simplejson.dumps(slavedata))
+      lib.debug.info(r.content)
+      break
+    except:
+      time.sleep(2)
+
+
 
 
 def start_sub(q=None):
@@ -120,6 +127,7 @@ if __name__ == '__main__':
     app_lock()
   except:
     sys.exit(0)
+
   register_host()
   start_sub()
 

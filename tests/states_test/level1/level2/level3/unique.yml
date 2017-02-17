@@ -1,7 +1,13 @@
 - include:
-    - test1
-    - test2
+#    - level1.level2.level3
+    - level1.level2.level3_2.test1
+
+- run_madness:
+    cmd.run:
+      - ls /home/
+    user: root
+
 
 - include:
-    - test3
-    - test4
+    - level1.level2.level3.test6
+#    - level1.level2.level3_1

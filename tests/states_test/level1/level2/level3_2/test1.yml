@@ -1,4 +1,4 @@
-- level3_1:
+- level3_2:
     cmd.run:
       command:
         - echo "test" > /tmp/slave.test

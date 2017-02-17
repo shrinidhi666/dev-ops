@@ -102,16 +102,38 @@ class states(root):
       return_obj = []
       if (template_file.split("/")[-1] == "init.yml"):
         for yml_obj in yml_objs:
-          retured_obj = self.render(yml_obj,slaveconst=slaveconst, masterconst=masterconst,is_recursive=True)
-          if (retured_obj):
-            return_obj.extend(retured_obj)
+          returned_obj = self.render(yml_obj,slaveconst=slaveconst, masterconst=masterconst,is_recursive=True)
+          if (returned_obj):
+            return_obj.extend(returned_obj)
       else:
         if (isinstance(yml_objs, dict)):
+          lib.debug.debug(yml_objs)
+          if(yml_objs.has_key("include")):
+            states_include = yml_objs["include"]
+            for state_include in states_include:
+              returned_obj = self.render(state_include,slaveconst=slaveconst,masterconst=masterconst)
+              lib.debug.debug(returned_obj)
+              return_obj.extend(returned_obj)
+            del(yml_objs['include'])
           return_obj.append(yml_objs)
         else:
-          return_obj = yml_objs
+          lib.debug.debug(yml_objs)
+          for yml_obj in yml_objs:
+            if(yml_obj.has_key("include")):
+              states_include = yml_obj["include"]
+              lib.debug.debug(states_include)
+              for state_include in states_include:
+                returned_obj = self.render(state_include, slaveconst=slaveconst, masterconst=masterconst)
+                lib.debug.debug(returned_obj)
+                return_obj.extend(returned_obj)
+              del(yml_obj['include'])
+            else:
+              return_obj.append(yml_obj)
+
+          # return_obj = yml_objs
         if(not is_recursive):
           cyclic_test.clear()
+
       return (return_obj)
     else:
       return (None)

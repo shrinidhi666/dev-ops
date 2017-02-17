@@ -17,6 +17,9 @@ wtf:
     shell: true
 {% endif %}
 
+include:
+  - level1.test1
+
 test4:
   file.sync:
     source: devops://jinjafile.jinja

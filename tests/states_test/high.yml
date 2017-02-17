@@ -1,6 +1,6 @@
 ram:total:100 :
   compare:
-    operator: '>'
+    operator: '<'
     type: int
   match: slaveconst
   states:
@@ -9,9 +9,11 @@ ram:total:100 :
 platform:Linux :
   match: slaveconst
   states:
+    - level1.level2
     - level1.level2.level3_1
 
 
-blue00* :
+blue0* :
   states:
     - level1.level2.level3_2
+    - level1.level2
