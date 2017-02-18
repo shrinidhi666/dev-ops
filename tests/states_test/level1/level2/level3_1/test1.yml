@@ -7,7 +7,7 @@ test1:
     path: /home/shrinidhi
     shell: true
 
-{% if slaveconst['test'] == True %}
+{% if slaveconst['test'] %}
 wtf_test:
   cmd.run:
     command:
@@ -15,6 +15,9 @@ wtf_test:
     user: shrinidhi
     path: /home/shrinidhi
     shell: true
+  event.register:
+    start: wtf/test/start
+    end: wtf/test/start
 
 {% endif %}
 

@@ -95,6 +95,9 @@ class file(object):
 
 
 
+class event(object):
 
+  @staticmethod
+  def register():
 
 

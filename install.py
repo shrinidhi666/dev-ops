@@ -34,7 +34,7 @@ args = parser.parse_args()
 
 
 gitclone = "cd /opt/ ; git clone https://github.com/shrinidhi666/dev-ops.git ;cd /opt/dev-ops; git checkout master; cd -"
-gitpull =  "git pull /opt/dev-opts"
+gitpull =  "git pull /opt/dev-ops/"
 
 def gitupdate():
   p = subprocess.Popen(gitpull,shell=True,stderr=subprocess.PIPE, stdout=subprocess.PIPE)
