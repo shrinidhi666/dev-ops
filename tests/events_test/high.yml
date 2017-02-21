@@ -1,0 +1,9 @@
+/wtf/test/start:
+{% if(slaveconst['hostname'].find('blue066') >= 0) %}
+  forblue:
+    import: fortest
+    run: fortest.forblue
+{% endif %}
+  test:
+    import: fortest
+    run: fortest.test

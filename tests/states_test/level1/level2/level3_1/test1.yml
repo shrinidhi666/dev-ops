@@ -7,7 +7,7 @@ test1:
     path: /home/shrinidhi
     shell: true
 
-{% if slaveconst['test'] %}
+#{% if slaveconst['test'] %}
 wtf_test:
   cmd.run:
     command:
@@ -15,11 +15,12 @@ wtf_test:
     user: shrinidhi
     path: /home/shrinidhi
     shell: true
-  event.register:
+  event.fire:
     start: wtf/test/start
-    end: wtf/test/start
+    end: wtf/test/end
+    result: wtf/test/result
 
-{% endif %}
+#{% endif %}
 
 include:
   - level1.test1
@@ -31,3 +32,7 @@ test4:
     user: shrinidhi
     group: artist
     mode: 777
+
+just_event:
+  event.fire:
+    start: just/event/started

@@ -19,9 +19,7 @@ import simplejson
 import lib.config
 import lib.master_utils
 import time
-import fnmatch
-import collections
-
+import multiprocessing
 
 
 app = flask.Flask(__name__)
@@ -29,86 +27,40 @@ app = flask.Flask(__name__)
 @app.route('/states/<hostid>/<state>/<isfile>',methods=['POST'])
 def states(hostid,state,isfile):
   slaveconst = simplejson.loads(flask.request.data)
+  masterconst = lib.master_utils.masterconst().masterconst()
   all_states = lib.template.states(path="../tests/states_test")
-  lib.debug.debug(hostid)
-  lib.debug.debug(state)
-  lib.debug.debug(isfile)
-  lib.debug.debug(slaveconst)
+  # lib.debug.debug(hostid)
+  # lib.debug.debug(state)
+  # lib.debug.debug(isfile)
+  # lib.debug.debug(slaveconst)
   if(int(isfile)):
     try:
-      ret_state_details = all_states.render(unicode(state), slaveconst=slaveconst,is_file=True)
+      ret_state_details = all_states.render(unicode(state), slaveconst=slaveconst, masterconst=masterconst,is_file=True)
     except:
       return (unicode(sys.exc_info()))
     return unicode(ret_state_details)
   else:
-    ret_state_details = all_states.render(unicode(state), slaveconst=slaveconst)
+    ret_state_details = all_states.render(unicode(state), slaveconst=slaveconst,masterconst=masterconst)
     return simplejson.dumps(ret_state_details)
 
 
 @app.route('/high/<hostid>',methods=['POST'])
 def high(hostid):
   slaveconst = simplejson.loads(flask.request.data)
+  masterconst = lib.master_utils.masterconst().masterconst()
   all_states = lib.template.states(path="../tests/states_test")
   lib.debug.debug(slaveconst)
-  high_state_obj = all_states.render("high", slaveconst=slaveconst)
-  valid_states_list = []
+  high_state_obj = all_states.render("high", slaveconst=slaveconst, masterconst=masterconst)
 
-  for hs in high_state_obj:
-    for fn_exp in hs.keys():
-      (const_key, const_exp) = (fn_exp.split(":")[:-1], fn_exp.split(":")[-1])
-      states_list = hs[fn_exp]['states']
-      if(hs[fn_exp].has_key("match")):
-        match = hs[fn_exp]["match"]
-
-        if(match == "slaveconst"):
-          formatch = slaveconst
-          for sc in const_key:
-            formatch = formatch[sc]
-
-          if(hs[fn_exp].has_key("compare")):
-            comp_obj = hs[fn_exp]['compare']
-            if(isinstance(comp_obj,dict)):
-              comp_op = comp_obj['operator']
-              comp_type = comp_obj['type']
-              comp_str = "is_match = True if(" + comp_type +"(formatch) "+ comp_op +" "+ comp_type +"(const_exp)) else False"
-              lib.debug.debug(comp_str)
-              exec comp_str
-              if(is_match):
-                lib.debug.debug("matched : " + unicode(formatch) + " : " + unicode(const_exp))
-                valid_states_list.extend(states_list)
-            else:
-              return("compare object is not a dict : "+ str(comp_obj))
-          else:
-            if(fnmatch.fnmatch(unicode(formatch),unicode(const_exp))):
-              lib.debug.debug("matched : "+ unicode(formatch) +" : "+ unicode(const_exp))
-              valid_states_list.extend(states_list)
-          # lib.debug.debug(str(const_key) + " : " + str(const_exp) + " : " + str(formatch))
-        elif(match == "cidr"):
-          ipset = netaddr.IPSet(netaddr.IPNetwork(const_key))
-          if(slaveconst['ip'] in ipset):
-            valid_states_list.extend(states_list)
-        else:
-          return("match should be either cidr or slaveconst")
-      else:
-        lib.debug.debug(fn_exp)
-        validhosts = lib.master_utils.get_slaves_match(fn_exp)
-        lib.debug.debug(validhosts)
-        if((slaveconst['ip'] in [x['ip'] for x in validhosts])):
-          lib.debug.debug("found valid host")
-          valid_states_list.extend(states_list)
-
-  dupcheck = collections.OrderedDict()
-  if(valid_states_list):
-    for x in valid_states_list:
-      dupcheck[x] = 1
-  valid_states_list = [x for x in dupcheck.keys()]
+  # valid_states_list = []
+  valid_states_list = lib.master_utils.render_high(high_state_obj,slaveconst=slaveconst, masterconst=masterconst)
 
   state_contents = []
   for x in valid_states_list:
-    state_x_content = all_states.render(x,slaveconst=slaveconst)
+    state_x_content = all_states.render(x,slaveconst=slaveconst,masterconst=masterconst)
+    lib.debug.debug(str(x) +" : "+ str(state_x_content))
     if(state_x_content):
       state_contents.extend(state_x_content)
-
 
   lib.debug.debug(state_contents)
   return simplejson.dumps(state_contents)
@@ -166,6 +118,9 @@ def slaves_returner():
 def event():
   slaveconst = simplejson.loads(flask.request.data)
   lib.debug.debug(slaveconst['event'])
+  event_process = multiprocessing.Process(target=lib.master_utils.event_handler,args=(slaveconst,))
+  event_process.start()
+  # lib.master_utils.event_handler(slaveconst)
   return (simplejson.dumps([slaveconst['event']]))
 
 

@@ -79,9 +79,13 @@ class states(root):
     for x in self._loader.list_templates():
       if (unicode(x).endswith('.yml')):
         if (unicode(x).split("/")[-1] == "init.yml"):
-          ret_loader[unicode(x).rstrip('/init.yml').replace("/", ".")] = unicode(x)
+          key = unicode(x).rstrip('/init.yml').replace("/", ".")
+          if(key):
+            ret_loader[key] = unicode(x)
         else:
-          ret_loader[unicode(x).rstrip('.yml').replace("/", ".")] = unicode(x)
+          key = unicode(x).rstrip('.yml').replace("/", ".")
+          if(key):
+            ret_loader[key] = unicode(x)
     return (ret_loader)
 
   def render(self, path, slaveconst={}, masterconst={}, is_file=False,cyclic_test={},is_recursive=False):

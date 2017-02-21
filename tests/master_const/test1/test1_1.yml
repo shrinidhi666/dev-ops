@@ -1,0 +1,10 @@
+- gr:
+    - te1
+    - te2
+- {{ slaveconst['os'] }}:
+    te3:
+      - te3_1
+    te4:
+      - te4_1
+- test:
+    - test111

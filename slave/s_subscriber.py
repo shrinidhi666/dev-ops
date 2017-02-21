@@ -83,10 +83,14 @@ class slave_sub(lib.transport.subscriber):
 
   def process(self, topic, request_id,state_name):
     slaveconst = lib.slave_utils.slaveconst().slaveconst()
-    r = requests.post("http://"+ lib.config.slave_conf['master'] +":"+ str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.constants.hostname + "/"+ state_name +"/0" , data=simplejson.dumps(slaveconst))
-    lib.debug.debug(r.content)
+    if(state_name != "high"):
+      r = requests.post("http://"+ lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.constants.hostname + "/"+ state_name +"/0" , data=simplejson.dumps(slaveconst))
+    else:
+      r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/high/" + lib.constants.hostname , data=simplejson.dumps(slaveconst))
+    r_content = r.content
+    lib.debug.debug(r_content)
     try:
-      work = simplejson.loads(r.content)
+      work = simplejson.loads(r_content)
       if(work):
         for x in work:
           lib.debug.debug(x)

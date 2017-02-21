@@ -1,4 +1,4 @@
-testing env:
+testing env1:
   cmd.run:
     command:
       - echo %test%

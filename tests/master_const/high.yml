@@ -13,11 +13,10 @@ platform:Winux :
     - level1.level2.level3_1
 
 
-blue0* :
-  states:
-    - level1.level2.level3_2.test1
-    - level1.level2.test1
-
+#blue0* :
+#  states:
+#    - test2.test2
+#
 '*' :
   states:
-    - level1.test1
+    - test1.test1
