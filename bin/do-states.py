@@ -28,7 +28,7 @@ args = parser.parse_args()
 
 
 if(args.list):
-  for x in lib.template.states(path="/home/shrinidhi/bin/gitHub/dev-ops/tests/states_test").list:
+  for x in lib.template.states().list:
     print(x)
 
 else:

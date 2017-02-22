@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e072f42f-b1e1-47d6-868c-ed9aebc0cf0c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/do-states.py" afterPath="$PROJECT_DIR$/bin/do-states.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -120,11 +121,11 @@
       <file leaf-file-name="do-states.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/do-states.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="47" column="66" lean-forward="true" selection-start-line="47" selection-start-column="66" selection-end-line="47" selection-end-column="66" />
+            <state relative-caret-position="198">
+              <caret line="30" column="38" lean-forward="true" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
               <folding>
-                <marker date="1487750967359" expanded="true" signature="1516:1572" ph="insert into log... " />
-                <marker date="1487750967359" expanded="true" signature="1516:1594" ph="insert into log... " />
+                <marker date="1487751155340" expanded="true" signature="1457:1513" ph="insert into log... " />
+                <marker date="1487751155340" expanded="true" signature="1457:1535" ph="insert into log... " />
               </folding>
             </state>
           </provider>
@@ -1040,7 +1041,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487751000639</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="fixing">
+      <created>1487751052089</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1487751052089</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1054,7 +1062,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1680" height="1020" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.504896" order="7" side_tool="true" content_ui="tabs" />
@@ -1062,7 +1070,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.49510404" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2735618" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2735618" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1503,11 +1511,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/do-states.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="47" column="66" lean-forward="true" selection-start-line="47" selection-start-column="66" selection-end-line="47" selection-end-column="66" />
+        <state relative-caret-position="198">
+          <caret line="30" column="38" lean-forward="true" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
           <folding>
-            <marker date="1487750967359" expanded="true" signature="1516:1572" ph="insert into log... " />
-            <marker date="1487750967359" expanded="true" signature="1516:1594" ph="insert into log... " />
+            <marker date="1487751155340" expanded="true" signature="1457:1513" ph="insert into log... " />
+            <marker date="1487751155340" expanded="true" signature="1457:1535" ph="insert into log... " />
           </folding>
         </state>
       </provider>
