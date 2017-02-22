@@ -43,8 +43,9 @@ else:
     for x in validhosts:
       print (x +" : "+ validhosts[x])
     socket.close()
-    conn = lib.db_sqlite3.db.connect(lib.constants.mds_sqlite3_file)
-    lib.db_sqlite3.execute("insert into log (request_id,state_name,topic) values (\"{0}\",\"{1}\",\"{2}\")".format(uid,args.state,args.hosts),
+    lib.db_sqlite3.execute("insert into log "
+                           "(request_id,state_name,topic) values "
+                           "(\"{0}\",\"{1}\",\"{2}\")".format(uid,args.state,args.hosts),
                            db_file=lib.constants.mds_sqlite3_file)
     print(uid)
 
