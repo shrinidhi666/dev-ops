@@ -21,6 +21,8 @@ sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
 import lib.debug
 import lib.constants
 import lib.config
+import threading
+
 
 class publisher(object):
   def __init__(self,context=None):
@@ -124,7 +126,8 @@ class subscriber(object):
           self._socket_req.close()
         else:
           lib.debug.info ("{0} : {1} : {2}".format(topic,request_id,state_name))
-          retmsg = self.process(topic, request_id, state_name)
+          process_thread = threading.Thread(target=self.process, args=(topic, request_id, state_name,))
+          process_thread.start()
       # except KeyboardInterrupt:
       #   break
       except SystemExit:

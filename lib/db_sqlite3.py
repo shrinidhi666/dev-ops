@@ -24,8 +24,14 @@ class db(object):
     return d
 
   @staticmethod
-  def connect():
-    db_file = lib.constants.m_sqlite3_file
+  def connect(db_file=None):
+    """
+    connect to a sqlite3 database.
+    :param db_file: if not specified then use the master sqlite file
+    :return: connection object
+    """
+    if(not db_file):
+      db_file = lib.constants.m_sqlite3_file
     lib.debug.debug("connecting to sqlite file :"+ db_file)
     try:
       conn = sqlite3.connect(db_file)
@@ -37,8 +43,8 @@ class db(object):
     return (conn)
 
 
-def execute(query,dictionary=False):
-  con = db.connect()
+def execute(query,dictionary=False,db_file=None):
+  con = db.connect(db_file=db_file)
   if(con):
     if(dictionary):
       try:
