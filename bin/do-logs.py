@@ -31,7 +31,7 @@ if(args.list):
                                       db_file=lib.constants.mds_sqlite3_file,
                                       dictionary=True)
   for x in id_details:
-    print(x)
+    print(simplejson.dumps(x))
 else:
   if(args.id):
     id_details = lib.db_sqlite3.execute("select * from log where request_id=\""+ args.id +"\"",
