@@ -33,7 +33,7 @@ else:
   if(args.accept):
     if(args.accept == "all"):
       try:
-        lib.db_sqlite3.execute("update slaves set status=\""+ str(lib.constants.slaves_status.accepted) +"\" where status=\""+ lib.constants.slaves_status.pending +"\"")
+        lib.db_sqlite3.execute("update slaves set status=\""+ str(lib.constants.slaves_status.accepted) +"\" where status=\""+ str(lib.constants.slaves_status.pending) +"\"")
       except:
         print(sys.exc_info())
     else:
