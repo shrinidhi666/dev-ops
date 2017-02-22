@@ -37,7 +37,7 @@ else:
     id_details = lib.db_sqlite3.execute("select * from log where request_id=\""+ args.id +"\"",
                                         db_file=lib.constants.mds_sqlite3_file,
                                         dictionary=True)
-    print(simplejson.dumps(id_details,indent=4))
+    print(simplejson.dumps(id_details[0],indent=4))
     files_to_open = glob.glob(os.path.join(lib.constants.m_result_logs_dir,lib.constants.m_result_logs_prefix + lib.constants.m_result_logs_delimiter +"*"+ args.id +"*"))
     for f in files_to_open:
       fd = open(f,"r")
