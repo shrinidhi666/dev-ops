@@ -114,15 +114,15 @@
       <file leaf-file-name="do-logs.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/do-logs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="32" column="12" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+            <state relative-caret-position="180">
+              <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
               <folding>
-                <marker date="1487751696746" expanded="true" signature="1122:1140" ph="select * fro... logs" />
-                <marker date="1487751696746" expanded="true" signature="1122:1142" ph="select * fro... logs" />
-                <marker date="1487751696746" expanded="true" signature="1374:1413" ph="select * fro... logs" />
-                <marker date="1487751696746" expanded="true" signature="1374:1427" ph="select * fro... logs" />
-                <marker date="1487751696746" expanded="true" signature="1374:1566" ph="select * fro... logs" />
-                <marker date="1487751696746" expanded="true" signature="1392:1413" ph="insert into log... " />
+                <marker date="1487751735834" expanded="true" signature="1144:1162" ph="select * fro... logs" />
+                <marker date="1487751735834" expanded="true" signature="1144:1164" ph="select * fro... logs" />
+                <marker date="1487751735834" expanded="true" signature="1396:1435" ph="select * fro... logs" />
+                <marker date="1487751735834" expanded="true" signature="1396:1449" ph="select * fro... logs" />
+                <marker date="1487751735834" expanded="true" signature="1396:1588" ph="select * fro... logs" />
+                <marker date="1487751735834" expanded="true" signature="1414:1435" ph="insert into log... " />
               </folding>
             </state>
           </provider>
@@ -1070,7 +1070,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487751564895</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="fixing">
+      <created>1487751704817</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1487751704817</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1537,15 +1544,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/do-logs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="32" column="12" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+        <state relative-caret-position="180">
+          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
           <folding>
-            <marker date="1487751696746" expanded="true" signature="1122:1140" ph="select * fro... logs" />
-            <marker date="1487751696746" expanded="true" signature="1122:1142" ph="select * fro... logs" />
-            <marker date="1487751696746" expanded="true" signature="1374:1413" ph="select * fro... logs" />
-            <marker date="1487751696746" expanded="true" signature="1374:1427" ph="select * fro... logs" />
-            <marker date="1487751696746" expanded="true" signature="1374:1566" ph="select * fro... logs" />
-            <marker date="1487751696746" expanded="true" signature="1392:1413" ph="insert into log... " />
+            <marker date="1487751735834" expanded="true" signature="1144:1162" ph="select * fro... logs" />
+            <marker date="1487751735834" expanded="true" signature="1144:1164" ph="select * fro... logs" />
+            <marker date="1487751735834" expanded="true" signature="1396:1435" ph="select * fro... logs" />
+            <marker date="1487751735834" expanded="true" signature="1396:1449" ph="select * fro... logs" />
+            <marker date="1487751735834" expanded="true" signature="1396:1588" ph="select * fro... logs" />
+            <marker date="1487751735834" expanded="true" signature="1414:1435" ph="insert into log... " />
           </folding>
         </state>
       </provider>
