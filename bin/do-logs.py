@@ -27,14 +27,14 @@ ulogs = {}
 for x in logs:
   ulogs[x.split(lib.constants.m_result_logs_delimiter)[-2]] = x
 if(args.list):
-  id_details = lib.db_sqlite3.execute("select * from logs",
+  id_details = lib.db_sqlite3.execute("select * from log",
                                       db_file=lib.constants.mds_sqlite3_file,
                                       dictionary=True)
   for x in id_details:
     print(x)
 else:
   if(args.id):
-    id_details = lib.db_sqlite3.execute("select * from logs where request_id=\""+ args.id +"\"",
+    id_details = lib.db_sqlite3.execute("select * from log where request_id=\""+ args.id +"\"",
                                         db_file=lib.constants.mds_sqlite3_file,
                                         dictionary=True)
     print(id_details)
