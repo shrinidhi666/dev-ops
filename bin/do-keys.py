@@ -31,13 +31,19 @@ if(args.list):
       print(x['hostname'] +" : "+ x['ip'] +" : "+ lib.constants.slaves_status()[int(x['status'])])
 else:
   if(args.accept):
-    accept_list = args.accept.split(",")
-    print(accept_list)
-    for x in accept_list:
+    if(args.accept == "all"):
       try:
-        lib.db_sqlite3.execute("update slaves set status=\""+ str(lib.constants.slaves_status.accepted) +"\" where ip=\""+ x +"\" or hostname=\""+ x +"\"")
+        lib.db_sqlite3.execute("update slaves set status=\""+ str(lib.constants.slaves_status.accepted) +"\" where status=\""+ lib.constants.slaves_status.pending +"\"")
       except:
         print(sys.exc_info())
+    else:
+      accept_list = args.accept.split(",")
+      print(accept_list)
+      for x in accept_list:
+        try:
+          lib.db_sqlite3.execute("update slaves set status=\""+ str(lib.constants.slaves_status.accepted) +"\" where ip=\""+ x +"\" or hostname=\""+ x +"\"")
+        except:
+          print(sys.exc_info())
 
   if (args.reject):
     accept_list = args.reject.split(",")

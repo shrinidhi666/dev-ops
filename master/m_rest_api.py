@@ -28,7 +28,7 @@ app = flask.Flask(__name__)
 def states(hostid,state,isfile):
   slaveconst = simplejson.loads(flask.request.data)
   masterconst = lib.master_utils.masterconst().masterconst()
-  all_states = lib.template.states(path="../tests/states_test")
+  all_states = lib.template.states()
   # lib.debug.debug(hostid)
   # lib.debug.debug(state)
   # lib.debug.debug(isfile)
@@ -48,7 +48,7 @@ def states(hostid,state,isfile):
 def high(hostid):
   slaveconst = simplejson.loads(flask.request.data)
   masterconst = lib.master_utils.masterconst().masterconst()
-  all_states = lib.template.states(path="../tests/states_test")
+  all_states = lib.template.states()
   lib.debug.debug(slaveconst)
   high_state_obj = all_states.render("high", slaveconst=slaveconst, masterconst=masterconst)
 
@@ -68,7 +68,7 @@ def high(hostid):
 
 @app.route('/states/list',methods=['GET'])
 def states_list():
-  all_states = lib.template.states(path="/home/shrinidhi/bin/gitHub/dev-ops/tests")
+  all_states = lib.template.states()
   return simplejson.dumps(all_states.list)
 
 @app.route('/slaves/register',methods=['POST'])
