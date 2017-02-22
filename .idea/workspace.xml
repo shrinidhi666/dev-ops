@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e072f42f-b1e1-47d6-868c-ed9aebc0cf0c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/do-keys.py" afterPath="$PROJECT_DIR$/bin/do-keys.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/master/m_rest_api.py" afterPath="$PROJECT_DIR$/master/m_rest_api.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,14 +29,15 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="m_rest_api.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="m_rest_api.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/master/m_rest_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+            <state relative-caret-position="159">
+              <caret line="79" column="225" lean-forward="true" selection-start-line="79" selection-start-column="225" selection-end-line="79" selection-end-column="225" />
               <folding>
-                <marker date="1487742870184" expanded="true" signature="2390:2462" ph="insert into slaves... " />
-                <marker date="1487742870184" expanded="true" signature="2741:2775" ph="select * fro... slaves" />
+                <marker date="1487744960066" expanded="true" signature="2446:2533" ph="insert into slaves... " />
+                <marker date="1487744960066" expanded="true" signature="2740:2812" ph="insert into slaves... " />
+                <marker date="1487744960066" expanded="true" signature="3091:3125" ph="select * fro... slaves" />
               </folding>
             </state>
           </provider>
@@ -65,8 +66,8 @@
       <file leaf-file-name="master.conf" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/install/master/master.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="126">
+              <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -82,7 +83,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="do-keys.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="do-keys.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/do-keys.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="299">
@@ -214,8 +215,8 @@
         <option value="$PROJECT_DIR$/tests/events_test/fortest.py" />
         <option value="$PROJECT_DIR$/lib/transport.py" />
         <option value="$PROJECT_DIR$/install.py" />
-        <option value="$PROJECT_DIR$/master/m_rest_api.py" />
         <option value="$PROJECT_DIR$/bin/do-keys.py" />
+        <option value="$PROJECT_DIR$/master/m_rest_api.py" />
       </list>
     </option>
   </component>
@@ -998,7 +999,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487744166304</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="fixing">
+      <created>1487744246874</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1487744246874</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1063,8 +1071,9 @@
         <state relative-caret-position="486">
           <caret line="29" column="61" lean-forward="false" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
           <folding>
-            <marker date="1487742870184" expanded="true" signature="2390:2462" ph="insert into slaves... " />
-            <marker date="1487742870184" expanded="true" signature="2741:2775" ph="select * fro... slaves" />
+            <marker date="1487744960066" expanded="true" signature="2446:2533" ph="insert into slaves... " />
+            <marker date="1487744960066" expanded="true" signature="2740:2812" ph="insert into slaves... " />
+            <marker date="1487744960066" expanded="true" signature="3091:3125" ph="select * fro... slaves" />
           </folding>
         </state>
       </provider>
@@ -1385,14 +1394,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/install/master/master.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/processor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -1433,13 +1434,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/master/m_rest_api.py">
+    <entry file="file://$PROJECT_DIR$/bin/do-keys.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+        <state relative-caret-position="299">
+          <caret line="35" column="166" lean-forward="false" selection-start-line="35" selection-start-column="131" selection-end-line="35" selection-end-column="166" />
           <folding>
-            <marker date="1487742870184" expanded="true" signature="2390:2462" ph="insert into slaves... " />
-            <marker date="1487742870184" expanded="true" signature="2741:2775" ph="select * fro... slaves" />
+            <marker date="1487744239703" expanded="true" signature="828:848" ph="select * fro... slaves" />
+            <marker date="1487744239703" expanded="true" signature="1101:1241" ph="update slave... " />
+            <marker date="1487744239703" expanded="true" signature="1441:1562" ph="update slave... " />
+            <marker date="1487744239703" expanded="true" signature="1767:1894" ph="update slave... " />
           </folding>
         </state>
       </provider>
@@ -1452,15 +1455,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/do-keys.py">
+    <entry file="file://$PROJECT_DIR$/install/master/master.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="35" column="166" lean-forward="false" selection-start-line="35" selection-start-column="131" selection-end-line="35" selection-end-column="166" />
+        <state relative-caret-position="126">
+          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/master/m_rest_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="79" column="225" lean-forward="true" selection-start-line="79" selection-start-column="225" selection-end-line="79" selection-end-column="225" />
           <folding>
-            <marker date="1487744239703" expanded="true" signature="828:848" ph="select * fro... slaves" />
-            <marker date="1487744239703" expanded="true" signature="1101:1241" ph="update slave... " />
-            <marker date="1487744239703" expanded="true" signature="1441:1562" ph="update slave... " />
-            <marker date="1487744239703" expanded="true" signature="1767:1894" ph="update slave... " />
+            <marker date="1487744960066" expanded="true" signature="2446:2533" ph="insert into slaves... " />
+            <marker date="1487744960066" expanded="true" signature="2740:2812" ph="insert into slaves... " />
+            <marker date="1487744960066" expanded="true" signature="3091:3125" ph="select * fro... slaves" />
           </folding>
         </state>
       </provider>
