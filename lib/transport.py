@@ -22,6 +22,7 @@ import lib.debug
 import lib.constants
 import lib.config
 import threading
+import simplejson
 
 
 class publisher(object):
