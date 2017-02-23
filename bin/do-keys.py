@@ -54,5 +54,13 @@ else:
       except:
         print(sys.exc_info())
 
+  if (args.delete):
+    accept_list = args.reject.split(",")
+    print(accept_list)
+    for x in accept_list:
+      try:
+        lib.db_sqlite3.execute("delete from slaves where ip=\"" + x + "\" or hostname=\"" + x + "\"")
+      except:
+        print(sys.exc_info())
 
 

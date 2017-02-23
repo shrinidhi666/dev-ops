@@ -80,10 +80,11 @@ def slaves_register():
       lib.db_sqlite3.execute("insert into slaves (hostid,ip,hostname,status) values (\"{0}\",\"{1}\",\"{2}\",\"{3}\")".format(slavedets['hostid'], slavedets['ip'], slavedets['hostname'], lib.constants.slaves_status.accepted))
     except:
       return simplejson.dumps(str(sys.exc_info()))
-  try:
-    lib.db_sqlite3.execute("insert into slaves (hostid,ip,hostname) values (\"{0}\",\"{1}\",\"{2}\")".format(slavedets['hostid'],slavedets['ip'],slavedets['hostname']))
-  except:
-    return simplejson.dumps(str(sys.exc_info()))
+  else:
+    try:
+      lib.db_sqlite3.execute("insert into slaves (hostid,ip,hostname) values (\"{0}\",\"{1}\",\"{2}\")".format(slavedets['hostid'],slavedets['ip'],slavedets['hostname']))
+    except:
+      return simplejson.dumps(str(sys.exc_info()))
   return simplejson.dumps("host registered")
 
 
