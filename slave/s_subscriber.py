@@ -41,6 +41,10 @@ def quit():
   #   os.remove(app_lock_file)
   # except:
   #   lib.debug.error(sys.exc_info())
+  try:
+    os.remove(lib.constants.s_process_lock_file)
+  except:
+    lib.debug.warn("no file : "+ lib.constants.s_process_lock_file)
   sys.exit(0)
 
 
@@ -99,7 +103,15 @@ class slave_sub(lib.transport.subscriber):
           #   return(0)
     except:
       lib.debug.warn(sys.exc_info())
+      try:
+        os.remove(lib.constants.s_process_lock_file)
+      except:
+        lib.debug.warn("no file : " + lib.constants.s_process_lock_file)
       return(0)
+    try:
+      os.remove(lib.constants.s_process_lock_file)
+    except:
+      lib.debug.warn("no file : " + lib.constants.s_process_lock_file)
     return(1)
 
 
