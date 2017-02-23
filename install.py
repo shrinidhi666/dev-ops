@@ -19,9 +19,9 @@ slavedir = os.path.join(configdir,"slave")
 
 supervisorpath = "/etc/supervisor/conf.d/"
 installdir = "/opt/dev-ops"
-states_path = "/srv/devops/states/"
-events_root = "/srv/devops/events/"
-masterconst_root = "/srv/devops/masterconst/"
+states_path = "/srv/dev-ops/states/"
+events_root = "/srv/dev-ops/events/"
+masterconst_root = "/srv/dev-ops/masterconst/"
 
 progpath = installdir
 source_master_path = os.path.join(progpath,"install","master")

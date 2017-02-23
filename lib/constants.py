@@ -20,7 +20,7 @@ import tempfile
 # IE: NOTHING SHOULD BE HERE THAT GENERATED DYNAMICALLY.
 
 os.environ['XDG_CONFIG_DIRS'] = '/etc'
-configdir = os.path.join(appdirs.site_config_dir(),"dev_ops")
+configdir = os.path.join(appdirs.site_config_dir(),"dev-ops")
 masterdir = os.path.join(configdir,"master")
 slavedir = os.path.join(configdir,"slave")
 default_delimiter = "__"
