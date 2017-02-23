@@ -58,11 +58,15 @@ class publisher(object):
         (request_id_rep,state_name_rep,msg_rep) = rep_sock.recv_multipart()
         rep_sock.send_multipart([request_id_rep,state_name,msg_rep])
         lib.debug.debug(msg_rep)
-        msg_reved = simplejson.loads(msg_rep)
-        if(msg_reved['status'] == "free"):
-          can_send_state = True
-        else:
-          return(msg_reved['status'] +" : "+ msg_reved['request_id'])
+        try:
+          msg_reved = simplejson.loads(msg_rep)
+          if(msg_reved['status'] == "free"):
+            can_send_state = True
+          else:
+            return(msg_reved['status'] +" : "+ msg_reved['request_id'])
+        except:
+          lib.debug.error(str(state_name) + " : "+ str(request_id) +" : "+ str(sys.exc_info()))
+          return (str(state_name) + " : " + str(request_id) + " : " + str(sys.exc_info()))
 
     else:
       lib.debug.error(str(topic) +" : Timeout processing auth request")
