@@ -57,6 +57,7 @@ class publisher(object):
       for rep_sock in rep_socks:
         (request_id_rep,state_name_rep,msg_rep) = rep_sock.recv_multipart()
         rep_sock.send_multipart([request_id_rep,state_name,msg_rep])
+        lib.debug.debug(msg_rep)
         msg_reved = simplejson.loads(msg_rep)
         if(msg_reved['status'] == "free"):
           can_send_state = True
