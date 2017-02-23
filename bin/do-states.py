@@ -40,14 +40,18 @@ else:
     socket.connect("ipc:///tmp/publisher.zmq.sock")
     socket.send_multipart([uid,args.hosts,args.state])
     validhosts = socket.recv_pyobj()
-    for x in validhosts:
-      print (x +" : "+ validhosts[x])
+    if(validhosts):
+      for x in validhosts:
+        print (x +" : "+ validhosts[x])
+    else:
+      print("No valid hosts")
     socket.close()
     lib.db_sqlite3.execute("insert into log "
                            "(request_id,state_name,topic) values "
                            "(\"{0}\",\"{1}\",\"{2}\")".format(uid,args.state,args.hosts),
                            db_file=lib.constants.m_dostates_sqlite3_file)
-    print(uid)
+    if(validhosts):
+      print("request id : "+ str(uid))
 
   elif(args.test):
     lib.debug.debug("testing state : " + args.test)

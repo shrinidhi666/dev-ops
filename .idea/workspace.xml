@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e072f42f-b1e1-47d6-868c-ed9aebc0cf0c" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/install/master/sqlite/master.sqlite3" afterPath="$PROJECT_DIR$/install/master/sqlite/keys.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/do-logs.py" afterPath="$PROJECT_DIR$/bin/do-logs.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/do-states.py" afterPath="$PROJECT_DIR$/bin/do-states.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/db_sqlite3.py" afterPath="$PROJECT_DIR$/lib/db_sqlite3.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -72,14 +69,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="do-states.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="do-states.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/do-states.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="43" column="36" lean-forward="false" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="36" />
+            <state relative-caret-position="501">
+              <caret line="53" column="38" lean-forward="true" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
               <folding>
-                <marker date="1487831243540" expanded="true" signature="1388:1504" ph="insert into log... " />
-                <marker date="1487831243540" expanded="true" signature="1388:1526" ph="insert into log... " />
+                <marker date="1487832000787" expanded="true" signature="1452:1568" ph="insert into log... " />
+                <marker date="1487832000787" expanded="true" signature="1452:1590" ph="insert into log... " />
               </folding>
             </state>
           </provider>
@@ -105,7 +102,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="constants.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="constants.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/constants.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="267">
@@ -222,11 +219,11 @@
         <option value="$PROJECT_DIR$/install/master/master.conf" />
         <option value="$PROJECT_DIR$/install.py" />
         <option value="$PROJECT_DIR$/slave/s_subscriber.py" />
-        <option value="$PROJECT_DIR$/bin/do-states.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/lib/transport.py" />
         <option value="$PROJECT_DIR$/bin/do-logs.py" />
         <option value="$PROJECT_DIR$/lib/constants.py" />
+        <option value="$PROJECT_DIR$/bin/do-states.py" />
       </list>
     </option>
   </component>
@@ -875,13 +872,6 @@
       <option name="presentableId" value="Default" />
       <updated>1486396648675</updated>
     </task>
-    <task id="LOCAL-00007" summary="fixing">
-      <created>1486531595742</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1486531595742</updated>
-    </task>
     <task id="LOCAL-00008" summary="fixing">
       <created>1486531786677</created>
       <option name="number" value="00008" />
@@ -1218,7 +1208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487830711453</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="fixing">
+      <created>1487831245846</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1487831245846</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1232,7 +1229,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1680" height="1020" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.504896" order="7" side_tool="true" content_ui="tabs" />
@@ -1243,7 +1240,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18053855" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20380738" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20380738" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1678,17 +1675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/do-states.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="43" column="36" lean-forward="false" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="36" />
-          <folding>
-            <marker date="1487831243540" expanded="true" signature="1388:1504" ph="insert into log... " />
-            <marker date="1487831243540" expanded="true" signature="1388:1526" ph="insert into log... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/master/m_publisher.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="593">
@@ -1702,6 +1688,17 @@
         <state relative-caret-position="267">
           <caret line="31" column="14" lean-forward="false" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/do-states.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="53" column="38" lean-forward="true" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
+          <folding>
+            <marker date="1487832000787" expanded="true" signature="1452:1568" ph="insert into log... " />
+            <marker date="1487832000787" expanded="true" signature="1452:1590" ph="insert into log... " />
+          </folding>
         </state>
       </provider>
     </entry>
