@@ -40,8 +40,9 @@ else:
                                         dictionary=True)
 
     host_details = simplejson.loads(open(os.path.join(lib.constants.m_result_logs_dir, lib.constants.m_result_logs_prefix_hosts + lib.constants.m_result_logs_delimiter + args.id),"r").read())
-    print(simplejson.dumps(host_details,indent=4))
+
     print(simplejson.dumps(id_details[0],indent=4))
+    print(simplejson.dumps(host_details, indent=4))
     files_to_open = glob.glob(os.path.join(lib.constants.m_result_logs_dir,lib.constants.m_result_logs_prefix + lib.constants.m_result_logs_delimiter +"*"+ args.id +"*"))
     for f in files_to_open:
       fd = open(f,"r")

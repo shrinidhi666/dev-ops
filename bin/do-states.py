@@ -57,8 +57,7 @@ else:
                            "(request_id,state_name,topic) values "
                            "(\"{0}\",\"{1}\",\"{2}\")".format(uid,args.state,args.hosts),
                            db_file=lib.constants.m_dostates_sqlite3_file)
-    if(validhosts):
-      print("request id : "+ str(uid))
+    print("request id : "+ str(uid))
 
   elif(args.test):
     lib.debug.debug("testing state : " + args.test)
