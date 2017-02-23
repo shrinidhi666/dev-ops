@@ -51,7 +51,7 @@ else:
 
   elif(args.test):
     lib.debug.debug("testing state : " + args.test)
-    test_state = lib.template.states(path="/home/shrinidhi/bin/gitHub/dev-ops/tests/states_test")
+    test_state = lib.template.states()
     rendered_state = test_state.render(args.test)
     print (simplejson.dumps(rendered_state,indent=4))
 
