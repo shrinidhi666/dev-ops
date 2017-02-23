@@ -55,7 +55,7 @@ else:
         print(sys.exc_info())
 
   if (args.delete):
-    accept_list = args.reject.split(",")
+    accept_list = args.delete.split(",")
     print(accept_list)
     for x in accept_list:
       try:
