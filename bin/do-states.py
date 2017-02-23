@@ -45,6 +45,13 @@ else:
         print (x +" : "+ validhosts[x])
     else:
       print("No valid hosts")
+
+    hosts_file = os.path.join(lib.constants.m_result_logs_dir,lib.constants.m_result_logs_prefix_hosts + lib.constants.m_result_logs_delimiter + uid)
+    hosts_file_fd = open(hosts_file,"w")
+    hosts_file_fd.write(simplejson.dumps(validhosts))
+    hosts_file_fd.flush()
+    hosts_file_fd.close()
+
     socket.close()
     lib.db_sqlite3.execute("insert into log "
                            "(request_id,state_name,topic) values "

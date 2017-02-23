@@ -36,6 +36,7 @@ hostname = socket.gethostname()
 ip = socket.gethostbyname(hostname)
 m_result_logs_dir = tempfile.gettempdir()
 m_result_logs_prefix = "devops.result"
+m_result_logs_prefix_hosts = "devops.hosts"
 m_result_logs_delimiter = default_delimiter
 s_process_lock_file = os.path.join(tempfile.gettempdir(),"devops.slave.process.lock")
 
