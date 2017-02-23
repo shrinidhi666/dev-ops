@@ -46,7 +46,7 @@ else:
     lib.db_sqlite3.execute("insert into log "
                            "(request_id,state_name,topic) values "
                            "(\"{0}\",\"{1}\",\"{2}\")".format(uid,args.state,args.hosts),
-                           db_file=lib.constants.mds_sqlite3_file)
+                           db_file=lib.constants.m_dostates_sqlite3_file)
     print(uid)
 
   elif(args.test):

@@ -31,7 +31,7 @@ class db(object):
     :return: connection object
     """
     if(not db_file):
-      db_file = lib.constants.m_sqlite3_file
+      db_file = lib.constants.m_keys_sqlite3_file
     lib.debug.debug("connecting to sqlite file :"+ db_file)
     try:
       conn = sqlite3.connect(db_file)
