@@ -44,30 +44,6 @@ else:
       data = simplejson.loads(fd.read())
       fd.close()
       print(simplejson.dumps(data,indent=4))
-      #
-      # for n in data: # hostname
-      #   print("\n")
-      #   print(n + " : ")
-      #   if(isinstance(data[n],dict)):
-      #     for o in data[n]: # state_name
-      #       print("  "+ str(o) +" : ")
-      #       if(isinstance(data[n][o],dict)):
-      #         for p in data[n][o]: # state_object
-      #           print("    " + str(p) + " : ")
-      #           if(isinstance(data[n][o][p],dict)):
-      #             for q in data[n][o][p]: # state_module
-      #               print("      " + str(q) + " : ")
-      #               if(isinstance(data[n][o][p][q],dict)):
-      #                 for r in data[n][o][p][q]: # state_module_output . should always have the output status at -1 index : 0 -> success else fail
-      #                   if(isinstance(data[n][o][p][q][r],list)):
-      #                     if (isinstance(data[n][o][p][q][r][0], list)):
-      #                       print("        " + str(r) + " : \n" + str(data[n][o][p][q][r][0][0]))
-      #                     if(data[n][o][p][q][r][-1] != 0):
-      #                       print ("          FAIL")
-      #                     else:
-      #                       print ("          SUCCESS")
-
-
 
 
 
