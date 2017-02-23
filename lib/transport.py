@@ -51,15 +51,21 @@ class publisher(object):
     lib.debug.debug("pinging : "+ str(topic) +" : "+ str(state_name))
     self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode("ping.wtf"))])
     rep_socks = dict(self.poller.poll(1*1000)) # 10s timeout in milliseconds
+    can_send_state = False
     if(rep_socks):
       for rep_sock in rep_socks:
         (request_id_rep,state_name_rep,msg_rep) = rep_sock.recv_multipart()
         rep_sock.send_multipart([request_id_rep,state_name,msg_rep])
+        msg_reved = simplejson.loads(msg_rep)
+        if(msg_reved['status'] == "free"):
+          can_send_state = True
+        else:
+          return(msg_reved['status'] +" : "+ msg_reved['request_id'])
 
     else:
       lib.debug.error(str(topic) +" : Timeout processing auth request")
       return("timeout")
-    if(state_name != "ping.wtf"):
+    if(state_name != "ping.wtf" and can_send_state):
       self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode(state_name))])
     return("success")
 
@@ -119,13 +125,28 @@ class subscriber(object):
         (topic, request_id, state_name) = self._socket_sub.recv_multipart()
         if(state_name == "ping.wtf"):
           lib.debug.debug("got ping.wtf priority msg!")
+          msg = {}
+          if(os.path.exists(lib.constants.s_process_lock_file)):
+            msg = simplejson.loads(open(lib.constants.s_process_lock_file,"r").read())
+            msg['status'] = "running"
+          else:
+            msg['status'] = "free"
+
+          msg_to_send = simplejson.dumps(msg)
           self._socket_req = self._context.socket(zmq.REQ)
           self._socket_req.connect("tcp://{0}:{1}".format(lib.config.slave_conf['master'], lib.config.slave_conf['master_ping_port']))
-          self._socket_req.send_multipart([bytes(unicode(request_id)), bytes(unicode(state_name)), bytes(unicode("ack"))])
+          self._socket_req.send_multipart([bytes(unicode(request_id)), bytes(unicode(state_name)), bytes(unicode(msg_to_send))])
           (request_id_recved) = self._socket_req.recv_multipart()
           self._socket_req.close()
         else:
           lib.debug.info ("{0} : {1} : {2}".format(topic,request_id,state_name))
+          slf = open(lib.constants.s_process_lock_file,"w")
+          state_running = {}
+          state_running['request_id'] = request_id
+          state_running['state'] = state_name
+          slf.write(simplejson.dumps(state_running))
+          slf.flush()
+          slf.close()
           process_thread = threading.Thread(target=self.process, args=(topic, request_id, state_name,))
           process_thread.start()
       # except KeyboardInterrupt:
