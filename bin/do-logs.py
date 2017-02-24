@@ -17,7 +17,7 @@ import simplejson
 parser = argparse.ArgumentParser()
 parser.add_argument("-l","--list",dest="list",action="store_true",help="list all the logs")
 parser.add_argument("-c","--clean",dest="clean",action="store_true",help="clean all the logs")
-parser.add_argument("-k","--keep",dest="keep",help="keep only the last <n> number of logs")
+parser.add_argument("-k","--keep",dest="keep",help="keep only the last <n> number of logs. delete the rest")
 parser.add_argument("-s","--show",dest="id",help="show the logs for id ...")
 parser.add_argument("-t","--tail",dest="tail",action="store_true",help="tail the logs")
 # parser.add_argument("-j","--jobs",dest="jobs")
