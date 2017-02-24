@@ -27,7 +27,7 @@ ulogs = {}
 for x in logs:
   ulogs[x.split(lib.constants.m_result_logs_delimiter)[-2]] = x
 if(args.list):
-  id_details = lib.db_sqlite3.execute("select * from log order by submit_time asc",
+  id_details = lib.db_sqlite3.execute("select * from log order by submit_time desc",
                                       db_file=lib.constants.m_dostates_sqlite3_file,
                                       dictionary=True)
 
