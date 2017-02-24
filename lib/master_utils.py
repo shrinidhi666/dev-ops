@@ -60,20 +60,20 @@ def event_handler(data):
     sys.path.append(even_root)
   if(event_high):
     for x in event_high:
-      # lib.debug.debug(str(x))
-      for event in x:
-        lib.debug.debug(x[event])
-        for event_key in x[event]:
-          # if(sys.modules.has_key(x[event][event_key]['import'])):
-          #   mod_import = "reload("+ x[event][event_key]['import'] +")"
-          # else:
-          mod_import = "import " + x[event][event_key]['import']
-          mod_run = "mod_ret = "+ x[event][event_key]['run'] + "(data)"
-          exec mod_import
-          lib.debug.debug("importing : "+ str(sys.modules[x[event][event_key]['import']].__file__))
-          exec mod_run
-          lib.debug.debug(mod_import +" : "+ mod_run)
-          lib.debug.debug(mod_ret)
+      if(x.has_key(data['event']['id'])):
+        for event in x:
+          lib.debug.debug(x[event])
+          for event_key in x[event]:
+            # if(sys.modules.has_key(x[event][event_key]['import'])):
+            #   mod_import = "reload("+ x[event][event_key]['import'] +")"
+            # else:
+            mod_import = "import " + x[event][event_key]['import']
+            mod_run = "mod_ret = "+ x[event][event_key]['run'] + "(data)"
+            exec mod_import
+            lib.debug.debug("importing : "+ str(sys.modules[x[event][event_key]['import']].__file__))
+            exec mod_run
+            lib.debug.debug(mod_import +" : "+ mod_run)
+            lib.debug.debug(mod_ret)
 
 
 
