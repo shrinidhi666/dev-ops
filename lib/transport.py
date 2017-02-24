@@ -21,6 +21,7 @@ sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
 import lib.debug
 import lib.constants
 import lib.config
+import lib.slave_utils
 import threading
 import simplejson
 
@@ -111,9 +112,27 @@ class subscriber(object):
   def process(self, topic, request_id,state_name):
     return state_name
 
+  def _fire_start_event(self):
+    event_data = {}
+    slaveconst = lib.slave_utils.slaveconst().slaveconst()
+    event_data['id'] = "/devops/slave/started"
+    slaveconst['event'] = event_data
+    try:
+      r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/event", data=simplejson.dumps(slaveconst))
+      r_content = r.content
+      lib.debug.debug(r_content)
+    except:
+      lib.debug.warn(str(sys.exc_info()))
+
 
   def _start(self):
     self._start_sub()
+
+
+
+
+
+
 
   def _start_sub(self):
     self._socket_sub = self._context.socket(zmq.SUB)
@@ -126,6 +145,7 @@ class subscriber(object):
     else:
       self._socket_sub.setsockopt(zmq.SUBSCRIBE, bytes(unicode(self._topic)))
       lib.debug.debug("connecting to topic : " + str(self._topic))
+    self._fire_start_event()
     while (True):
       try:
         (topic, request_id, state_name) = self._socket_sub.recv_multipart()
