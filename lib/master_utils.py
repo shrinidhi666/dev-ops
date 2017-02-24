@@ -52,6 +52,7 @@ def event_handler(data):
   # even_root = "/home/shrinidhi/bin/gitHub/dev-ops/tests/events_test"
   event_templates = lib.template.states(path=even_root) #lib.config.master_conf['events_root']
   event_high = event_templates.render("high",slaveconst=data)
+  lib.debug.debug(event_high)
   lib.debug.debug("got event : "+ data['event']['id'])
   try:
     sys.path.index(even_root)
