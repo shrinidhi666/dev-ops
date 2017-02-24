@@ -27,11 +27,12 @@ ulogs = {}
 for x in logs:
   ulogs[x.split(lib.constants.m_result_logs_delimiter)[-2]] = x
 if(args.list):
-  id_details = lib.db_sqlite3.execute("select * from log order by submit_time desc",
+  id_details = lib.db_sqlite3.execute("select * from log order by submit_time asc",
                                       db_file=lib.constants.m_dostates_sqlite3_file,
                                       dictionary=True)
 
   for x in id_details:
+    print("\n")
     print(simplejson.dumps(x,indent=4))
 else:
   if(args.id):
@@ -48,6 +49,7 @@ else:
       fd = open(f,"r")
       data = simplejson.loads(fd.read())
       fd.close()
+      print("\n")
       print(simplejson.dumps(data,indent=4))
 
 
