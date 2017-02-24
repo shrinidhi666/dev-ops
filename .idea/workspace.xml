@@ -32,8 +32,8 @@
       <file leaf-file-name="s_subscriber.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/slave/s_subscriber.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+            <state relative-caret-position="633">
+              <caret line="148" column="67" lean-forward="false" selection-start-line="148" selection-start-column="67" selection-end-line="148" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -897,13 +897,6 @@
       <option name="presentableId" value="Default" />
       <updated>1486396648675</updated>
     </task>
-    <task id="LOCAL-00027" summary="fixing">
-      <created>1487742788355</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1487742788355</updated>
-    </task>
     <task id="LOCAL-00028" summary="fixing">
       <created>1487744166304</created>
       <option name="number" value="00028" />
@@ -1240,7 +1233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487928293848</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="fixing">
+      <created>1487928424677</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1487928424677</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1690,8 +1690,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/slave/s_subscriber.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+        <state relative-caret-position="633">
+          <caret line="148" column="67" lean-forward="false" selection-start-line="148" selection-start-column="67" selection-end-line="148" selection-end-column="67" />
           <folding />
         </state>
       </provider>

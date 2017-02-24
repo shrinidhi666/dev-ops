@@ -143,7 +143,10 @@ if __name__ == '__main__':
     app_lock()
   except:
     sys.exit(0)
-
+  try:
+    os.remove(lib.constants.s_process_lock_file)
+  except:
+    lib.debug.warn("no file : "+ lib.constants.s_process_lock_file)
   register_host()
   start_sub()
 
