@@ -145,6 +145,7 @@ class subscriber(object):
     else:
       self._socket_sub.setsockopt(zmq.SUBSCRIBE, bytes(unicode(self._topic)))
       lib.debug.debug("connecting to topic : " + str(self._topic))
+    time.sleep(2)
     self._fire_start_event()
     while (True):
       try:
