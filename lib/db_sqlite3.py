@@ -34,7 +34,7 @@ class db(object):
       db_file = lib.constants.m_keys_sqlite3_file
     lib.debug.debug("connecting to sqlite file :"+ db_file)
     try:
-      conn = sqlite3.connect(db_file)
+      conn = sqlite3.connect(db_file,detect_types=sqlite3.PARSE_DECLTYPES|sqlite3.PARSE_COLNAMES)
       conn.isolation_level = None
       conn.row_factory = db.dict_factory
     except:

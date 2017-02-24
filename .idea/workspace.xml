@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e072f42f-b1e1-47d6-868c-ed9aebc0cf0c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/master_utils.py" afterPath="$PROJECT_DIR$/lib/master_utils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/db_sqlite3.py" afterPath="$PROJECT_DIR$/lib/db_sqlite3.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -63,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="master_utils.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="master_utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/master_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state relative-caret-position="443">
+              <caret line="67" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding>
                 <marker date="1487848840489" expanded="true" signature="511:545" ph="select * fro... slaves" />
                 <marker date="1487848840489" expanded="true" signature="696:730" ph="select * fro... slaves" />
@@ -75,6 +75,26 @@
                 <marker date="1487848840489" expanded="true" signature="970:990" ph="select * fro... slaves" />
                 <marker date="1487848840489" expanded="true" signature="1117:1151" ph="select * fro... slaves" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="high.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/events_test/high.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" column="53" lean-forward="false" selection-start-line="1" selection-start-column="53" selection-end-line="1" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db_sqlite3.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/db_sqlite3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="515">
+              <caret line="36" column="96" lean-forward="false" selection-start-line="36" selection-start-column="96" selection-end-line="36" selection-end-column="96" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -88,16 +108,6 @@
                 <marker date="1487848363902" expanded="true" signature="1751:1867" ph="insert into log... " />
                 <marker date="1487848363902" expanded="true" signature="1751:1889" ph="insert into log... " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="version.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/version.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -134,23 +144,6 @@
                 <marker date="1487848251993" expanded="true" signature="1430:1483" ph="select * fro... log" />
                 <marker date="1487848251993" expanded="true" signature="1430:1629" ph="select * fro... logs" />
                 <marker date="1487848251993" expanded="true" signature="1447:1468" ph="insert into log... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="do-keys.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/do-keys.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="717">
-              <caret line="57" column="29" lean-forward="false" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
-              <folding>
-                <marker date="1487820089662" expanded="true" signature="828:848" ph="select * fro... slaves" />
-                <marker date="1487820089662" expanded="true" signature="1101:1241" ph="update slave... " />
-                <marker date="1487820089662" expanded="true" signature="1441:1562" ph="update slave... " />
-                <marker date="1487820089662" expanded="true" signature="1767:1894" ph="update slave... " />
-                <marker date="1487820089662" expanded="true" signature="2095:2162" ph="delete from " />
-                <marker date="1487820089662" expanded="true" signature="2106:2162" ph="update slave... " />
               </folding>
             </state>
           </provider>
@@ -221,7 +214,6 @@
         <option value="$PROJECT_DIR$/tests/events_test/__init__.py" />
         <option value="$PROJECT_DIR$/tests/events_test/high.yml" />
         <option value="$PROJECT_DIR$/tests/events_test/fortest.py" />
-        <option value="$PROJECT_DIR$/lib/db_sqlite3.py" />
         <option value="$PROJECT_DIR$/lib/debug.py" />
         <option value="$PROJECT_DIR$/master/m_rest_api.py" />
         <option value="$PROJECT_DIR$/bin/do-keys.py" />
@@ -235,6 +227,7 @@
         <option value="$PROJECT_DIR$/bin/do-logs.py" />
         <option value="$PROJECT_DIR$/bin/do-states.py" />
         <option value="$PROJECT_DIR$/lib/master_utils.py" />
+        <option value="$PROJECT_DIR$/lib/db_sqlite3.py" />
       </list>
     </option>
   </component>
@@ -330,6 +323,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="level1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev-ops" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev-ops" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="events_test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -883,13 +894,6 @@
       <option name="presentableId" value="Default" />
       <updated>1486396648675</updated>
     </task>
-    <task id="LOCAL-00012" summary="fixing">
-      <created>1486542833406</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1486542833406</updated>
-    </task>
     <task id="LOCAL-00013" summary="fixing">
       <created>1486552980638</created>
       <option name="number" value="00013" />
@@ -1226,7 +1230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487848448937</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="fixing">
+      <created>1487848858492</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1487848858492</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1507,14 +1518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/events_test/high.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="53" lean-forward="false" selection-start-line="1" selection-start-column="53" selection-end-line="1" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/events_test/fortest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -1545,14 +1548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/db_sqlite3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="46" column="35" lean-forward="true" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1708,8 +1703,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/master_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+        <state relative-caret-position="443">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
             <marker date="1487848840489" expanded="true" signature="511:545" ph="select * fro... slaves" />
             <marker date="1487848840489" expanded="true" signature="696:730" ph="select * fro... slaves" />
@@ -1717,6 +1712,22 @@
             <marker date="1487848840489" expanded="true" signature="970:990" ph="select * fro... slaves" />
             <marker date="1487848840489" expanded="true" signature="1117:1151" ph="select * fro... slaves" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/events_test/high.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="53" lean-forward="false" selection-start-line="1" selection-start-column="53" selection-end-line="1" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/db_sqlite3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="36" column="96" lean-forward="false" selection-start-line="36" selection-start-column="96" selection-end-line="36" selection-end-column="96" />
+          <folding />
         </state>
       </provider>
     </entry>
