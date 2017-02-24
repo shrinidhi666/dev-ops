@@ -48,8 +48,8 @@ def get_slaves_match(match):
 
 
 def event_handler(data):
-  # even_root = lib.config.master_conf['events_root']
-  even_root = "/home/shrinidhi/bin/gitHub/dev-ops/tests/events_test"
+  even_root = lib.config.master_conf['events_root']
+  # even_root = "/home/shrinidhi/bin/gitHub/dev-ops/tests/events_test"
   event_templates = lib.template.states(path=even_root) #lib.config.master_conf['events_root']
   event_high = event_templates.render("high",slaveconst=data)
   try:

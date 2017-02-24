@@ -24,6 +24,7 @@ import lib.config
 import lib.slave_utils
 import threading
 import simplejson
+import requests
 
 
 class publisher(object):
@@ -113,6 +114,7 @@ class subscriber(object):
     return state_name
 
   def _fire_start_event(self):
+    time.sleep(2)
     event_data = {}
     slaveconst = lib.slave_utils.slaveconst().slaveconst()
     event_data['id'] = "/devops/slave/started"
@@ -146,7 +148,8 @@ class subscriber(object):
       self._socket_sub.setsockopt(zmq.SUBSCRIBE, bytes(unicode(self._topic)))
       lib.debug.debug("connecting to topic : " + str(self._topic))
     time.sleep(2)
-    self._fire_start_event()
+    fse = threading.Thread(target=self._fire_start_event)
+    fse.start()
     while (True):
       try:
         (topic, request_id, state_name) = self._socket_sub.recv_multipart()
