@@ -17,6 +17,7 @@ import simplejson
 parser = argparse.ArgumentParser()
 parser.add_argument("-l","--list",dest="list",action="store_true",help="list all the logs")
 parser.add_argument("-c","--clean",dest="clean",action="store_true",help="clean all the logs")
+parser.add_argument("-k","--keep",dest="keep",help="keep only the last <n> number of logs")
 parser.add_argument("-o","--order",dest="order",help="asc or dsc order")
 parser.add_argument("-s","--show",dest="id",help="show the logs for id ...")
 parser.add_argument("-t","--tail",dest="tail",action="store_true",help="tail the logs")
@@ -27,7 +28,7 @@ ulogs = {}
 for x in logs:
   ulogs[x.split(lib.constants.m_result_logs_delimiter)[-2]] = x
 if(args.list):
-  id_details = lib.db_sqlite3.execute("select * from log",
+  id_details = lib.db_sqlite3.execute("select * from log order by submit_time",
                                       db_file=lib.constants.m_dostates_sqlite3_file,
                                       dictionary=True)
 
