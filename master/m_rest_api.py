@@ -33,17 +33,9 @@ def states(hostid,state,isfile):
   # lib.debug.debug(state)
   # lib.debug.debug(isfile)
   # lib.debug.debug(slaveconst)
-  if(int(isfile)):
-    try:
-      ret_state_details = all_states.render(unicode(state), slaveconst=slaveconst, masterconst=masterconst,is_file=True)
-      # lib.debug.debug(ret_state_details)
-    except:
-      return (unicode(sys.exc_info()))
-    return unicode(ret_state_details)
-  else:
-    ret_state_details = all_states.render(unicode(state), slaveconst=slaveconst,masterconst=masterconst)
-    # lib.debug.debug(ret_state_details)
-    return simplejson.dumps(ret_state_details)
+  ret_state_details = all_states.render(unicode(state), slaveconst=slaveconst,masterconst=masterconst)
+  # lib.debug.debug(ret_state_details)
+  return simplejson.dumps(ret_state_details)
 
 @app.route('/filesync',methods=['POST'])
 def filesync():
