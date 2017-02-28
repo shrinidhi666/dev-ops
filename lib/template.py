@@ -15,7 +15,7 @@ import jinja2
 import yaml
 import copy
 import simplejson
-
+import re
 
 # def list_dirs(startpath):
 #   ret_dirs = [startpath]
@@ -84,7 +84,7 @@ class states(root):
             lib.debug.debug(key)
             ret_loader[key] = unicode(x)
         else:
-          key = unicode(x).rstrip(".yml").replace("/", ".")
+          key = unicode(x)[:-4].replace("/", ".")
           if(key):
             lib.debug.debug(key)
             ret_loader[key] = unicode(x)
