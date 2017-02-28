@@ -79,7 +79,7 @@ class states(root):
     for x in self._loader.list_templates():
       if (unicode(x).endswith(".yml")):
         if (unicode(x).split("/")[-1] == "init.yml"):
-          key = unicode(x).rstrip("/init.yml").replace("/", ".")
+          key = unicode(x)[:-9].replace("/", ".")
           if(key):
             lib.debug.debug(key)
             ret_loader[key] = unicode(x)
