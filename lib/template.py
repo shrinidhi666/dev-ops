@@ -86,6 +86,7 @@ class states(root):
           key = unicode(x).rstrip('.yml').replace("/", ".")
           if(key):
             ret_loader[key] = unicode(x)
+    lib.debug.debug(ret_loader)
     return (ret_loader)
 
   def render(self, path, slaveconst={}, masterconst={}, is_file=False,cyclic_test={},is_recursive=False):
