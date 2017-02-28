@@ -131,8 +131,8 @@ class states(root):
               return_obj.append(yml_obj)
 
           # return_obj = yml_objs
-        if(not is_recursive):
-          cyclic_test.clear()
+      if(not is_recursive):
+        cyclic_test.clear()
 
       return (return_obj)
     else:

@@ -33,7 +33,11 @@ def states(hostid,state,isfile):
   # lib.debug.debug(state)
   # lib.debug.debug(isfile)
   # lib.debug.debug(slaveconst)
-  ret_state_details = all_states.render(unicode(state), slaveconst=slaveconst,masterconst=masterconst)
+  try:
+    ret_state_details = all_states.render(unicode(state), slaveconst=slaveconst,masterconst=masterconst)
+  except:
+    lib.debug.debug(sys.exc_info())
+    return(str(sys.exc_info()))
   # lib.debug.debug(ret_state_details)
   return simplejson.dumps(ret_state_details)
 
@@ -43,7 +47,11 @@ def filesync():
   masterconst = lib.master_utils.masterconst().masterconst()
   all_states = lib.template.states()
   state = slaveconst['file.sync']
-  ret_state_details = all_states.render(unicode(state), slaveconst=slaveconst, masterconst=masterconst, is_file=True)
+  try:
+    ret_state_details = all_states.render(unicode(state), slaveconst=slaveconst, masterconst=masterconst, is_file=True)
+  except:
+    lib.debug.debug(sys.exc_info())
+    return(str(sys.exc_info()))
   return (ret_state_details)
 
 
