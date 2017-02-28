@@ -77,14 +77,14 @@ class states(root):
     # self._env = jinja2.Environment(loader=self._loader, trim_blocks=True)
     ret_loader = {}
     for x in self._loader.list_templates():
-      if (unicode(x).endswith('.yml')):
+      if (unicode(x).endswith(".yml")):
         if (unicode(x).split("/")[-1] == "init.yml"):
-          key = unicode(x).rstrip('/init.yml').replace("/", ".")
+          key = unicode(x).rstrip("/init.yml").replace("/", ".")
           if(key):
             lib.debug.debug(key)
             ret_loader[key] = unicode(x)
         else:
-          key = unicode(x).rstrip('.yml').replace("/", ".")
+          key = unicode(x).rstrip(".yml").replace("/", ".")
           if(key):
             lib.debug.debug(key)
             ret_loader[key] = unicode(x)
