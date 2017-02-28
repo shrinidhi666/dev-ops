@@ -70,8 +70,10 @@ class file(object):
       if(source.startswith("devops://")):
         try:
           slaveconst = lib.slave_utils.slaveconst().slaveconst()
+
           source_dry = str(source).replace("devops://","")
-          r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.constants.hostname + "/" + source_dry +"/1", data=simplejson.dumps(slaveconst))
+          slaveconst['file.sync'] = source_dry
+          r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/filesync", data=simplejson.dumps(slaveconst))
           file_data = r.content
           if(backup):
             if(os.path.exists(dest)):

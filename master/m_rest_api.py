@@ -45,6 +45,17 @@ def states(hostid,state,isfile):
     # lib.debug.debug(ret_state_details)
     return simplejson.dumps(ret_state_details)
 
+@app.route('/filesync',methods=['POST'])
+def filesync():
+  slaveconst = simplejson.loads(flask.request.data)
+  masterconst = lib.master_utils.masterconst().masterconst()
+  all_states = lib.template.states()
+  state = slaveconst['file.sync']
+  ret_state_details = all_states.render(unicode(state), slaveconst=slaveconst, masterconst=masterconst, is_file=True)
+  return simplejson.dumps(ret_state_details)
+
+
+
 
 @app.route('/high/<hostid>',methods=['POST'])
 def high(hostid):
