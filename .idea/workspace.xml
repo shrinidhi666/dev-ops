@@ -4,7 +4,6 @@
     <list default="true" id="e072f42f-b1e1-47d6-868c-ed9aebc0cf0c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/template.py" afterPath="$PROJECT_DIR$/lib/template.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/master/m_rest_api.py" afterPath="$PROJECT_DIR$/master/m_rest_api.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -97,8 +96,8 @@
       <file leaf-file-name="template.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/template.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="134" column="27" lean-forward="false" selection-start-line="133" selection-start-column="6" selection-end-line="134" selection-end-column="27" />
+            <state relative-caret-position="281">
+              <caret line="100" column="29" lean-forward="false" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -1086,13 +1085,6 @@
       <option name="presentableId" value="Default" />
       <updated>1486396648675</updated>
     </task>
-    <task id="LOCAL-00044" summary="fixing">
-      <created>1487820058664</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1487820058664</updated>
-    </task>
     <task id="LOCAL-00045" summary="fixing">
       <created>1487820095575</created>
       <option name="number" value="00045" />
@@ -1429,7 +1421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488280214250</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="fixing">
+      <created>1488281470492</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1488281470492</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1870,8 +1869,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/template.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="134" column="27" lean-forward="false" selection-start-line="133" selection-start-column="6" selection-end-line="134" selection-end-column="27" />
+        <state relative-caret-position="281">
+          <caret line="100" column="29" lean-forward="false" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
           <folding />
         </state>
       </provider>

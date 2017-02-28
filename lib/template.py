@@ -98,6 +98,7 @@ class states(root):
       template_file = self.list[path]
       if(is_recursive):
         if (cyclic_test.has_key(template_file)):
+          cyclic_test.clear()
           raise Exception("cyclic redundancy : " + str(template_file))
       cyclic_test[template_file] = 1
       template_env = self._env.get_template(template_file)
