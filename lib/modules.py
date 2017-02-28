@@ -65,6 +65,7 @@ class file(object):
   @staticmethod
   def sync(user=None,group=None,mode=None,source=None,dest=None,backup=True,template=True):
     returner = {}
+    lib.debug.debug(source)
     if(source):
       if(source.startswith("devops://")):
         try:
