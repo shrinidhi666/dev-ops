@@ -36,13 +36,13 @@ def states(hostid,state,isfile):
   if(int(isfile)):
     try:
       ret_state_details = all_states.render(unicode(state), slaveconst=slaveconst, masterconst=masterconst,is_file=True)
-      lib.debug.debug(ret_state_details)
+      # lib.debug.debug(ret_state_details)
     except:
       return (unicode(sys.exc_info()))
     return unicode(ret_state_details)
   else:
     ret_state_details = all_states.render(unicode(state), slaveconst=slaveconst,masterconst=masterconst)
-    lib.debug.debug(ret_state_details)
+    # lib.debug.debug(ret_state_details)
     return simplejson.dumps(ret_state_details)
 
 
