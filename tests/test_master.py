@@ -21,8 +21,8 @@ hostname =  socket.gethostname()
 ip = socket.gethostbyname(hostname)
 testdata = lib.slave_utils.slaveconst().slaveconst()
 testdata['wtf'] = 'wtf1'
-r = requests.post("http://devops:"+ str(lib.config.slave_conf['master_rest_port']) +"/high/"+ hostname ,data=simplejson.dumps(testdata))
-# lib.debug.debug(r.content)
+r = requests.post("http://devops:"+ str(lib.config.slave_conf['master_rest_port']) +"/states/"+ hostname +"/browsers.firefox.firefox-firejail/0",data=simplejson.dumps(testdata))
+lib.debug.debug(r.content)
 try:
   work = simplejson.loads(r.content)
   for x in work:
