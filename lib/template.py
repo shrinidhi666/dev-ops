@@ -81,10 +81,12 @@ class states(root):
         if (unicode(x).split("/")[-1] == "init.yml"):
           key = unicode(x).rstrip('/init.yml').replace("/", ".")
           if(key):
+            lib.debug.debug(key)
             ret_loader[key] = unicode(x)
         else:
           key = unicode(x).rstrip('.yml').replace("/", ".")
           if(key):
+            lib.debug.debug(key)
             ret_loader[key] = unicode(x)
     lib.debug.debug(ret_loader)
     return (ret_loader)
