@@ -66,6 +66,22 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="do-keys.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/do-keys.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="57" column="29" lean-forward="false" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
+              <folding>
+                <marker date="1487820089662" expanded="true" signature="828:848" ph="select * fro... slaves" />
+                <marker date="1487820089662" expanded="true" signature="1101:1241" ph="update slave... " />
+                <marker date="1487820089662" expanded="true" signature="1441:1562" ph="update slave... " />
+                <marker date="1487820089662" expanded="true" signature="1767:1894" ph="update slave... " />
+                <marker date="1487820089662" expanded="true" signature="2095:2162" ph="delete from " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="test_master.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/test_master.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -99,7 +115,7 @@
       <file leaf-file-name="template.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/template.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
+            <state relative-caret-position="47">
               <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
               <folding />
             </state>
@@ -110,7 +126,7 @@
         <entry file="file://$PROJECT_DIR$/lib/debug.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
-              <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+              <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -121,16 +137,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_master_event.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/test_master_event.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -1085,13 +1091,6 @@
       <option name="presentableId" value="Default" />
       <updated>1486396648675</updated>
     </task>
-    <task id="LOCAL-00036" summary="fixing">
-      <created>1487751744579</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1487751744579</updated>
-    </task>
     <task id="LOCAL-00037" summary="fixing">
       <created>1487751797813</created>
       <option name="number" value="00037" />
@@ -1428,7 +1427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488264345713</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="fixing">
+      <created>1488268833581</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1488268833581</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1603,13 +1609,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/install-devops.py" />
-    <entry file="file://$PROJECT_DIR$/bin/do-keys.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="57" column="29" lean-forward="false" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/version.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -1849,9 +1848,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bin/do-keys.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="57" column="29" lean-forward="false" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
+          <folding>
+            <marker date="1487820089662" expanded="true" signature="828:848" ph="select * fro... slaves" />
+            <marker date="1487820089662" expanded="true" signature="1101:1241" ph="update slave... " />
+            <marker date="1487820089662" expanded="true" signature="1441:1562" ph="update slave... " />
+            <marker date="1487820089662" expanded="true" signature="1767:1894" ph="update slave... " />
+            <marker date="1487820089662" expanded="true" signature="2095:2162" ph="delete from " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/template.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
+        <state relative-caret-position="47">
           <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding />
         </state>
@@ -1860,7 +1873,7 @@
     <entry file="file://$PROJECT_DIR$/lib/debug.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
-          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
           <folding />
         </state>
       </provider>
