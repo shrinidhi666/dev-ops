@@ -21,7 +21,8 @@ hostname =  socket.gethostname()
 ip = socket.gethostbyname(hostname)
 testdata = lib.slave_utils.slaveconst().slaveconst()
 testdata['wtf'] = 'wtf1'
-r = requests.post("http://devops:"+ str(lib.config.slave_conf['master_rest_port']) +"/states/"+ hostname +"/files/firefox/1",data=simplejson.dumps(testdata))
+testdata['file.sync'] = "files/firefox"
+r = requests.post("http://devops:"+ str(lib.config.slave_conf['master_rest_port']) +"/filesync",data=simplejson.dumps(testdata))
 lib.debug.debug(r.content)
 try:
   work = simplejson.loads(r.content)

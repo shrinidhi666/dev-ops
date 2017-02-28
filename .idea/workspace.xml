@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e072f42f-b1e1-47d6-868c-ed9aebc0cf0c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/modules.py" afterPath="$PROJECT_DIR$/lib/modules.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/master/m_rest_api.py" afterPath="$PROJECT_DIR$/master/m_rest_api.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_master.py" afterPath="$PROJECT_DIR$/tests/test_master.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,7 +17,7 @@
     <SUITE FILE_PATH="coverage/dev-ops$m_publisher.coverage" NAME="m_publisher Coverage Results" MODIFIED="1486722858861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/master" />
     <SUITE FILE_PATH="coverage/dev-ops$master_utils_test.coverage" NAME="master_utils_test Coverage Results" MODIFIED="1487658442835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/dev-ops$template_test.coverage" NAME="template_test Coverage Results" MODIFIED="1487307195331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/dev-ops$test_master.coverage" NAME="test_master Coverage Results" MODIFIED="1488274688165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/dev-ops$test_master.coverage" NAME="test_master Coverage Results" MODIFIED="1488277611851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/dev-ops$m_rest_api.coverage" NAME="m_rest_api Coverage Results" MODIFIED="1487559396912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/master" />
     <SUITE FILE_PATH="coverage/dev-ops$master_utils.coverage" NAME="master_utils Coverage Results" MODIFIED="1487647763912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
     <SUITE FILE_PATH="coverage/dev-ops$slave_utils.coverage" NAME="slave_utils Coverage Results" MODIFIED="1487326430074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
@@ -50,15 +50,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="m_rest_api.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="m_rest_api.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/master/m_rest_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="54" column="44" lean-forward="false" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
+            <state relative-caret-position="425">
+              <caret line="54" column="28" lean-forward="true" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
               <folding>
-                <marker date="1488276657655" expanded="true" signature="2937:3024" ph="insert into slaves... " />
-                <marker date="1488276657655" expanded="true" signature="3243:3315" ph="insert into slaves... " />
-                <marker date="1488276657655" expanded="true" signature="3598:3632" ph="select * fro... slaves" />
+                <marker date="1488277799328" expanded="true" signature="2921:3008" ph="insert into slaves... " />
+                <marker date="1488277799328" expanded="true" signature="3227:3299" ph="insert into slaves... " />
+                <marker date="1488277799328" expanded="true" signature="3582:3616" ph="select * fro... slaves" />
               </folding>
             </state>
           </provider>
@@ -98,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/tests/test_master.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="23" column="123" lean-forward="false" selection-start-line="23" selection-start-column="123" selection-end-line="23" selection-end-column="123" />
+              <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -117,7 +117,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modules.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="modules.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/modules.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
@@ -217,9 +217,9 @@
         <option value="$PROJECT_DIR$/slave/s_subscriber.py" />
         <option value="$PROJECT_DIR$/lib/template.py" />
         <option value="$PROJECT_DIR$/lib/debug.py" />
+        <option value="$PROJECT_DIR$/lib/modules.py" />
         <option value="$PROJECT_DIR$/tests/test_master.py" />
         <option value="$PROJECT_DIR$/master/m_rest_api.py" />
-        <option value="$PROJECT_DIR$/lib/modules.py" />
       </list>
     </option>
   </component>
@@ -1086,13 +1086,6 @@
       <option name="presentableId" value="Default" />
       <updated>1486396648675</updated>
     </task>
-    <task id="LOCAL-00041" summary="fixing">
-      <created>1487753895702</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1487753895702</updated>
-    </task>
     <task id="LOCAL-00042" summary="fixing">
       <created>1487753925816</created>
       <option name="number" value="00042" />
@@ -1429,7 +1422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488275281611</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="fixing">
+      <created>1488277259516</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1488277259516</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1840,14 +1840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_master.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="23" column="123" lean-forward="false" selection-start-line="23" selection-start-column="123" selection-end-line="23" selection-end-column="123" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/processor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-144">
@@ -1856,15 +1848,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/master/m_rest_api.py">
+    <entry file="file://$PROJECT_DIR$/tests/test_master.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="54" column="44" lean-forward="false" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
-          <folding>
-            <marker date="1488276657655" expanded="true" signature="2937:3024" ph="insert into slaves... " />
-            <marker date="1488276657655" expanded="true" signature="3243:3315" ph="insert into slaves... " />
-            <marker date="1488276657655" expanded="true" signature="3598:3632" ph="select * fro... slaves" />
-          </folding>
+        <state relative-caret-position="378">
+          <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1873,6 +1861,18 @@
         <state relative-caret-position="252">
           <caret line="75" column="140" lean-forward="false" selection-start-line="75" selection-start-column="140" selection-end-line="75" selection-end-column="140" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/master/m_rest_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="54" column="28" lean-forward="true" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+          <folding>
+            <marker date="1488277799328" expanded="true" signature="2921:3008" ph="insert into slaves... " />
+            <marker date="1488277799328" expanded="true" signature="3227:3299" ph="insert into slaves... " />
+            <marker date="1488277799328" expanded="true" signature="3582:3616" ph="select * fro... slaves" />
+          </folding>
         </state>
       </provider>
     </entry>

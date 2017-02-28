@@ -52,7 +52,7 @@ def filesync():
   all_states = lib.template.states()
   state = slaveconst['file.sync']
   ret_state_details = all_states.render(unicode(state), slaveconst=slaveconst, masterconst=masterconst, is_file=True)
-  return simplejson.dumps(ret_state_details)
+  return (ret_state_details)
 
 
 
