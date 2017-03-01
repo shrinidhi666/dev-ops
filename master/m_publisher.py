@@ -32,7 +32,7 @@ def publisher():
       hostemp = lib.master_utils.get_slaves_match(h)
       if (hostemp):
         for ht in hostemp:
-          hosts.append(ht['hostname'])
+          hosts.append(ht['hostid'])
 
     for x in hosts:
       result = pub.publish(x, state, request_id)

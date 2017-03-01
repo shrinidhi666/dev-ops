@@ -134,7 +134,7 @@ def register_host():
 
 def start_sub(q=None):
 
-  sub = slave_sub(topic=[lib.constants.hostname,lib.constants.ip])
+  sub = slave_sub(topic=[lib.slave_utils.hostid()])
 
 
 if __name__ == '__main__':

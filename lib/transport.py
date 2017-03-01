@@ -53,8 +53,9 @@ class publisher(object):
 
     lib.debug.debug("pinging : "+ str(topic) +" : "+ str(state_name))
     self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode("ping.wtf"))])
+    rep_socks = {}
     rep_socks = dict(self.poller.poll(1*1000)) # 10s timeout in milliseconds
-    can_send_state = False
+    hosts_in_topic = {}
     if(rep_socks):
       for rep_sock in rep_socks:
         (request_id_rep,state_name_rep,msg_rep) = rep_sock.recv_multipart()
@@ -63,19 +64,21 @@ class publisher(object):
         try:
           msg_reved = simplejson.loads(msg_rep)
           if(msg_reved['status'] == "free"):
-            can_send_state = True
+            if (state_name != "ping.wtf"):
+              self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode(state_name))])
+            hosts_in_topic[msg_reved['hostid']] = msg_reved['status']
           else:
-            return(msg_reved['status'] +" : "+ msg_reved['request_id'])
+            hosts_in_topic[msg_reved['hostid']] = msg_reved['status'] +" : "+ msg_reved['request_id']
         except:
           lib.debug.error(str(state_name) + " : "+ str(request_id) +" : "+ str(sys.exc_info()))
-          return (str(state_name) + " : " + str(request_id) + " : " + str(sys.exc_info()))
+          hosts_in_topic[msg_reved['hostid']] = str(state_name) + " : " + str(request_id) + " : " + str(sys.exc_info())
 
     else:
       lib.debug.error(str(topic) +" : Timeout processing auth request")
-      return("timeout")
-    if(state_name != "ping.wtf" and can_send_state):
-      self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode(state_name))])
-    return("success")
+      hosts_in_topic[str(topic]]  = "timeout"
+    return(hosts_in_topic)
+
+
 
   def __del__(self):
     try:
@@ -164,7 +167,7 @@ class subscriber(object):
           msg_to_send = simplejson.dumps(msg)
           self._socket_req = self._context.socket(zmq.REQ)
           self._socket_req.connect("tcp://{0}:{1}".format(lib.config.slave_conf['master'], lib.config.slave_conf['master_ping_port']))
-          self._socket_req.send_multipart([bytes(unicode(request_id)), bytes(unicode(state_name)), bytes(unicode(msg_to_send))])
+          self._socket_req.send_multipart([bytes(unicode(request_id)), bytes(unicode(state_name)),bytes(unicode(topic)), bytes(unicode(msg_to_send))])
           (request_id_recved) = self._socket_req.recv_multipart()
           self._socket_req.close()
         else:
@@ -209,7 +212,7 @@ class server(object):
       self._context = zmq.Context()
     else:
       self._context = context
-    self._port = lib.config.master_conf['master_ping_returner_port']
+    self._port = lib.config.master_conf['master_ping_port']
 
 
   def process(self,received):
@@ -226,6 +229,20 @@ class server(object):
     socket.poll(timeout=1)
     socket.connect(worker_url)
 
+    while True:
+      (request_id_rep, state_name_rep, topic_rep, msg_rep) = socket.recv_multipart()
+      rep_sock.send_multipart([request_id_rep, state_name, msg_rep])
+      lib.debug.debug(msg_rep)
+      try:
+        msg_reved = simplejson.loads(msg_rep)
+        if (msg_reved['status'] == "free"):
+          hosts_recieved[msg_reved['hostid']] = msg_reved
+          lib.debug.debug("sending state : " + state_name_rep + " : ")
+        else:
+          return (msg_reved['status'] + " : " + msg_reved['request_id'])
+      except:
+        lib.debug.error(str(state_name) + " : " + str(request_id) + " : " + str(sys.exc_info()))
+        return (str(state_name) + " : " + str(request_id) + " : " + str(sys.exc_info()))
 
     while True:
       received = socket.recv_multipart()

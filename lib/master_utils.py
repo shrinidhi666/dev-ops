@@ -40,7 +40,7 @@ def get_slaves_match(match):
   if(data):
     for x in data:
       # lib.debug.debug(x)
-      if(fnmatch.fnmatch(x['hostname'],match) or fnmatch.fnmatch(x['ip'],match)):
+      if(fnmatch.fnmatch(x['hostname'],match) or fnmatch.fnmatch(x['ip'],match) or fnmatch.fnmatch(x['hostid'],match)):
         matched_data.append(x)
 
   return(matched_data)

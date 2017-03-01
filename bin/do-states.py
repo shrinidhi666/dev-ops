@@ -42,7 +42,7 @@ else:
     validhosts = socket.recv_pyobj()
     if(validhosts):
       for x in validhosts:
-        print (x +" : "+ validhosts[x])
+        print (x +" : "+ simplejson.dumps(validhosts[x],indent=4))
     else:
       print("No valid hosts")
 
