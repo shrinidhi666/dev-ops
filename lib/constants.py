@@ -16,7 +16,7 @@ import sqlite3
 import socket
 import tempfile
 import requests
-import lib.config
+import config
 
 # DO NOT PUT ANYTHING THATS SUPPOSED TO BE IN A CONFIG FILE HERE
 # IE: NOTHING SHOULD BE HERE THAT GENERATED DYNAMICALLY.
@@ -37,7 +37,7 @@ s_backup_dir = os.path.join(slavedir, "backup")
 hostname = socket.gethostname()
 while(True):
   try:
-    ip = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/getmyip").content
+    ip = requests.post("http://" + config.slave_conf['master'] + ":" + str(config.slave_conf['master_rest_port']) + "/getmyip").content
     break
   except:
     lib.debug.info(sys.exc_info())
