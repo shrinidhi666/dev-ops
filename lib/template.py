@@ -86,7 +86,7 @@ class states(root):
           key = unicode(x)[:-4].replace("/", ".")
           if(key):
             ret_loader[key] = unicode(x)
-    lib.debug.debug(ret_loader)
+    # lib.debug.debug(ret_loader)
     return (ret_loader)
 
   def render(self, path, slaveconst={}, masterconst={}, is_file=False,cyclic_test={},is_recursive=False):
