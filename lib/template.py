@@ -99,6 +99,7 @@ class states(root):
       if(is_recursive):
         if (cyclic_test.has_key(template_file)):
           cyclic_test.clear()
+          lib.debug.error("cyclic redundancy : " + str(template_file))
           raise Exception("cyclic redundancy : " + str(template_file))
       cyclic_test[template_file] = 1
       template_env = self._env.get_template(template_file)

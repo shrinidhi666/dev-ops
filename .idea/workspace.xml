@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e072f42f-b1e1-47d6-868c-ed9aebc0cf0c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slave/s_subscriber.py" afterPath="$PROJECT_DIR$/slave/s_subscriber.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/template.py" afterPath="$PROJECT_DIR$/lib/template.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,12 +29,24 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="s_subscriber.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="s_subscriber.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/slave/s_subscriber.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
               <caret line="120" column="48" lean-forward="true" selection-start-line="120" selection-start-column="48" selection-end-line="120" selection-end-column="48" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="do-states.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bin/do-states.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="407">
+              <caret line="64" column="36" lean-forward="false" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="36" />
+              <folding>
+                <marker date="1487848363902" expanded="true" signature="1751:1889" ph="insert into log... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -69,16 +81,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="processor.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/processor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="m_rest_api.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/master/m_rest_api.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -106,8 +108,8 @@
       <file leaf-file-name="template.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/template.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1782">
-              <caret line="100" column="29" lean-forward="false" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
+            <state relative-caret-position="281">
+              <caret line="101" column="70" lean-forward="true" selection-start-line="101" selection-start-column="70" selection-end-line="101" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -212,11 +214,11 @@
         <option value="$PROJECT_DIR$/lib/debug.py" />
         <option value="$PROJECT_DIR$/lib/modules.py" />
         <option value="$PROJECT_DIR$/tests/test_master.py" />
-        <option value="$PROJECT_DIR$/lib/template.py" />
         <option value="$PROJECT_DIR$/master/m_rest_api.py" />
         <option value="$PROJECT_DIR$/lib/slave_utils.py" />
         <option value="$PROJECT_DIR$/lib/constants.py" />
         <option value="$PROJECT_DIR$/slave/s_subscriber.py" />
+        <option value="$PROJECT_DIR$/lib/template.py" />
       </list>
     </option>
   </component>
@@ -971,13 +973,6 @@
       <option name="presentableId" value="Default" />
       <updated>1486396648675</updated>
     </task>
-    <task id="LOCAL-00054" summary="fixing">
-      <created>1487828409340</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1487828409340</updated>
-    </task>
     <task id="LOCAL-00055" summary="fixing">
       <created>1487830711453</created>
       <option name="number" value="00055" />
@@ -1314,7 +1309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488341065662</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="fixing">
+      <created>1488363132958</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1488363132959</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1623,13 +1625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/do-states.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-151">
-          <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/master/m_publisher.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
@@ -1658,14 +1653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1332">
           <caret line="75" column="140" lean-forward="false" selection-start-line="75" selection-start-column="140" selection-end-line="75" selection-end-column="140" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/template.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1782">
-          <caret line="100" column="29" lean-forward="false" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1719,6 +1706,24 @@
         <state relative-caret-position="306">
           <caret line="120" column="48" lean-forward="true" selection-start-line="120" selection-start-column="48" selection-end-line="120" selection-end-column="48" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/template.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="101" column="70" lean-forward="true" selection-start-line="101" selection-start-column="70" selection-end-line="101" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/do-states.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="64" column="36" lean-forward="false" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="36" />
+          <folding>
+            <marker date="1487848363902" expanded="true" signature="1751:1889" ph="insert into log... " />
+          </folding>
         </state>
       </provider>
     </entry>
