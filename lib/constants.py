@@ -16,7 +16,6 @@ import sqlite3
 import socket
 import tempfile
 import requests
-import config
 
 # DO NOT PUT ANYTHING THATS SUPPOSED TO BE IN A CONFIG FILE HERE
 # IE: NOTHING SHOULD BE HERE THAT GENERATED DYNAMICALLY.
@@ -35,12 +34,10 @@ m_dostates_sqlite3_file = os.path.join(masterdir, "sqlite", "do-states.sqlite3")
 s_slaveconst_dir = os.path.join(slavedir, "slaveconst")
 s_backup_dir = os.path.join(slavedir, "backup")
 hostname = socket.gethostname()
-while(True):
-  try:
-    ip = requests.post("http://" + config.slave_conf['master'] + ":" + str(config.slave_conf['master_rest_port']) + "/getmyip").content
-    break
-  except:
-    lib.debug.info(sys.exc_info())
+try:
+  ip = requests.post("http://" + config.slave_conf['master'] + ":" + str(config.slave_conf['master_rest_port']) + "/getmyip").content
+except:
+  lib.debug.info(sys.exc_info())
 
 m_result_logs_dir = tempfile.gettempdir()
 m_result_logs_prefix = "devops.result"

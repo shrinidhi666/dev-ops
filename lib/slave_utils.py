@@ -62,7 +62,7 @@ def hostid():
   if(lib.config.slave_conf.has_key('id')):
     return(lib.config.slave_conf['hostid'])
   else:
-    return(hashlib.sha512(lib.constants.ip).hexdigest())
+    return(hashlib.sha512(lib.constants.hostname).hexdigest())
 
 
 
