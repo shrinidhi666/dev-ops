@@ -55,6 +55,11 @@ def filesync():
   return (ret_state_details)
 
 
+@app.route('/getmyip',methods=['GET'])
+def getmyip():
+  return (flask.request.remote_addr)
+
+
 
 
 @app.route('/high/<hostid>',methods=['POST'])
