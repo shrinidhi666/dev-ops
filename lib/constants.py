@@ -33,7 +33,13 @@ m_dostates_sqlite3_file = os.path.join(masterdir, "sqlite", "do-states.sqlite3")
 s_slaveconst_dir = os.path.join(slavedir, "slaveconst")
 s_backup_dir = os.path.join(slavedir, "backup")
 hostname = socket.gethostname()
-ip = socket.gethostbyname(hostname)
+while(True):
+  try:
+    ip = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/getmyip").content
+    break
+  except:
+    lib.debug.info(sys.exc_info())
+
 m_result_logs_dir = tempfile.gettempdir()
 m_result_logs_prefix = "devops.result"
 m_result_logs_prefix_hosts = "devops.hosts"
