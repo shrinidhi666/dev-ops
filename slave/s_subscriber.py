@@ -120,7 +120,6 @@ def register_host():
   slavedata['hostid'] = lib.slave_utils.hostid()
   slavedata['hostname'] = lib.constants.hostname
   slavedata['ip'] = lib.constants.ip
-
   lib.debug.info(slavedata)
   while(True):
     try:
