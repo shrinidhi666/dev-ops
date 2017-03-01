@@ -16,6 +16,7 @@ import sqlite3
 import socket
 import tempfile
 import requests
+import lib.config
 
 # DO NOT PUT ANYTHING THATS SUPPOSED TO BE IN A CONFIG FILE HERE
 # IE: NOTHING SHOULD BE HERE THAT GENERATED DYNAMICALLY.
