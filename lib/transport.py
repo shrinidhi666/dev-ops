@@ -67,6 +67,7 @@ class publisher(object):
             hosts_in_topic[msg_reved['hostid']] = msg_reved['status']
             if (state_name != "ping.wtf"):
               self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode(state_name))])
+              hosts_in_topic[msg_reved['hostid']] = "success"
           else:
             hosts_in_topic[msg_reved['hostid']] = msg_reved['status'] +" : "+ msg_reved['request_id']
         except:
