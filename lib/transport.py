@@ -58,24 +58,24 @@ class publisher(object):
     hosts_in_topic = {}
     if(rep_socks):
       for rep_sock in rep_socks:
-        (request_id_rep,state_name_rep,msg_rep) = rep_sock.recv_multipart()
+        (request_id_rep,state_name_rep,topic_rep,msg_rep) = rep_sock.recv_multipart()
         rep_sock.send_multipart([request_id_rep,state_name,msg_rep])
         lib.debug.debug(msg_rep)
         try:
           msg_reved = simplejson.loads(msg_rep)
           if(msg_reved['status'] == "free"):
+            hosts_in_topic[msg_reved['hostid']] = msg_reved['status']
             if (state_name != "ping.wtf"):
               self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode(state_name))])
-            hosts_in_topic[msg_reved['hostid']] = msg_reved['status']
           else:
             hosts_in_topic[msg_reved['hostid']] = msg_reved['status'] +" : "+ msg_reved['request_id']
         except:
           lib.debug.error(str(state_name) + " : "+ str(request_id) +" : "+ str(sys.exc_info()))
           hosts_in_topic[msg_reved['hostid']] = str(state_name) + " : " + str(request_id) + " : " + str(sys.exc_info())
-
     else:
       lib.debug.error(str(topic) +" : Timeout processing auth request")
       hosts_in_topic[str(topic)]  = "timeout"
+
     return(hosts_in_topic)
 
 
@@ -132,11 +132,6 @@ class subscriber(object):
 
   def _start(self):
     self._start_sub()
-
-
-
-
-
 
 
   def _start_sub(self):
