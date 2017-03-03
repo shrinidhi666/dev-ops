@@ -117,8 +117,8 @@
       <file leaf-file-name="transport.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/transport.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="164" column="52" lean-forward="true" selection-start-line="164" selection-start-column="52" selection-end-line="164" selection-end-column="52" />
+            <state relative-caret-position="486">
+              <caret line="61" column="16" lean-forward="false" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -973,13 +973,6 @@
       <option name="presentableId" value="Default" />
       <updated>1486396648675</updated>
     </task>
-    <task id="LOCAL-00062" summary="fixing">
-      <created>1487904000309</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1487904000309</updated>
-    </task>
     <task id="LOCAL-00063" summary="fixing">
       <created>1487904407453</created>
       <option name="number" value="00063" />
@@ -1316,7 +1309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488528108283</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="fixing">
+      <created>1488528486630</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1488528486630</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1717,8 +1717,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/transport.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="164" column="52" lean-forward="true" selection-start-line="164" selection-start-column="52" selection-end-line="164" selection-end-column="52" />
+        <state relative-caret-position="486">
+          <caret line="61" column="16" lean-forward="false" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="16" />
           <folding />
         </state>
       </provider>

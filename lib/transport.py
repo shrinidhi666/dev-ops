@@ -163,9 +163,17 @@ class subscriber(object):
           msg_to_send = simplejson.dumps(msg)
           self._socket_req = self._context.socket(zmq.REQ)
           self._socket_req.setsockopt(zmq.SNDTIMEO, 1000)
+          self._socket_req.setsockopt(zmq.RCVTIMEO, 1000)
           self._socket_req.connect("tcp://{0}:{1}".format(lib.config.slave_conf['master'], lib.config.slave_conf['master_ping_port']))
-          self._socket_req.send_multipart([bytes(unicode(request_id)), bytes(unicode(state_name)),bytes(unicode(topic)), bytes(unicode(msg_to_send))])
-          (request_id_recved) = self._socket_req.recv_multipart()
+          try:
+            self._socket_req.send_multipart([bytes(unicode(request_id)), bytes(unicode(state_name)),bytes(unicode(topic)), bytes(unicode(msg_to_send))])
+          except:
+            lib.debug.error(sys.exc_info())
+          try:
+            (request_id_recved) = self._socket_req.recv_multipart()
+          except:
+            lib.debug.error(sys.exc_info())
+
           self._socket_req.close()
         else:
           lib.debug.info ("{0} : {1} : {2}".format(topic,request_id,state_name))
