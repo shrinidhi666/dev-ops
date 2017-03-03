@@ -91,7 +91,7 @@ class file(object):
           if(user and group):
             os.chown(dest,pwd.getpwnam(user).pw_uid, grp.getgrnam(group).gr_gid)
           returner[dest] = ["file updated",0]
-          return (returner)
+          return(returner)
         except:
           returner[dest] = [unicode(sys.exc_info()), 1]
           return(returner)

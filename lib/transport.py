@@ -75,7 +75,7 @@ class publisher(object):
 
     else:
       lib.debug.error(str(topic) +" : Timeout processing auth request")
-      hosts_in_topic[str(topic]]  = "timeout"
+      hosts_in_topic[str(topic)]  = "timeout"
     return(hosts_in_topic)
 
 
