@@ -16,6 +16,7 @@ import sqlite3
 import socket
 import tempfile
 import requests
+import time
 
 # DO NOT PUT ANYTHING THATS SUPPOSED TO BE IN A CONFIG FILE HERE
 # IE: NOTHING SHOULD BE HERE THAT GENERATED DYNAMICALLY.
@@ -34,7 +35,13 @@ m_dostates_sqlite3_file = os.path.join(masterdir, "sqlite", "do-states.sqlite3")
 s_slaveconst_dir = os.path.join(slavedir, "slaveconst")
 s_backup_dir = os.path.join(slavedir, "backup")
 hostname = socket.gethostname()
+while(hostname.find("localhost") >= 0):
+  time.sleep(1)
+  hostname = socket.gethostname()
+
+
 ip = socket.gethostbyname(socket.gethostname())
+
 
 m_result_logs_dir = tempfile.gettempdir()
 m_result_logs_prefix = "devops.result"
