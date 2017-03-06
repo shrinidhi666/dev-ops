@@ -39,8 +39,9 @@ while(hostname.find("localhost") >= 0):
   time.sleep(1)
   hostname = socket.gethostname()
 
+ip = socket.gethostbyname(hostname)
 
-ip = socket.gethostbyname(socket.gethostname())
+
 
 
 m_result_logs_dir = tempfile.gettempdir()
