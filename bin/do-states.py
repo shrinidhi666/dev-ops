@@ -19,6 +19,7 @@ import lib.master_utils
 import lib.db_sqlite3
 import simplejson
 import re
+import lib.slave_utils
 
 parser = argparse.ArgumentParser(description="Command should be run on master")
 parser.add_argument("-l","--list",dest="list",action="store_true",help="list all the states that are available")
@@ -65,6 +66,7 @@ else:
   elif(args.test):
     lib.debug.debug("testing state : " + args.test)
     test_state = lib.template.states()
-    rendered_state = test_state.render(args.test)
+    slaveconst = lib.slave_utils.slaveconst.slaveconst()
+    rendered_state = test_state.render(args.test,slaveconst=slaveconst)
     print (simplejson.dumps(rendered_state,indent=4))
 
