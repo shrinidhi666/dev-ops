@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e072f42f-b1e1-47d6-868c-ed9aebc0cf0c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/constants.py" afterPath="$PROJECT_DIR$/lib/constants.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/do-logs.py" afterPath="$PROJECT_DIR$/bin/do-logs.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,24 +61,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="do-logs.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="do-logs.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/do-logs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="19" column="108" lean-forward="false" selection-start-line="19" selection-start-column="108" selection-end-line="19" selection-end-column="108" />
+            <state relative-caret-position="827">
+              <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding>
-                <marker date="1487923770819" expanded="true" signature="1180:1222" ph="select * fro... log" />
-                <marker date="1487923770819" expanded="true" signature="1507:1560" ph="select * fro... log" />
+                <marker date="1488946791919" expanded="true" signature="1181:1223" ph="select * fro... log" />
+                <marker date="1488946791919" expanded="true" signature="1508:1561" ph="select * fro... log" />
+                <marker date="1488946791919" expanded="true" signature="2408:2423" ph="delete from " />
+                <marker date="1488946791919" expanded="true" signature="2415:2423" ph="select * fro... log" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="constants.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="constants.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="324">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -207,7 +209,6 @@
         <option value="$PROJECT_DIR$/version.yml" />
         <option value="$PROJECT_DIR$/lib/db_sqlite3.py" />
         <option value="$PROJECT_DIR$/lib/master_utils.py" />
-        <option value="$PROJECT_DIR$/bin/do-logs.py" />
         <option value="$PROJECT_DIR$/lib/debug.py" />
         <option value="$PROJECT_DIR$/tests/test_master.py" />
         <option value="$PROJECT_DIR$/master/m_rest_api.py" />
@@ -219,6 +220,7 @@
         <option value="$PROJECT_DIR$/lib/transport.py" />
         <option value="$PROJECT_DIR$/bin/do-states.py" />
         <option value="$PROJECT_DIR$/lib/constants.py" />
+        <option value="$PROJECT_DIR$/bin/do-logs.py" />
       </list>
     </option>
   </component>
@@ -973,13 +975,6 @@
       <option name="presentableId" value="Default" />
       <updated>1486396648675</updated>
     </task>
-    <task id="LOCAL-00065" summary="fixing">
-      <created>1487914546058</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1487914546058</updated>
-    </task>
     <task id="LOCAL-00066" summary="fixing">
       <created>1487915655149</created>
       <option name="number" value="00066" />
@@ -1316,7 +1311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488605871579</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="fixing">
+      <created>1488793334511</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1488793334511</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1646,17 +1648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/do-logs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="19" column="108" lean-forward="false" selection-start-line="19" selection-start-column="108" selection-end-line="19" selection-end-column="108" />
-          <folding>
-            <marker date="1487923770819" expanded="true" signature="1180:1222" ph="select * fro... log" />
-            <marker date="1487923770819" expanded="true" signature="1507:1560" ph="select * fro... log" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/slave_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1062">
@@ -1717,9 +1708,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="324">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/do-logs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="827">
+          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding>
+            <marker date="1488946791919" expanded="true" signature="1181:1223" ph="select * fro... log" />
+            <marker date="1488946791919" expanded="true" signature="1508:1561" ph="select * fro... log" />
+            <marker date="1488946791919" expanded="true" signature="2408:2423" ph="delete from " />
+            <marker date="1488946791919" expanded="true" signature="2415:2423" ph="select * fro... log" />
+          </folding>
         </state>
       </provider>
     </entry>

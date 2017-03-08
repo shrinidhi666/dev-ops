@@ -23,6 +23,7 @@ parser.add_argument("-t","--tail",dest="tail",action="store_true",help="tail the
 # parser.add_argument("-j","--jobs",dest="jobs")
 args = parser.parse_args()
 logs = glob.glob(os.path.join(lib.constants.m_result_logs_dir,lib.constants.m_result_logs_prefix + lib.constants.m_result_logs_delimiter +"*"))
+
 ulogs = {}
 for x in logs:
   ulogs[x.split(lib.constants.m_result_logs_delimiter)[-2]] = x
@@ -40,10 +41,10 @@ else:
                                         db_file=lib.constants.m_dostates_sqlite3_file,
                                         dictionary=True)
 
-    host_details = simplejson.loads(open(os.path.join(lib.constants.m_result_logs_dir, lib.constants.m_result_logs_prefix_hosts + lib.constants.m_result_logs_delimiter + args.id),"r").read())
+    host_detail = simplejson.loads(open(os.path.join(lib.constants.m_result_logs_dir, lib.constants.m_result_logs_prefix_hosts + lib.constants.m_result_logs_delimiter + args.id), "r").read())
 
     print(simplejson.dumps(id_details[0],indent=4))
-    print(simplejson.dumps(host_details, indent=4))
+    print(simplejson.dumps(host_detail, indent=4))
     files_to_open = glob.glob(os.path.join(lib.constants.m_result_logs_dir,lib.constants.m_result_logs_prefix + lib.constants.m_result_logs_delimiter +"*"+ args.id +"*"))
     for f in files_to_open:
       fd = open(f,"r")
@@ -52,5 +53,16 @@ else:
       print("\n")
       print(simplejson.dumps(data,indent=4))
 
+  if(args.clean):
+    try:
+      # lib.db_sqlite3.execute("delete from log",
+      #                        db_file=lib.constants.m_dostates_sqlite3_file)
+
+      host_details = glob.glob(os.path.join(lib.constants.m_result_logs_dir, lib.constants.m_result_logs_prefix_hosts + lib.constants.m_result_logs_delimiter + "*"))
+      for hd in host_details:
+        print(hd)
+
+    except:
+      print(sys.exc_info())
 
 
