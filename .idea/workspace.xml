@@ -64,13 +64,13 @@
       <file leaf-file-name="do-logs.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/do-logs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="827">
-              <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+            <state relative-caret-position="530">
+              <caret line="60" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding>
-                <marker date="1488946791919" expanded="true" signature="1181:1223" ph="select * fro... log" />
-                <marker date="1488946791919" expanded="true" signature="1508:1561" ph="select * fro... log" />
-                <marker date="1488946791919" expanded="true" signature="2408:2423" ph="delete from " />
-                <marker date="1488946791919" expanded="true" signature="2415:2423" ph="select * fro... log" />
+                <marker date="1488947054172" expanded="true" signature="1058:1100" ph="select * fro... log" />
+                <marker date="1488947054172" expanded="true" signature="1385:1438" ph="select * fro... log" />
+                <marker date="1488947054172" expanded="true" signature="2283:2298" ph="delete from " />
+                <marker date="1488947054172" expanded="true" signature="2290:2298" ph="select * fro... log" />
               </folding>
             </state>
           </provider>
@@ -157,6 +157,7 @@
       <find>dev_ops</find>
       <find>masterc</find>
       <find>config</find>
+      <find>ulogs</find>
     </findStrings>
     <replaceStrings>
       <replace>print</replace>
@@ -975,13 +976,6 @@
       <option name="presentableId" value="Default" />
       <updated>1486396648675</updated>
     </task>
-    <task id="LOCAL-00066" summary="fixing">
-      <created>1487915655149</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1487915655149</updated>
-    </task>
     <task id="LOCAL-00067" summary="fixing">
       <created>1487915684613</created>
       <option name="number" value="00067" />
@@ -1318,7 +1312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488793334511</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="fixing">
+      <created>1488946798608</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1488946798608</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1716,13 +1717,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/do-logs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="827">
-          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+        <state relative-caret-position="530">
+          <caret line="60" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding>
-            <marker date="1488946791919" expanded="true" signature="1181:1223" ph="select * fro... log" />
-            <marker date="1488946791919" expanded="true" signature="1508:1561" ph="select * fro... log" />
-            <marker date="1488946791919" expanded="true" signature="2408:2423" ph="delete from " />
-            <marker date="1488946791919" expanded="true" signature="2415:2423" ph="select * fro... log" />
+            <marker date="1488947054172" expanded="true" signature="1058:1100" ph="select * fro... log" />
+            <marker date="1488947054172" expanded="true" signature="1385:1438" ph="select * fro... log" />
+            <marker date="1488947054172" expanded="true" signature="2283:2298" ph="delete from " />
+            <marker date="1488947054172" expanded="true" signature="2290:2298" ph="select * fro... log" />
           </folding>
         </state>
       </provider>

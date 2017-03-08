@@ -13,6 +13,7 @@ import lib.db_sqlite3
 import argparse
 import glob
 import simplejson
+import shutil
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-l","--list",dest="list",action="store_true",help="list all the logs")
@@ -22,11 +23,11 @@ parser.add_argument("-s","--show",dest="id",help="show the logs for id ...")
 parser.add_argument("-t","--tail",dest="tail",action="store_true",help="tail the logs")
 # parser.add_argument("-j","--jobs",dest="jobs")
 args = parser.parse_args()
-logs = glob.glob(os.path.join(lib.constants.m_result_logs_dir,lib.constants.m_result_logs_prefix + lib.constants.m_result_logs_delimiter +"*"))
 
-ulogs = {}
-for x in logs:
-  ulogs[x.split(lib.constants.m_result_logs_delimiter)[-2]] = x
+
+# ulogs = {}
+# for x in logs:
+#   ulogs[x.split(lib.constants.m_result_logs_delimiter)[-2]] = x
 if(args.list):
   id_details = lib.db_sqlite3.execute("select * from log order by submit_time asc",
                                       db_file=lib.constants.m_dostates_sqlite3_file,
@@ -55,12 +56,15 @@ else:
 
   if(args.clean):
     try:
-      # lib.db_sqlite3.execute("delete from log",
-      #                        db_file=lib.constants.m_dostates_sqlite3_file)
+      lib.db_sqlite3.execute("delete from log",
+                             db_file=lib.constants.m_dostates_sqlite3_file)
 
       host_details = glob.glob(os.path.join(lib.constants.m_result_logs_dir, lib.constants.m_result_logs_prefix_hosts + lib.constants.m_result_logs_delimiter + "*"))
+      logs = glob.glob(os.path.join(lib.constants.m_result_logs_dir, lib.constants.m_result_logs_prefix + lib.constants.m_result_logs_delimiter + "*"))
       for hd in host_details:
-        print(hd)
+        os.remove(hd)
+      for lg in logs:
+        os.remove(lg)
 
     except:
       print(sys.exc_info())
