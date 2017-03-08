@@ -39,7 +39,12 @@ while(hostname.find("localhost") >= 0):
   time.sleep(1)
   hostname = socket.gethostname()
 
-ip = socket.gethostbyname(hostname)
+while(True):
+  try:
+    ip = socket.gethostbyname(hostname)
+    break
+  except:
+    time.sleep(1)
 
 
 
