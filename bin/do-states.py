@@ -66,7 +66,7 @@ else:
   elif(args.test):
     lib.debug.debug("testing state : " + args.test)
     test_state = lib.template.states()
-    slaveconst = lib.slave_utils.slaveconst.slaveconst()
+    slaveconst = lib.slave_utils.slaveconst().slaveconst()
     rendered_state = test_state.render(args.test,slaveconst=slaveconst)
     print (simplejson.dumps(rendered_state,indent=4))
 
