@@ -81,8 +81,8 @@ class file(object):
                 os.makedirs(lib.constants.s_backup_dir)
               except:
                 lib.debug.debug(sys.exc_info())
-              lib.debug.debug("backup : "+ os.path.join(lib.constants.s_backup_dir,dest + lib.constants.default_delimiter + str(time.time())))
-              shutil.copy(dest,os.path.join(lib.constants.s_backup_dir,dest + lib.constants.default_delimiter + str(time.time())))
+              lib.debug.debug("backup : "+ os.path.join(lib.constants.s_backup_dir, dest.split(os.sep)[-1] + lib.constants.default_delimiter + str(time.time())))
+              shutil.copy(dest,os.path.join(lib.constants.s_backup_dir, dest.split(os.sep)[-1] + lib.constants.default_delimiter + str(time.time())))
           fd = open(dest,"w")
           fd.write(file_data)
           fd.flush()
