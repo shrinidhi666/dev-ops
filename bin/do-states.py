@@ -31,7 +31,8 @@ args = parser.parse_args()
 
 if(args.list):
   states = lib.template.states().list.keys()
-  for x in states.sort():
+  states.sort()
+  for x in states:
     print(x)
 
 else:
