@@ -26,7 +26,7 @@ except:
 class cmd(object):
 
   @staticmethod
-  def run(command=[],user=None,path=None,shell=True,log=True,env=None):
+  def run(command=[],user=None,group=None,path=None,shell=True,log=True,env=None):
     """
 
     :param self:
