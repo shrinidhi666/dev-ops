@@ -67,13 +67,16 @@ class publisher(object):
         lib.debug.debug(msg_rep)
         try:
           msg_reved = simplejson.loads(msg_rep)
-          if(msg_reved['status'] == "free"):
-            hosts_in_topic[msg_reved['hostid']] = msg_reved['status']
-            if (state_name != "ping.wtf" and state_name != "ping.slaveconst"):
-              self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode(state_name))])
-              hosts_in_topic[msg_reved['hostid']] = "success"
+          if (state_name == "ping.slaveconst"):
+            hosts_in_topic[msg_reved['hostid']] = msg_reved['slaveconst']
           else:
-            hosts_in_topic[msg_reved['hostid']] = msg_reved['status'] +" : "+ msg_reved['request_id']
+            if(msg_reved['status'] == "free"):
+              hosts_in_topic[msg_reved['hostid']] = msg_reved['status']
+              if (state_name != "ping.wtf" and state_name != "ping.slaveconst"):
+                self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode(state_name))])
+                hosts_in_topic[msg_reved['hostid']] = "success"
+            else:
+              hosts_in_topic[msg_reved['hostid']] = msg_reved['status'] +" : "+ msg_reved['request_id']
         except:
           lib.debug.error(str(state_name) + " : "+ str(request_id) +" : "+ str(sys.exc_info()))
           hosts_in_topic[msg_reved['hostid']] = str(state_name) + " : " + str(request_id) + " : " + str(sys.exc_info())
