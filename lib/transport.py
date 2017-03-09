@@ -52,7 +52,11 @@ class publisher(object):
       request_id = uuid.uuid4()
 
     lib.debug.debug("pinging : "+ str(topic) +" : "+ str(state_name))
-    self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode("ping.wtf"))])
+    state_name = state_name.strip()
+    if(state_name == "ping.slaveconst")
+      self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode("ping.slaveconst"))])
+    else:
+      self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode("ping.wtf"))])
     rep_socks = {}
     rep_socks = dict(self.poller.poll(1*1000)) # 10s timeout in milliseconds
     hosts_in_topic = {}
