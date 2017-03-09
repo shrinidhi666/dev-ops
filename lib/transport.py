@@ -183,7 +183,7 @@ class subscriber(object):
             msg['status'] = "running"
           else:
             msg['status'] = "free"
-          msg['hostid'] = lib.slave_utils.slaveconst.slaveconst()
+          msg['hostid'] = lib.slave_utils.slaveconst().slaveconst()
           msg_to_send = simplejson.dumps(msg)
           self._socket_req = self._context.socket(zmq.REQ)
           self._socket_req.setsockopt(zmq.SNDTIMEO, 1000)
