@@ -65,7 +65,7 @@ class publisher(object):
           msg_reved = simplejson.loads(msg_rep)
           if(msg_reved['status'] == "free"):
             hosts_in_topic[msg_reved['hostid']] = msg_reved['status']
-            if (state_name != "ping.wtf"):
+            if (state_name != "ping.wtf" and state_name != "ping.slaveconst"):
               self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode(state_name))])
               hosts_in_topic[msg_reved['hostid']] = "success"
           else:
