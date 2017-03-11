@@ -127,7 +127,14 @@ if(args.slave):
     sc_fd = open(installed_slave_conf,"r")
     slave_conf_dict = yaml.safe_load(sc_fd)
     sc_fd.close()
-    print(slave_conf_dict)
+    slave_conf_dict['slave_group'] = args.groups
+    sc_fd = open(installed_slave_conf, "w")
+    yaml.dump(slave_conf_dict, sc_fd, default_flow_style=False)
+    sc_fd.flush()
+    sc_fd.close()
+
+
+
 
 
 
