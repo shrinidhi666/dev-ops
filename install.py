@@ -9,6 +9,7 @@ import os
 import argparse
 import subprocess
 import appdirs
+import yaml
 
 
 os.environ['XDG_CONFIG_DIRS'] = '/etc'
@@ -26,12 +27,14 @@ masterconst_root = "/srv/dev-ops/masterconst/"
 progpath = installdir
 source_master_path = os.path.join(progpath,"install","master")
 source_slave_path = os.path.join(progpath,"install","slave")
+installed_slave_conf = os.path.join(slavedir,"slave.conf")
 slave_supervisorconf = os.path.join(progpath,"install","supervisor","slave")
 master_supervisorconf = os.path.join(progpath,"install","supervisor","master")
 print(progpath)
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--slave",dest="slave",action="store_true",help="install config files for slave")
+parser.add_argument("--groups",dest="groups",help="add the slave to comma seperated groups or a single group")
 parser.add_argument("--master",dest="master",action="store_true",help="install config files for master")
 args = parser.parse_args()
 
@@ -119,6 +122,13 @@ if(args.slave):
     os.system("rsync -av "+ slave_supervisorconf.rstrip(os.sep) +"/ "+ supervisorpath.rstrip(os.sep) +"/")
   except:
     print(sys.exc_info())
+
+  if(args.groups):
+    sc_fd = open(installed_slave_conf,"r")
+    slave_conf_dict = yaml.safe_load(sc_fd)
+    sc_fd.close()
+    print(slave_conf_dict)
+
 
 
 
