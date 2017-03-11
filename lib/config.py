@@ -15,13 +15,13 @@ import glob
 
 if(os.path.exists(lib.constants.s_config_file)):
   slave_fd = open(lib.constants.s_config_file, "r")
-  slave_conf = yaml.safe_load(slave_fd.read())
+  slave_conf = yaml.safe_load(slave_fd)
   # lib.debug.info("slave conf : ")
   # lib.debug.info(slave_conf)
 
 if(os.path.exists(lib.constants.m_config_file)):
   master_fd = open(lib.constants.m_config_file, "r")
-  master_conf = yaml.safe_load(master_fd.read())
+  master_conf = yaml.safe_load(master_fd)
   # lib.debug.info("master conf : ")
   # lib.debug.info(master_conf)
 
