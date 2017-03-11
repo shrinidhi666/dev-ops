@@ -14,14 +14,16 @@ import yaml
 import glob
 
 if(os.path.exists(lib.constants.s_config_file)):
-  slave_fd = open(lib.constants.s_config_file, "r")
-  slave_conf = yaml.safe_load(slave_fd)
+  __slave_fd = open(lib.constants.s_config_file, "r")
+  slave_conf = yaml.safe_load(__slave_fd)
+  __slave_fd.close()
   # lib.debug.info("slave conf : ")
   # lib.debug.info(slave_conf)
 
 if(os.path.exists(lib.constants.m_config_file)):
-  master_fd = open(lib.constants.m_config_file, "r")
-  master_conf = yaml.safe_load(master_fd)
+  __master_fd = open(lib.constants.m_config_file, "r")
+  master_conf = yaml.safe_load(__master_fd)
+  __master_fd.close()
   # lib.debug.info("master conf : ")
   # lib.debug.info(master_conf)
 
