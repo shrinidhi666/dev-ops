@@ -36,7 +36,7 @@ def publisher():
 
     for x in hosts:
       result = pub.publish(x, state, request_id)
-      hostsping[x] = result
+      hostsping.update(result)
 
 
     #  Send reply back to client
