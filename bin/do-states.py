@@ -20,6 +20,7 @@ import lib.db_sqlite3
 import simplejson
 import re
 import lib.slave_utils
+import requests
 
 parser = argparse.ArgumentParser(description="Command should be run on master")
 parser.add_argument("-l","--list",dest="list",action="store_true",help="list all the states that are available")
