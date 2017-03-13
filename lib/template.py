@@ -107,6 +107,10 @@ class states(root):
       yml_content = template_env.render(slaveconst=slaveconst, masterconst=masterconst)
       yml_objs = yaml.safe_load(yml_content)
       return_obj = []
+
+      if(not yml_objs):
+        return(return_obj)
+
       if (template_file.split("/")[-1] == "init.yml"):
         for yml_obj in yml_objs:
           returned_obj = self.render(yml_obj,slaveconst=slaveconst, masterconst=masterconst,is_recursive=True)
