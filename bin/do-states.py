@@ -66,9 +66,13 @@ else:
       print("request id : "+ str(uid))
 
   elif(args.test):
+    state_name = args.test
     lib.debug.debug("testing state : " + args.test)
-    test_state = lib.template.states()
     slaveconst = lib.slave_utils.slaveconst().slaveconst()
-    rendered_state = test_state.render(args.test,slaveconst=slaveconst)
+    if (state_name != "high"):
+      r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.constants.hostname + "/" + state_name + "/0", data=simplejson.dumps(slaveconst))
+    else:
+      r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/high/" + lib.constants.hostname, data=simplejson.dumps(slaveconst))
+    r_content = simplejson.loads(r.content)
     print (simplejson.dumps(rendered_state,indent=4))
 
