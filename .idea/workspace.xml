@@ -4,7 +4,6 @@
     <list default="true" id="e072f42f-b1e1-47d6-868c-ed9aebc0cf0c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/master_utils.py" afterPath="$PROJECT_DIR$/lib/master_utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/master/m_rest_api.py" afterPath="$PROJECT_DIR$/master/m_rest_api.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="m_rest_api.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="m_rest_api.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/master/m_rest_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="29" column="44" lean-forward="false" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="44" />
+            <state relative-caret-position="583">
+              <caret line="46" column="54" lean-forward="true" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
               <folding>
                 <marker date="1489387103920" expanded="true" signature="2956:3043" ph="insert into slaves... " />
                 <marker date="1489387103920" expanded="true" signature="3262:3334" ph="insert into slaves... " />
@@ -66,17 +65,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="master_utils.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="master_utils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/master_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="135" column="39" lean-forward="true" selection-start-line="135" selection-start-column="39" selection-end-line="135" selection-end-column="39" />
+            <state relative-caret-position="673">
+              <caret line="186" column="22" lean-forward="true" selection-start-line="186" selection-start-column="22" selection-end-line="186" selection-end-column="22" />
               <folding>
-                <marker date="1489387031599" expanded="true" signature="511:545" ph="select * fro... slaves" />
-                <marker date="1489387031599" expanded="true" signature="696:730" ph="select * fro... slaves" />
-                <marker date="1489387031599" expanded="true" signature="835:869" ph="select * fro... slaves" />
-                <marker date="1489387031599" expanded="true" signature="970:990" ph="select * fro... slaves" />
-                <marker date="1489387031599" expanded="true" signature="1117:1151" ph="select * fro... slaves" />
+                <marker date="1489387334556" expanded="true" signature="511:545" ph="select * fro... slaves" />
+                <marker date="1489387334556" expanded="true" signature="696:730" ph="select * fro... slaves" />
+                <marker date="1489387334556" expanded="true" signature="835:869" ph="select * fro... slaves" />
+                <marker date="1489387334556" expanded="true" signature="970:990" ph="select * fro... slaves" />
+                <marker date="1489387334556" expanded="true" signature="1117:1151" ph="select * fro... slaves" />
               </folding>
             </state>
           </provider>
@@ -231,8 +230,8 @@
         <option value="$PROJECT_DIR$/lib/config.py" />
         <option value="$PROJECT_DIR$/lib/template.py" />
         <option value="$PROJECT_DIR$/bin/do-states.py" />
-        <option value="$PROJECT_DIR$/lib/master_utils.py" />
         <option value="$PROJECT_DIR$/master/m_rest_api.py" />
+        <option value="$PROJECT_DIR$/lib/master_utils.py" />
       </list>
     </option>
   </component>
@@ -1005,13 +1004,6 @@
       <option name="presentableId" value="Default" />
       <updated>1486396648675</updated>
     </task>
-    <task id="LOCAL-00099" summary="fixing">
-      <created>1488339245613</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1488339245613</updated>
-    </task>
     <task id="LOCAL-00100" summary="fixing">
       <created>1488339718516</created>
       <option name="number" value="00100" />
@@ -1348,7 +1340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489386382300</updated>
     </task>
-    <option name="localTasksCounter" value="148" />
+    <task id="LOCAL-00148" summary="fixing">
+      <created>1489387108087</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1489387108087</updated>
+    </task>
+    <option name="localTasksCounter" value="149" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1763,28 +1762,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/master_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="135" column="39" lean-forward="true" selection-start-line="135" selection-start-column="39" selection-end-line="135" selection-end-column="39" />
-          <folding>
-            <marker date="1489387031599" expanded="true" signature="511:545" ph="select * fro... slaves" />
-            <marker date="1489387031599" expanded="true" signature="696:730" ph="select * fro... slaves" />
-            <marker date="1489387031599" expanded="true" signature="835:869" ph="select * fro... slaves" />
-            <marker date="1489387031599" expanded="true" signature="970:990" ph="select * fro... slaves" />
-            <marker date="1489387031599" expanded="true" signature="1117:1151" ph="select * fro... slaves" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/master/m_rest_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="29" column="44" lean-forward="false" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="44" />
+        <state relative-caret-position="583">
+          <caret line="46" column="54" lean-forward="true" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
           <folding>
             <marker date="1489387103920" expanded="true" signature="2956:3043" ph="insert into slaves... " />
             <marker date="1489387103920" expanded="true" signature="3262:3334" ph="insert into slaves... " />
             <marker date="1489387103920" expanded="true" signature="3617:3651" ph="select * fro... slaves" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/master_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="673">
+          <caret line="186" column="22" lean-forward="true" selection-start-line="186" selection-start-column="22" selection-end-line="186" selection-end-column="22" />
+          <folding>
+            <marker date="1489387334556" expanded="true" signature="511:545" ph="select * fro... slaves" />
+            <marker date="1489387334556" expanded="true" signature="696:730" ph="select * fro... slaves" />
+            <marker date="1489387334556" expanded="true" signature="835:869" ph="select * fro... slaves" />
+            <marker date="1489387334556" expanded="true" signature="970:990" ph="select * fro... slaves" />
+            <marker date="1489387334556" expanded="true" signature="1117:1151" ph="select * fro... slaves" />
           </folding>
         </state>
       </provider>

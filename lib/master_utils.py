@@ -184,6 +184,7 @@ class masterconst(lib.template.states):
             const_dict[yml_obj] = True
         # lib.debug.debug(yml_objs)
     lib.debug.debug(const_dict)
+    return(const_dict)
 
 
 
