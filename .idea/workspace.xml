@@ -68,14 +68,14 @@
       <file leaf-file-name="master_utils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/master_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="673">
-              <caret line="186" column="22" lean-forward="true" selection-start-line="186" selection-start-column="22" selection-end-line="186" selection-end-column="22" />
+            <state relative-caret-position="760">
+              <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
               <folding>
-                <marker date="1489387334556" expanded="true" signature="511:545" ph="select * fro... slaves" />
-                <marker date="1489387334556" expanded="true" signature="696:730" ph="select * fro... slaves" />
-                <marker date="1489387334556" expanded="true" signature="835:869" ph="select * fro... slaves" />
-                <marker date="1489387334556" expanded="true" signature="970:990" ph="select * fro... slaves" />
-                <marker date="1489387334556" expanded="true" signature="1117:1151" ph="select * fro... slaves" />
+                <marker date="1489388122820" expanded="true" signature="511:545" ph="select * fro... slaves" />
+                <marker date="1489388122820" expanded="true" signature="696:730" ph="select * fro... slaves" />
+                <marker date="1489388122820" expanded="true" signature="835:869" ph="select * fro... slaves" />
+                <marker date="1489388122820" expanded="true" signature="970:990" ph="select * fro... slaves" />
+                <marker date="1489388122820" expanded="true" signature="1117:1151" ph="select * fro... slaves" />
               </folding>
             </state>
           </provider>
@@ -1004,13 +1004,6 @@
       <option name="presentableId" value="Default" />
       <updated>1486396648675</updated>
     </task>
-    <task id="LOCAL-00100" summary="fixing">
-      <created>1488339718516</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1488339718516</updated>
-    </task>
     <task id="LOCAL-00101" summary="fixing">
       <created>1488339792409</created>
       <option name="number" value="00101" />
@@ -1347,7 +1340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489387108087</updated>
     </task>
-    <option name="localTasksCounter" value="149" />
+    <task id="LOCAL-00149" summary="fixing">
+      <created>1489387339190</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1489387339191</updated>
+    </task>
+    <option name="localTasksCounter" value="150" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1776,14 +1776,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/master_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="186" column="22" lean-forward="true" selection-start-line="186" selection-start-column="22" selection-end-line="186" selection-end-column="22" />
+        <state relative-caret-position="760">
+          <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
           <folding>
-            <marker date="1489387334556" expanded="true" signature="511:545" ph="select * fro... slaves" />
-            <marker date="1489387334556" expanded="true" signature="696:730" ph="select * fro... slaves" />
-            <marker date="1489387334556" expanded="true" signature="835:869" ph="select * fro... slaves" />
-            <marker date="1489387334556" expanded="true" signature="970:990" ph="select * fro... slaves" />
-            <marker date="1489387334556" expanded="true" signature="1117:1151" ph="select * fro... slaves" />
+            <marker date="1489388122820" expanded="true" signature="511:545" ph="select * fro... slaves" />
+            <marker date="1489388122820" expanded="true" signature="696:730" ph="select * fro... slaves" />
+            <marker date="1489388122820" expanded="true" signature="835:869" ph="select * fro... slaves" />
+            <marker date="1489388122820" expanded="true" signature="970:990" ph="select * fro... slaves" />
+            <marker date="1489388122820" expanded="true" signature="1117:1151" ph="select * fro... slaves" />
           </folding>
         </state>
       </provider>

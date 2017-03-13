@@ -155,34 +155,34 @@ class masterconst(lib.template.states):
     else:
       state_list = self.list
     const_dict = {}
-    for x in state_list:
-      if(x == "high"):
-        continue
-      if(not self.list.has_key(x)):
-        lib.debug.debug("No state named : "+ str(x))
-        continue
-      template_file = self.list[x]
+    if(state_list):
+      for x in state_list:
+        if(x == "high"):
+          continue
+        if(not self.list.has_key(x)):
+          lib.debug.debug("No state named : "+ str(x))
+          continue
+        template_file = self.list[x]
 
-      template_env = self._env.get_template(template_file)
-      yml_content = template_env.render(slaveconst=slaveconst)
-      yml_objs = yaml.safe_load(yml_content)
-      if(isinstance(yml_objs,dict)):
-        for yo in yml_objs:
-          if (const_dict.has_key(yo)):
-            lib.debug.warn("duplicate key : "+ str(yo) +" : "+ template_file)
-        const_dict.update(yml_objs)
-      elif(isinstance(yml_objs,list)):
-        for yml_obj in yml_objs:
-          if(isinstance(yml_obj,dict)):
-            for yo in yml_obj:
-              if(const_dict.has_key(yo)):
-                lib.debug.warn("duplicate key : "+ str(yo) +" : "+ template_file)
-              const_dict[yo] = yml_obj[yo]
-          else:
-            if(const_dict.has_key(yml_obj)):
-              lib.debug.warn("duplicate key : " + str(yml_obj) +" : "+ template_file)
-            const_dict[yml_obj] = True
-        # lib.debug.debug(yml_objs)
+        template_env = self._env.get_template(template_file)
+        yml_content = template_env.render(slaveconst=slaveconst)
+        yml_objs = yaml.safe_load(yml_content)
+        if(isinstance(yml_objs,dict)):
+          for yo in yml_objs:
+            if (const_dict.has_key(yo)):
+              lib.debug.warn("duplicate key : "+ str(yo) +" : "+ template_file)
+          const_dict.update(yml_objs)
+        elif(isinstance(yml_objs,list)):
+          for yml_obj in yml_objs:
+            if(isinstance(yml_obj,dict)):
+              for yo in yml_obj:
+                if(const_dict.has_key(yo)):
+                  lib.debug.warn("duplicate key : "+ str(yo) +" : "+ template_file)
+                const_dict[yo] = yml_obj[yo]
+            else:
+              if(const_dict.has_key(yml_obj)):
+                lib.debug.warn("duplicate key : " + str(yml_obj) +" : "+ template_file)
+              const_dict[yml_obj] = True
     lib.debug.debug(const_dict)
     return(const_dict)
 
