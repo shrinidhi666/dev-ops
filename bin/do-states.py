@@ -74,6 +74,7 @@ else:
       r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.constants.hostname + "/" + state_name + "/0", data=simplejson.dumps(slaveconst))
     else:
       r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/high/" + lib.constants.hostname, data=simplejson.dumps(slaveconst))
-    r_content = simplejson.loads(r.content)
+
+    rendered_state = simplejson.loads(r.content)
     print (simplejson.dumps(rendered_state,indent=4))
 
