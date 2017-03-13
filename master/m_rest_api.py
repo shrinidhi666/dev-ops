@@ -27,7 +27,7 @@ app = flask.Flask(__name__)
 @app.route('/states/<hostid>/<state>/<isfile>',methods=['POST'])
 def states(hostid,state,isfile):
   slaveconst = simplejson.loads(flask.request.data)
-  masterconst = lib.master_utils.masterconst().masterconst()
+  masterconst = lib.master_utils.masterconst().masterconst(slaveconst=slaveconst)
   all_states = lib.template.states()
   # lib.debug.debug(hostid)
   # lib.debug.debug(state)
@@ -44,7 +44,7 @@ def states(hostid,state,isfile):
 @app.route('/filesync',methods=['POST'])
 def filesync():
   slaveconst = simplejson.loads(flask.request.data)
-  masterconst = lib.master_utils.masterconst().masterconst()
+  masterconst = lib.master_utils.masterconst().masterconst(slaveconst=slaveconst)
   all_states = lib.template.states()
   state = slaveconst['file.sync']
   try:
@@ -65,7 +65,7 @@ def getmyip():
 @app.route('/high/<hostid>',methods=['POST'])
 def high(hostid):
   slaveconst = simplejson.loads(flask.request.data)
-  masterconst = lib.master_utils.masterconst().masterconst()
+  masterconst = lib.master_utils.masterconst().masterconst(slaveconst=slaveconst)
   all_states = lib.template.states()
   lib.debug.debug(slaveconst)
   high_state_obj = all_states.render("high", slaveconst=slaveconst, masterconst=masterconst)

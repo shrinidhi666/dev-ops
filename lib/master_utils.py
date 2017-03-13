@@ -141,7 +141,7 @@ class masterconst(lib.template.states):
     else:
       self._path = lib.config.master_conf['masterconst_root']
 
-  def masterconst(self,slaveconst={},masterconf={}):
+  def masterconst(self,slaveconst={}):
     state_list = None
     if(self.list.has_key("high")):
       highobj = self.render("high",slaveconst=slaveconst)
@@ -164,7 +164,7 @@ class masterconst(lib.template.states):
       template_file = self.list[x]
 
       template_env = self._env.get_template(template_file)
-      yml_content = template_env.render(slaveconst=slaveconst, masterconst=masterconst)
+      yml_content = template_env.render(slaveconst=slaveconst)
       yml_objs = yaml.safe_load(yml_content)
       if(isinstance(yml_objs,dict)):
         for yo in yml_objs:
