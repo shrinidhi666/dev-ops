@@ -108,35 +108,32 @@ class states(root):
       yml_objs = yaml.safe_load(yml_content)
       return_obj = []
 
-      if(not yml_objs):
-        return(return_obj)
-
-      if (template_file.split("/")[-1] == "init.yml"):
-        for yml_obj in yml_objs:
-          returned_obj = self.render(yml_obj,slaveconst=slaveconst, masterconst=masterconst,is_recursive=True)
-          if (returned_obj):
-            return_obj.extend(returned_obj)
-      else:
-        if (isinstance(yml_objs, dict)):
-          if(yml_objs.has_key("include")):
-            states_include = yml_objs["include"]
-            for state_include in states_include:
-              returned_obj = self.render(state_include,slaveconst=slaveconst,masterconst=masterconst)
-              return_obj.extend(returned_obj)
-            del(yml_objs['include'])
-          return_obj.append(yml_objs)
-        else:
+      if(yml_objs):
+        if (template_file.split("/")[-1] == "init.yml"):
           for yml_obj in yml_objs:
-            if(yml_obj.has_key("include")):
-              states_include = yml_obj["include"]
+            returned_obj = self.render(yml_obj,slaveconst=slaveconst, masterconst=masterconst,is_recursive=True)
+            if (returned_obj):
+              return_obj.extend(returned_obj)
+        else:
+          if (isinstance(yml_objs, dict)):
+            if(yml_objs.has_key("include")):
+              states_include = yml_objs["include"]
               for state_include in states_include:
-                returned_obj = self.render(state_include, slaveconst=slaveconst, masterconst=masterconst)
+                returned_obj = self.render(state_include,slaveconst=slaveconst,masterconst=masterconst)
                 return_obj.extend(returned_obj)
-              del(yml_obj['include'])
-            else:
-              return_obj.append(yml_obj)
+              del(yml_objs['include'])
+            return_obj.append(yml_objs)
+          else:
+            for yml_obj in yml_objs:
+              if(yml_obj.has_key("include")):
+                states_include = yml_obj["include"]
+                for state_include in states_include:
+                  returned_obj = self.render(state_include, slaveconst=slaveconst, masterconst=masterconst)
+                  return_obj.extend(returned_obj)
+                del(yml_obj['include'])
+              else:
+                return_obj.append(yml_obj)
 
-          # return_obj = yml_objs
       if(not is_recursive):
         cyclic_test.clear()
 
