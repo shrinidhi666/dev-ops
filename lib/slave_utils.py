@@ -37,7 +37,10 @@ class slaveconst(object):
     retdict['platform'] = platform.system()
     retdict['architecture'] = platform.architecture()
     retdict['os'] = platform.dist()
-    retdict['slave_group'] = lib.config.slave_conf['slave_group']
+    try:
+      retdict['slave_group'] = lib.config.slave_conf['slave_group'].split(",")
+    except:
+      retdict['slave_group'] = "slave"
     return(retdict)
 
   def __update_slaveconst(self):
