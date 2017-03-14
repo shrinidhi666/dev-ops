@@ -96,8 +96,11 @@ def render_high(high_state_obj,slaveconst={},masterconst={}):
             comp_obj = hs[fn_exp]['compare']
             if(isinstance(comp_obj,dict)):
               comp_op = comp_obj['operator']
-              comp_type = comp_obj['type']
-              comp_str = "is_match = True if(" + comp_type +"(formatch) "+ comp_op +" "+ comp_type +"(const_exp)) else False"
+              if(comp_obj.has_key('type')):
+                comp_type = comp_obj['type']
+                comp_str = "is_match = True if(" + comp_type +"(const_exp) "+ comp_op +" "+ comp_type +"(formatch)) else False"
+              else:
+                comp_str = "is_match = True if(const_exp " + comp_op + " formatch) else False"
               lib.debug.debug(comp_str)
               exec comp_str
               if(is_match):

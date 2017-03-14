@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e072f42f-b1e1-47d6-868c-ed9aebc0cf0c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/slave_utils.py" afterPath="$PROJECT_DIR$/lib/slave_utils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/master_utils.py" afterPath="$PROJECT_DIR$/lib/master_utils.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,8 +44,8 @@
       <file leaf-file-name="m_rest_api.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/master/m_rest_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="46" column="54" lean-forward="false" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
+            <state relative-caret-position="669">
+              <caret line="73" column="45" lean-forward="true" selection-start-line="73" selection-start-column="45" selection-end-line="73" selection-end-column="45" />
               <folding>
                 <marker date="1489387103920" expanded="true" signature="2956:3043" ph="insert into slaves... " />
                 <marker date="1489387103920" expanded="true" signature="3262:3334" ph="insert into slaves... " />
@@ -65,37 +65,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="master_utils.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="master_utils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/master_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+            <state relative-caret-position="431">
+              <caret line="100" column="127" lean-forward="true" selection-start-line="100" selection-start-column="127" selection-end-line="100" selection-end-column="127" />
               <folding>
-                <marker date="1489388122820" expanded="true" signature="511:545" ph="select * fro... slaves" />
-                <marker date="1489388122820" expanded="true" signature="696:730" ph="select * fro... slaves" />
-                <marker date="1489388122820" expanded="true" signature="835:869" ph="select * fro... slaves" />
-                <marker date="1489388122820" expanded="true" signature="970:990" ph="select * fro... slaves" />
-                <marker date="1489388122820" expanded="true" signature="1117:1151" ph="select * fro... slaves" />
+                <marker date="1489489417672" expanded="true" signature="511:545" ph="select * fro... slaves" />
+                <marker date="1489489417672" expanded="true" signature="696:730" ph="select * fro... slaves" />
+                <marker date="1489489417672" expanded="true" signature="835:869" ph="select * fro... slaves" />
+                <marker date="1489489417672" expanded="true" signature="970:990" ph="select * fro... slaves" />
+                <marker date="1489489417672" expanded="true" signature="1117:1151" ph="select * fro... slaves" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slave_utils.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="slave_utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/slave_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="42" column="37" lean-forward="false" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+            <state relative-caret-position="414">
+              <caret line="39" column="8" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/config.py">
+      <file leaf-file-name="high.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/states_test/high.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="396">
+              <caret line="22" column="6" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -229,9 +229,9 @@
         <option value="$PROJECT_DIR$/lib/config.py" />
         <option value="$PROJECT_DIR$/lib/template.py" />
         <option value="$PROJECT_DIR$/master/m_rest_api.py" />
-        <option value="$PROJECT_DIR$/lib/master_utils.py" />
         <option value="$PROJECT_DIR$/bin/do-states.py" />
         <option value="$PROJECT_DIR$/lib/slave_utils.py" />
+        <option value="$PROJECT_DIR$/lib/master_utils.py" />
       </list>
     </option>
   </component>
@@ -1004,13 +1004,6 @@
       <option name="presentableId" value="Default" />
       <updated>1486396648675</updated>
     </task>
-    <task id="LOCAL-00104" summary="fixing">
-      <created>1488363215431</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1488363215432</updated>
-    </task>
     <task id="LOCAL-00105" summary="fixing">
       <created>1488366889830</created>
       <option name="number" value="00105" />
@@ -1347,7 +1340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489467688968</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <task id="LOCAL-00153" summary="fixing">
+      <created>1489473728346</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1489473728346</updated>
+    </task>
+    <option name="localTasksCounter" value="154" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1670,13 +1670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/states_test/high.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="6" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/master/m_publisher.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="738">
@@ -1723,32 +1716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/master/m_rest_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="46" column="54" lean-forward="false" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
-          <folding>
-            <marker date="1489387103920" expanded="true" signature="2956:3043" ph="insert into slaves... " />
-            <marker date="1489387103920" expanded="true" signature="3262:3334" ph="insert into slaves... " />
-            <marker date="1489387103920" expanded="true" signature="3617:3651" ph="select * fro... slaves" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/master_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
-          <folding>
-            <marker date="1489388122820" expanded="true" signature="511:545" ph="select * fro... slaves" />
-            <marker date="1489388122820" expanded="true" signature="696:730" ph="select * fro... slaves" />
-            <marker date="1489388122820" expanded="true" signature="835:869" ph="select * fro... slaves" />
-            <marker date="1489388122820" expanded="true" signature="970:990" ph="select * fro... slaves" />
-            <marker date="1489388122820" expanded="true" signature="1117:1151" ph="select * fro... slaves" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/transport.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="774">
@@ -1779,9 +1746,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/slave_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="42" column="37" lean-forward="false" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+        <state relative-caret-position="414">
+          <caret line="39" column="8" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/states_test/high.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="6" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/master/m_rest_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="669">
+          <caret line="73" column="45" lean-forward="true" selection-start-line="73" selection-start-column="45" selection-end-line="73" selection-end-column="45" />
+          <folding>
+            <marker date="1489387103920" expanded="true" signature="2956:3043" ph="insert into slaves... " />
+            <marker date="1489387103920" expanded="true" signature="3262:3334" ph="insert into slaves... " />
+            <marker date="1489387103920" expanded="true" signature="3617:3651" ph="select * fro... slaves" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/master_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="100" column="127" lean-forward="true" selection-start-line="100" selection-start-column="127" selection-end-line="100" selection-end-column="127" />
+          <folding>
+            <marker date="1489489417672" expanded="true" signature="511:545" ph="select * fro... slaves" />
+            <marker date="1489489417672" expanded="true" signature="696:730" ph="select * fro... slaves" />
+            <marker date="1489489417672" expanded="true" signature="835:869" ph="select * fro... slaves" />
+            <marker date="1489489417672" expanded="true" signature="970:990" ph="select * fro... slaves" />
+            <marker date="1489489417672" expanded="true" signature="1117:1151" ph="select * fro... slaves" />
+          </folding>
         </state>
       </provider>
     </entry>
