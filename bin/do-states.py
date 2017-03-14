@@ -42,7 +42,7 @@ else:
     uid = str(uuid.uuid4())
     context = zmq.Context()
     socket = context.socket(zmq.REQ)
-    socket.setsockopt(zmq.SNDTIMEO, 1000*2)
+    # socket.setsockopt(zmq.SNDTIMEO, 1000*2)
     socket.connect("ipc:///tmp/publisher.zmq.sock")
 
     socket.send_multipart([uid,args.hosts,args.state])
