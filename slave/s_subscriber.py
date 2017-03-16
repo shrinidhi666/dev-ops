@@ -87,6 +87,7 @@ class slave_sub(lib.transport.subscriber):
 
   def process(self, topic, request_id,state_name):
     slaveconst = lib.slave_utils.slaveconst().slaveconst()
+    ret_value = 1
     if(state_name != "high"):
       r = requests.post("http://"+ lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.constants.hostname + "/"+ state_name +"/0" , data=simplejson.dumps(slaveconst))
     else:
@@ -103,16 +104,14 @@ class slave_sub(lib.transport.subscriber):
           #   return(0)
     except:
       lib.debug.warn(sys.exc_info())
-      try:
-        os.remove(lib.constants.s_process_lock_file)
-      except:
-        lib.debug.warn("no file : " + lib.constants.s_process_lock_file)
-      return(0)
+      ret_value = 0
+
+    lib.debug.info("removing process lock file : " + lib.constants.s_process_lock_file)
     try:
       os.remove(lib.constants.s_process_lock_file)
     except:
       lib.debug.warn("no file : " + lib.constants.s_process_lock_file)
-    return(1)
+    return(ret_value)
 
 
 def register_host():

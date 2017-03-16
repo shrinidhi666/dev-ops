@@ -211,6 +211,7 @@ class subscriber(object):
           self._socket_req.close()
         else:
           lib.debug.info ("{0} : {1} : {2}".format(topic,request_id,state_name))
+          lib.debug.info("writing process lock file : "+ lib.constants.s_process_lock_file)
           slf = open(lib.constants.s_process_lock_file,"w")
           state_running = {}
           state_running['request_id'] = request_id
@@ -218,6 +219,7 @@ class subscriber(object):
           slf.write(simplejson.dumps(state_running))
           slf.flush()
           slf.close()
+          lib.debug.info("staring process thread")
           process_thread = threading.Thread(target=self.process, args=(topic, request_id, state_name,))
           process_thread.start()
       # except KeyboardInterrupt:
