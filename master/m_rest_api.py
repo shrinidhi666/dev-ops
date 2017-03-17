@@ -60,12 +60,6 @@ def getmyip():
   return (flask.request.remote_addr)
 
 
-@app.route('/download/<filepath>',methods=['GET'])
-def getbinaries(filepath):
-  lib.debug.debug(filepath)
-  return(filepath)
-
-
 @app.route('/high/<hostid>',methods=['POST'])
 def high(hostid):
   slaveconst = simplejson.loads(flask.request.data)
