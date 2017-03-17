@@ -40,7 +40,7 @@ class publisher(object):
 
   def _start(self):
     self._socket_rep = self._context.socket(zmq.REP)
-    self._socket_req.setsockopt(zmq.RCVTIMEO, 1000 * 2)
+    self._socket_rep.setsockopt(zmq.RCVTIMEO, 1000 * 2)
     self._socket_rep.bind("tcp://*:" + str(lib.config.master_conf['master_ping_port']))
     self._socket_pub = self._context.socket(zmq.PUB)
     self._socket_pub.sndhwm = 100000
