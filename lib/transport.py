@@ -40,12 +40,13 @@ class publisher(object):
 
   def _start(self):
     self._socket_rep = self._context.socket(zmq.REP)
+    self._socket_req.setsockopt(zmq.RCVTIMEO, 1000 * 2)
     self._socket_rep.bind("tcp://*:" + str(lib.config.master_conf['master_ping_port']))
     self._socket_pub = self._context.socket(zmq.PUB)
     self._socket_pub.sndhwm = 100000
     self._socket_pub.bind("tcp://*:{0}".format(self._port))
-    self.poller = zmq.Poller()
-    self.poller.register(self._socket_rep, zmq.POLLIN)
+    # self.poller = zmq.Poller()
+    # self.poller.register(self._socket_rep, zmq.POLLIN)
 
   def publish(self, topic, state_name, request_id=None):
     if(not request_id):
@@ -58,31 +59,36 @@ class publisher(object):
     else:
       self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode("ping.wtf"))])
     rep_socks = {}
-    rep_socks = dict(self.poller.poll(1*1000)) # 10s timeout in milliseconds
+    # rep_socks = dict(self.poller.poll(1*1000)) # 10s timeout in milliseconds
     hosts_in_topic = {}
-    if(rep_socks):
-      for rep_sock in rep_socks:
-        (request_id_rep,state_name_rep,topic_rep,msg_rep) = rep_sock.recv_multipart()
-        rep_sock.send_multipart([request_id_rep,state_name,msg_rep])
+    # if(rep_socks):
+    #   for rep_sock in rep_socks:
+    #     (request_id_rep,state_name_rep,topic_rep,msg_rep) = rep_sock.recv_multipart()
+    #     rep_sock.send_multipart([request_id_rep,state_name,msg_rep])
+    try:
+      try:
+        (request_id_rep, state_name_rep, topic_rep, msg_rep) = self._socket_rep.recv_multipart()
+        self._socket_rep.send_multipart([request_id_rep, state_name, msg_rep])
         lib.debug.debug(msg_rep)
-        try:
-          msg_reved = simplejson.loads(msg_rep)
-          if (state_name == "ping.slaveconst"):
-            hosts_in_topic[msg_reved['hostid']] = msg_reved['slaveconst']
-          else:
-            if(msg_reved['status'] == "free"):
-              hosts_in_topic[msg_reved['hostid']] = msg_reved['status']
-              if (state_name != "ping.wtf" and state_name != "ping.slaveconst"):
-                self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode(state_name))])
-                hosts_in_topic[msg_reved['hostid']] = "success"
-            else:
-              hosts_in_topic[msg_reved['hostid']] = msg_reved['status'] +" : "+ msg_reved['request_id']
-        except:
-          lib.debug.error(str(state_name) + " : "+ str(request_id) +" : "+ str(sys.exc_info()))
-          hosts_in_topic[msg_reved['hostid']] = str(state_name) + " : " + str(request_id) + " : " + str(sys.exc_info())
-    else:
-      lib.debug.error(str(topic) +" : Timeout processing auth request")
-      hosts_in_topic[str(topic)]  = "timeout"
+      except:
+        lib.debug.error(str(topic) + " : Timeout processing auth request")
+        hosts_in_topic[str(topic)] = "timeout"
+        return (hosts_in_topic)
+
+      msg_reved = simplejson.loads(msg_rep)
+      if (state_name == "ping.slaveconst"):
+        hosts_in_topic[msg_reved['hostid']] = msg_reved['slaveconst']
+      else:
+        if(msg_reved['status'] == "free"):
+          hosts_in_topic[msg_reved['hostid']] = msg_reved['status']
+          if (state_name != "ping.wtf" and state_name != "ping.slaveconst"):
+            self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode(state_name))])
+            hosts_in_topic[msg_reved['hostid']] = "success"
+        else:
+          hosts_in_topic[msg_reved['hostid']] = msg_reved['status'] +" : "+ msg_reved['request_id']
+    except:
+      lib.debug.error(str(state_name) + " : "+ str(request_id) +" : "+ str(sys.exc_info()))
+      hosts_in_topic[msg_reved['hostid']] = str(state_name) + " : " + str(request_id) + " : " + str(sys.exc_info())
 
     return(hosts_in_topic)
 
