@@ -45,8 +45,6 @@ class publisher(object):
     self._socket_pub = self._context.socket(zmq.PUB)
     self._socket_pub.sndhwm = 100000
     self._socket_pub.bind("tcp://*:{0}".format(self._port))
-    # self.poller = zmq.Poller()
-    # self.poller.register(self._socket_rep, zmq.POLLIN)
 
   def publish(self, topic, state_name, request_id=None):
     if(not request_id):
@@ -58,13 +56,7 @@ class publisher(object):
       self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode("ping.slaveconst"))])
     else:
       self._socket_pub.send_multipart([bytes(unicode(topic)), bytes(unicode(request_id)), bytes(unicode("ping.wtf"))])
-    rep_socks = {}
-    # rep_socks = dict(self.poller.poll(1*1000)) # 10s timeout in milliseconds
     hosts_in_topic = {}
-    # if(rep_socks):
-    #   for rep_sock in rep_socks:
-    #     (request_id_rep,state_name_rep,topic_rep,msg_rep) = rep_sock.recv_multipart()
-    #     rep_sock.send_multipart([request_id_rep,state_name,msg_rep])
     try:
       try:
         (request_id_rep, state_name_rep, topic_rep, msg_rep) = self._socket_rep.recv_multipart()
