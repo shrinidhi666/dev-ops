@@ -48,6 +48,7 @@ else:
     socket.send_multipart([uid,args.hosts,args.state])
     validhosts = socket.recv_pyobj()
     socket.close()
+    totalhosts = len(validhosts)
     if(validhosts):
       for x in validhosts:
         print (x +" : "+ simplejson.dumps(validhosts[x],indent=4))
@@ -67,6 +68,8 @@ else:
                              "(\"{0}\",\"{1}\",\"{2}\")".format(uid,args.state,args.hosts),
                              db_file=lib.constants.m_dostates_sqlite3_file)
       print("request id : "+ str(uid))
+
+    print("TOTAL : "+ str(totalhosts))
 
   elif(args.test):
     state_name = args.test
