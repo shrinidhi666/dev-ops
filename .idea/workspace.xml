@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e072f42f-b1e1-47d6-868c-ed9aebc0cf0c" name="Default" comment="">
+    <list default="true" id="e072f42f-b1e1-47d6-868c-ed9aebc0cf0c" name="Default" comment="fixing">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dev-ops.iml" afterPath="$PROJECT_DIR$/.idea/dev-ops.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/supervisor/master/devops-master.conf" afterPath="$PROJECT_DIR$/install/supervisor/master/devops-master.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/supervisor/slave/devops-slave.conf" afterPath="$PROJECT_DIR$/install/supervisor/slave/devops-slave.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/modules.py" afterPath="$PROJECT_DIR$/lib/modules.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,16 +15,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/dev-ops$m_publisher.coverage" NAME="m_publisher Coverage Results" MODIFIED="1486722858861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/master" />
-    <SUITE FILE_PATH="coverage/dev-ops$master_utils_test.coverage" NAME="master_utils_test Coverage Results" MODIFIED="1487658442835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/dev-ops$template_test.coverage" NAME="template_test Coverage Results" MODIFIED="1487307195331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/dev-ops$test_master.coverage" NAME="test_master Coverage Results" MODIFIED="1488277611851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/dev-ops$m_rest_api.coverage" NAME="m_rest_api Coverage Results" MODIFIED="1487559396912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/master" />
     <SUITE FILE_PATH="coverage/dev-ops$master_utils.coverage" NAME="master_utils Coverage Results" MODIFIED="1487647763912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
-    <SUITE FILE_PATH="coverage/dev-ops$slave_utils.coverage" NAME="slave_utils Coverage Results" MODIFIED="1487326430074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
     <SUITE FILE_PATH="coverage/dev-ops$freemem.coverage" NAME="freemem Coverage Results" MODIFIED="1486402111352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/install/slave/slaveconst" />
-    <SUITE FILE_PATH="coverage/dev-ops$test_master_filedownload.coverage" NAME="test_master_filedownload Coverage Results" MODIFIED="1489743558447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/dev-ops$m_publisher.coverage" NAME="m_publisher Coverage Results" MODIFIED="1486722858861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/master" />
+    <SUITE FILE_PATH="coverage/dev-ops$test_master.coverage" NAME="test_master Coverage Results" MODIFIED="1487664958996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/dev-ops$slave_utils.coverage" NAME="slave_utils Coverage Results" MODIFIED="1487326430074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
+    <SUITE FILE_PATH="coverage/dev-ops$m_rest_api.coverage" NAME="m_rest_api Coverage Results" MODIFIED="1487559396912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/master" />
+    <SUITE FILE_PATH="coverage/dev-ops$template_test.coverage" NAME="template_test Coverage Results" MODIFIED="1487307195331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/dev-ops$test_master_event.coverage" NAME="test_master_event Coverage Results" MODIFIED="1487668429215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/dev-ops$master_utils_test.coverage" NAME="master_utils_test Coverage Results" MODIFIED="1487658442835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -31,14 +31,34 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="do-states.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/do-states.py">
+      <file leaf-file-name="debug.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/debug.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+            <state relative-caret-position="238">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transport.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/transport.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1292">
+              <caret line="84" column="26" lean-forward="false" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
               <folding>
-                <marker date="1489731509673" expanded="true" signature="2005:2147" ph="insert into log... " />
+                <marker date="1491023085784" expanded="true" signature="844:919" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="m_publisher.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/master/m_publisher.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -46,92 +66,90 @@
       <file leaf-file-name="m_rest_api.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/master/m_rest_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
-              <caret line="59" column="36" lean-forward="false" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+            <state relative-caret-position="1224">
+              <caret line="74" column="29" lean-forward="false" selection-start-line="75" selection-start-column="76" selection-end-line="75" selection-end-column="83" />
               <folding>
-                <marker date="1489743183580" expanded="true" signature="2954:3041" ph="insert into slaves... " />
-                <marker date="1489743183580" expanded="true" signature="3260:3332" ph="insert into slaves... " />
-                <marker date="1489743183580" expanded="true" signature="3615:3649" ph="select * fro... slaves" />
+                <marker date="1491023085800" expanded="true" signature="568:680" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modules.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="do-states.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/do-states.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+              <folding>
+                <marker date="1491023085706" expanded="true" signature="2005:2147" ph="insert into log... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="s_subscriber.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/slave/s_subscriber.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2278">
+              <caret line="135" column="51" lean-forward="false" selection-start-line="135" selection-start-column="51" selection-end-line="135" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="master_utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/master_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="680">
+              <caret line="42" column="108" lean-forward="false" selection-start-line="42" selection-start-column="108" selection-end-line="42" selection-end-column="108" />
+              <folding>
+                <marker date="1491023085768" expanded="true" signature="511:545" ph="select * fro... slaves" />
+                <marker date="1491023085768" expanded="true" signature="696:730" ph="select * fro... slaves" />
+                <marker date="1491023085768" expanded="true" signature="835:869" ph="select * fro... slaves" />
+                <marker date="1491023085768" expanded="true" signature="970:990" ph="select * fro... slaves" />
+                <marker date="1491023085768" expanded="true" signature="1117:1151" ph="select * fro... slaves" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="slave_utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/slave_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1173">
+              <caret line="75" column="17" lean-forward="true" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
+              <folding>
+                <marker date="1491023085768" expanded="true" signature="458:1728" ph="..." />
+                <marker date="1491023085768" expanded="true" signature="746:1142" ph="..." />
+                <marker date="1491023085768" expanded="true" signature="1176:1728" ph="..." />
+                <marker date="1491023085768" expanded="true" signature="1253:1703" ph="..." />
+                <marker date="1491023085768" expanded="true" signature="1353:1703" ph="..." />
+                <marker date="1491023085768" expanded="true" signature="1379:1703" ph="..." />
+                <marker date="1491023085768" expanded="true" signature="1746:1876" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/template.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1530">
+              <caret line="91" column="51" lean-forward="false" selection-start-line="91" selection-start-column="51" selection-end-line="91" selection-end-column="51" />
+              <folding>
+                <marker date="1491023085768" expanded="true" signature="1216:4145" ph="..." />
+                <marker date="1491023085768" expanded="true" signature="2042:4145" ph="..." />
+                <marker date="1491023085768" expanded="true" signature="2259:4115" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modules.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/modules.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="846">
-              <caret line="48" column="49" lean-forward="false" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="devops-master.conf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/install/supervisor/master/devops-master.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="devops-slave.conf" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/install/supervisor/slave/devops-slave.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_master.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/test_master.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="29" column="22" lean-forward="false" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_master_filedownload.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/test_master_filedownload.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="19" column="94" lean-forward="false" selection-start-line="19" selection-start-column="94" selection-end-line="19" selection-end-column="94" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="high.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/master_const/high.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="master.conf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/install/master/master.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="constants.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/constants.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="45" column="9" lean-forward="false" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+            <state relative-caret-position="267">
+              <caret line="51" column="90" lean-forward="false" selection-start-line="51" selection-start-column="90" selection-end-line="51" selection-end-column="90" />
               <folding />
             </state>
           </provider>
@@ -157,10 +175,7 @@
       <find>psutil</find>
       <find>dev_ops</find>
       <find>masterc</find>
-      <find>config</find>
-      <find>ulogs</find>
-      <find>masterconst</find>
-      <find>rep_sock</find>
+      <find>can_send_state</find>
     </findStrings>
     <replaceStrings>
       <replace>print</replace>
@@ -171,9 +186,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="PUSH_TAGS">
-      <GitPushTagMode />
-    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -181,16 +193,21 @@
         <option value="$PROJECT_DIR$/tests/jinjafile.jinja" />
         <option value="$PROJECT_DIR$/tests/level1/level2/level3/init.yml" />
         <option value="$PROJECT_DIR$/tests/level1/level2/level3_1/test1.yml" />
+        <option value="$PROJECT_DIR$/install/supervisor/slave/devops-slave.conf" />
+        <option value="$PROJECT_DIR$/install/supervisor/master/devops-master.conf" />
         <option value="$PROJECT_DIR$/tests/template_test.py" />
+        <option value="$PROJECT_DIR$/lib/slave_utils.py" />
         <option value="$PROJECT_DIR$/tests/states_test/level1/level2/level3/init.yml" />
         <option value="$PROJECT_DIR$/tests/states_test/level1/init.yml" />
         <option value="$PROJECT_DIR$/tests/states_test/level1/level2/level3/unique.yml" />
         <option value="$PROJECT_DIR$/tests/states_test/level1/level2/level3_2/test1.yml" />
         <option value="$PROJECT_DIR$/tests/test_master_event.py" />
+        <option value="$PROJECT_DIR$/tests/test_master.py" />
         <option value="$PROJECT_DIR$/install/slave/slaveconst/freemem.py" />
         <option value="$PROJECT_DIR$/lib/processor.py" />
         <option value="$PROJECT_DIR$/tests/states_test/jinjafile.jinja" />
         <option value="$PROJECT_DIR$/tests/states_test/level1/level2/level3_1/test1.yml" />
+        <option value="$PROJECT_DIR$/lib/template.py" />
         <option value="$PROJECT_DIR$/tests/states_test/init.yml" />
         <option value="$PROJECT_DIR$/tests/master_conf/high.yml" />
         <option value="$PROJECT_DIR$/tests/master_conf/test1/test1.yml" />
@@ -204,30 +221,22 @@
         <option value="$PROJECT_DIR$/tests/events_test/__init__.py" />
         <option value="$PROJECT_DIR$/tests/events_test/high.yml" />
         <option value="$PROJECT_DIR$/tests/events_test/fortest.py" />
+        <option value="$PROJECT_DIR$/master/m_rest_api.py" />
         <option value="$PROJECT_DIR$/bin/do-keys.py" />
+        <option value="$PROJECT_DIR$/install/master/master.conf" />
+        <option value="$PROJECT_DIR$/install.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/version.yml" />
-        <option value="$PROJECT_DIR$/lib/db_sqlite3.py" />
-        <option value="$PROJECT_DIR$/lib/debug.py" />
-        <option value="$PROJECT_DIR$/tests/test_master.py" />
-        <option value="$PROJECT_DIR$/bin/do-logs.py" />
         <option value="$PROJECT_DIR$/lib/constants.py" />
-        <option value="$PROJECT_DIR$/lib/modules.py" />
-        <option value="$PROJECT_DIR$/master/m_publisher.py" />
-        <option value="$PROJECT_DIR$/install/slave/slave.conf" />
-        <option value="$PROJECT_DIR$/install.py" />
-        <option value="$PROJECT_DIR$/lib/config.py" />
-        <option value="$PROJECT_DIR$/lib/template.py" />
-        <option value="$PROJECT_DIR$/lib/slave_utils.py" />
+        <option value="$PROJECT_DIR$/lib/db_sqlite3.py" />
+        <option value="$PROJECT_DIR$/bin/do-logs.py" />
+        <option value="$PROJECT_DIR$/lib/debug.py" />
         <option value="$PROJECT_DIR$/lib/master_utils.py" />
+        <option value="$PROJECT_DIR$/master/m_publisher.py" />
         <option value="$PROJECT_DIR$/slave/s_subscriber.py" />
         <option value="$PROJECT_DIR$/lib/transport.py" />
         <option value="$PROJECT_DIR$/bin/do-states.py" />
-        <option value="$PROJECT_DIR$/install/master/master.conf" />
-        <option value="$PROJECT_DIR$/tests/test_master_filedownload.py" />
-        <option value="$PROJECT_DIR$/master/m_rest_api.py" />
-        <option value="$PROJECT_DIR$/install/supervisor/master/devops-master.conf" />
-        <option value="$PROJECT_DIR$/install/supervisor/slave/devops-slave.conf" />
+        <option value="$PROJECT_DIR$/lib/modules.py" />
       </list>
     </option>
   </component>
@@ -238,9 +247,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1920" />
-    <option name="width" value="1920" />
-    <option name="height" value="1044" />
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -325,50 +335,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="level1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev-ops" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev-ops" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="states_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="level1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="level2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev-ops" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev-ops" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="master_const" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -572,6 +538,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="NBKnowledgePane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -584,20 +551,168 @@
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="nodejs_interpreter_path" value="/usr/bin/node" />
-    <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/GitHub/devops-aum" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/tests/states_test" />
       <recent name="$PROJECT_DIR$/tests/states_test/level1" />
     </key>
+    <key name="OPEN_URL_DIALOG">
+      <recent name="https://github.com/shrinidhi666/rbhus.git" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/tests" />
       <recent name="$PROJECT_DIR$/tests/states_test/level1" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test_master_filedownload">
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/do-logs.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/do-states.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/install.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/install/master/master.conf</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/install/slave/slave.conf</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/install/supervisor/master/devops-master.conf</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/install/supervisor/slave/devops-slave.conf</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/lib/config.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/lib/constants.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/lib/master_utils.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/lib/modules.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/lib/slave_utils.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/lib/template.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/lib/transport.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/master/m_publisher.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/master/m_rest_api.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/slave/s_subscriber.py</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/tests/test_master_filedownload.py</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
+  <component name="RunManager" selected="Python.test_master_event">
+    <configuration default="false" name="m_rest_api" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/master" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="dev-ops" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/master/m_rest_api.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
     <configuration default="false" name="test_master" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -670,27 +785,9 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="test_master_filedownload" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="dev-ops" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_master_filedownload.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
       <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="INTERPRETER_PATH" value="C:\Program Files\OpenSSH\bin\bash.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SCRIPT_NAME" value="" />
@@ -914,19 +1011,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.test_master" />
-      <item index="1" class="java.lang.String" itemvalue="Python.master_utils" />
-      <item index="2" class="java.lang.String" itemvalue="Python.master_utils_test" />
-      <item index="3" class="java.lang.String" itemvalue="Python.test_master_event" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test_master_filedownload" />
+      <item index="0" class="java.lang.String" itemvalue="Python.m_rest_api" />
+      <item index="1" class="java.lang.String" itemvalue="Python.test_master" />
+      <item index="2" class="java.lang.String" itemvalue="Python.master_utils" />
+      <item index="3" class="java.lang.String" itemvalue="Python.master_utils_test" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test_master_event" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test_master_filedownload" />
+        <item index="0" class="java.lang.String" itemvalue="Python.test_master_event" />
         <item index="1" class="java.lang.String" itemvalue="Python.test_master" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test_master_event" />
-        <item index="3" class="java.lang.String" itemvalue="Python.master_utils_test" />
-        <item index="4" class="java.lang.String" itemvalue="Python.master_utils" />
+        <item index="2" class="java.lang.String" itemvalue="Python.master_utils_test" />
+        <item index="3" class="java.lang.String" itemvalue="Python.master_utils" />
+        <item index="4" class="java.lang.String" itemvalue="Python.m_rest_api" />
       </list>
     </recent_temporary>
   </component>
@@ -951,350 +1048,350 @@
       <option name="presentableId" value="Default" />
       <updated>1486396648675</updated>
     </task>
-    <task id="LOCAL-00118" summary="fixing">
-      <created>1488948231045</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
+    <task id="LOCAL-00030" summary="fixing">
+      <created>1487744965153</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1488948231045</updated>
+      <updated>1487744965153</updated>
     </task>
-    <task id="LOCAL-00119" summary="fixing">
-      <created>1488952886683</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
+    <task id="LOCAL-00031" summary="fixing">
+      <created>1487751000639</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1488952886683</updated>
+      <updated>1487751000639</updated>
     </task>
-    <task id="LOCAL-00120" summary="fixing">
-      <created>1488955550286</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
+    <task id="LOCAL-00032" summary="fixing">
+      <created>1487751052089</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
       <option name="project" value="LOCAL" />
-      <updated>1488955550286</updated>
+      <updated>1487751052089</updated>
     </task>
-    <task id="LOCAL-00121" summary="fixing">
-      <created>1488967118417</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
+    <task id="LOCAL-00033" summary="fixing">
+      <created>1487751159482</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
       <option name="project" value="LOCAL" />
-      <updated>1488967118417</updated>
+      <updated>1487751159482</updated>
     </task>
-    <task id="LOCAL-00122" summary="fixing">
-      <created>1488967163010</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
+    <task id="LOCAL-00034" summary="fixing">
+      <created>1487751564895</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
       <option name="project" value="LOCAL" />
-      <updated>1488967163010</updated>
+      <updated>1487751564895</updated>
     </task>
-    <task id="LOCAL-00123" summary="fixing">
-      <created>1489035811082</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
+    <task id="LOCAL-00035" summary="fixing">
+      <created>1487751704817</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
       <option name="project" value="LOCAL" />
-      <updated>1489035811082</updated>
+      <updated>1487751704817</updated>
     </task>
-    <task id="LOCAL-00124" summary="fixing">
-      <created>1489037323444</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
+    <task id="LOCAL-00036" summary="fixing">
+      <created>1487751744579</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
       <option name="project" value="LOCAL" />
-      <updated>1489037323444</updated>
+      <updated>1487751744579</updated>
     </task>
-    <task id="LOCAL-00125" summary="fixing">
-      <created>1489037765825</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
+    <task id="LOCAL-00037" summary="fixing">
+      <created>1487751797813</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
       <option name="project" value="LOCAL" />
-      <updated>1489037765825</updated>
+      <updated>1487751797813</updated>
     </task>
-    <task id="LOCAL-00126" summary="fixing">
-      <created>1489037809924</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
+    <task id="LOCAL-00038" summary="fixing">
+      <created>1487751850545</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
       <option name="project" value="LOCAL" />
-      <updated>1489037809924</updated>
+      <updated>1487751850545</updated>
     </task>
-    <task id="LOCAL-00127" summary="fixing">
-      <created>1489039804980</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
+    <task id="LOCAL-00039" summary="fixing">
+      <created>1487751932111</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
       <option name="project" value="LOCAL" />
-      <updated>1489039804980</updated>
+      <updated>1487751932111</updated>
     </task>
-    <task id="LOCAL-00128" summary="fixing">
-      <created>1489040395135</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
+    <task id="LOCAL-00040" summary="fixing">
+      <created>1487752138752</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
       <option name="project" value="LOCAL" />
-      <updated>1489040395135</updated>
+      <updated>1487752138752</updated>
     </task>
-    <task id="LOCAL-00129" summary="fixing">
-      <created>1489041162376</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
+    <task id="LOCAL-00041" summary="fixing">
+      <created>1487753895702</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
       <option name="project" value="LOCAL" />
-      <updated>1489041162376</updated>
+      <updated>1487753895702</updated>
     </task>
-    <task id="LOCAL-00130" summary="fixing">
-      <created>1489041212657</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
+    <task id="LOCAL-00042" summary="fixing">
+      <created>1487753925816</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
       <option name="project" value="LOCAL" />
-      <updated>1489041212657</updated>
+      <updated>1487753925816</updated>
     </task>
-    <task id="LOCAL-00131" summary="fixing">
-      <created>1489049471433</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
+    <task id="LOCAL-00043" summary="fixing">
+      <created>1487819732769</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
       <option name="project" value="LOCAL" />
-      <updated>1489049471433</updated>
+      <updated>1487819732769</updated>
     </task>
-    <task id="LOCAL-00132" summary="fixing">
-      <created>1489206283245</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
+    <task id="LOCAL-00044" summary="fixing">
+      <created>1487820058664</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
       <option name="project" value="LOCAL" />
-      <updated>1489206283245</updated>
+      <updated>1487820058664</updated>
     </task>
-    <task id="LOCAL-00133" summary="fixing">
-      <created>1489206316838</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
+    <task id="LOCAL-00045" summary="fixing">
+      <created>1487820095575</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
       <option name="project" value="LOCAL" />
-      <updated>1489206316838</updated>
+      <updated>1487820095575</updated>
     </task>
-    <task id="LOCAL-00134" summary="fixing">
-      <created>1489206746193</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
+    <task id="LOCAL-00046" summary="fixing">
+      <created>1487820406737</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
       <option name="project" value="LOCAL" />
-      <updated>1489206746193</updated>
+      <updated>1487820406737</updated>
     </task>
-    <task id="LOCAL-00135" summary="fixing">
-      <created>1489210982840</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
+    <task id="LOCAL-00047" summary="fixing">
+      <created>1487820553411</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
       <option name="project" value="LOCAL" />
-      <updated>1489210982840</updated>
+      <updated>1487820553411</updated>
     </task>
-    <task id="LOCAL-00136" summary="fixing">
-      <created>1489220024934</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
+    <task id="LOCAL-00048" summary="fixing">
+      <created>1487822922677</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
       <option name="project" value="LOCAL" />
-      <updated>1489220024934</updated>
+      <updated>1487822922677</updated>
     </task>
-    <task id="LOCAL-00137" summary="fixing">
-      <created>1489220791823</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
+    <task id="LOCAL-00049" summary="fixing">
+      <created>1487823770219</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
       <option name="project" value="LOCAL" />
-      <updated>1489220791823</updated>
+      <updated>1487823770219</updated>
     </task>
-    <task id="LOCAL-00138" summary="fixing">
-      <created>1489220899821</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
+    <task id="LOCAL-00050" summary="fixing">
+      <created>1487823912629</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
       <option name="project" value="LOCAL" />
-      <updated>1489220899821</updated>
+      <updated>1487823912629</updated>
     </task>
-    <task id="LOCAL-00139" summary="fixing">
-      <created>1489222093937</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
+    <task id="LOCAL-00051" summary="fixing">
+      <created>1487827844650</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
       <option name="project" value="LOCAL" />
-      <updated>1489222093937</updated>
+      <updated>1487827844650</updated>
     </task>
-    <task id="LOCAL-00140" summary="fixing">
-      <created>1489222910196</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
+    <task id="LOCAL-00052" summary="fixing">
+      <created>1487828012743</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
       <option name="project" value="LOCAL" />
-      <updated>1489222910196</updated>
+      <updated>1487828012744</updated>
     </task>
-    <task id="LOCAL-00141" summary="fixing">
-      <created>1489222972524</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
+    <task id="LOCAL-00053" summary="fixing">
+      <created>1487828367324</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
       <option name="project" value="LOCAL" />
-      <updated>1489222972525</updated>
+      <updated>1487828367324</updated>
     </task>
-    <task id="LOCAL-00142" summary="fixing">
-      <created>1489223130016</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
+    <task id="LOCAL-00054" summary="fixing">
+      <created>1487828409340</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
       <option name="project" value="LOCAL" />
-      <updated>1489223130016</updated>
+      <updated>1487828409340</updated>
     </task>
-    <task id="LOCAL-00143" summary="fixing">
-      <created>1489385844905</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
+    <task id="LOCAL-00055" summary="fixing">
+      <created>1487830711453</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
       <option name="project" value="LOCAL" />
-      <updated>1489385844905</updated>
+      <updated>1487830711453</updated>
     </task>
-    <task id="LOCAL-00144" summary="fixing">
-      <created>1489385908371</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
+    <task id="LOCAL-00056" summary="fixing">
+      <created>1487831245846</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
       <option name="project" value="LOCAL" />
-      <updated>1489385908371</updated>
+      <updated>1487831245846</updated>
     </task>
-    <task id="LOCAL-00145" summary="fixing">
-      <created>1489386268148</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
+    <task id="LOCAL-00057" summary="fixing">
+      <created>1487832004578</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
       <option name="project" value="LOCAL" />
-      <updated>1489386268148</updated>
+      <updated>1487832004578</updated>
     </task>
-    <task id="LOCAL-00146" summary="fixing">
-      <created>1489386332791</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
+    <task id="LOCAL-00058" summary="fixing">
+      <created>1487848175040</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
       <option name="project" value="LOCAL" />
-      <updated>1489386332791</updated>
+      <updated>1487848175040</updated>
     </task>
-    <task id="LOCAL-00147" summary="fixing">
-      <created>1489386382300</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
+    <task id="LOCAL-00059" summary="fixing">
+      <created>1487848367767</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
       <option name="project" value="LOCAL" />
-      <updated>1489386382300</updated>
+      <updated>1487848367767</updated>
     </task>
-    <task id="LOCAL-00148" summary="fixing">
-      <created>1489387108087</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
+    <task id="LOCAL-00060" summary="fixing">
+      <created>1487848448937</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
       <option name="project" value="LOCAL" />
-      <updated>1489387108087</updated>
+      <updated>1487848448937</updated>
     </task>
-    <task id="LOCAL-00149" summary="fixing">
-      <created>1489387339190</created>
-      <option name="number" value="00149" />
-      <option name="presentableId" value="LOCAL-00149" />
+    <task id="LOCAL-00061" summary="fixing">
+      <created>1487848858492</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
       <option name="project" value="LOCAL" />
-      <updated>1489387339191</updated>
+      <updated>1487848858492</updated>
     </task>
-    <task id="LOCAL-00150" summary="fixing">
-      <created>1489388127766</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
+    <task id="LOCAL-00062" summary="fixing">
+      <created>1487904000309</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
       <option name="project" value="LOCAL" />
-      <updated>1489388127766</updated>
+      <updated>1487904000309</updated>
     </task>
-    <task id="LOCAL-00151" summary="fixing">
-      <created>1489467578335</created>
-      <option name="number" value="00151" />
-      <option name="presentableId" value="LOCAL-00151" />
+    <task id="LOCAL-00063" summary="fixing">
+      <created>1487904407453</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
       <option name="project" value="LOCAL" />
-      <updated>1489467578335</updated>
+      <updated>1487904407453</updated>
     </task>
-    <task id="LOCAL-00152" summary="fixing">
-      <created>1489467688968</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
+    <task id="LOCAL-00064" summary="fixing">
+      <created>1487913923637</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
       <option name="project" value="LOCAL" />
-      <updated>1489467688968</updated>
+      <updated>1487913923638</updated>
     </task>
-    <task id="LOCAL-00153" summary="fixing">
-      <created>1489473728346</created>
-      <option name="number" value="00153" />
-      <option name="presentableId" value="LOCAL-00153" />
+    <task id="LOCAL-00065" summary="fixing">
+      <created>1487914546058</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
       <option name="project" value="LOCAL" />
-      <updated>1489473728346</updated>
+      <updated>1487914546058</updated>
     </task>
-    <task id="LOCAL-00154" summary="fixing">
-      <created>1489489423064</created>
-      <option name="number" value="00154" />
-      <option name="presentableId" value="LOCAL-00154" />
+    <task id="LOCAL-00066" summary="fixing">
+      <created>1487915655149</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
       <option name="project" value="LOCAL" />
-      <updated>1489489423064</updated>
+      <updated>1487915655149</updated>
     </task>
-    <task id="LOCAL-00155" summary="fixing">
-      <created>1489663522133</created>
-      <option name="number" value="00155" />
-      <option name="presentableId" value="LOCAL-00155" />
+    <task id="LOCAL-00067" summary="fixing">
+      <created>1487915684613</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
       <option name="project" value="LOCAL" />
-      <updated>1489663522133</updated>
+      <updated>1487915684614</updated>
     </task>
-    <task id="LOCAL-00156" summary="fixing">
-      <created>1489663869709</created>
-      <option name="number" value="00156" />
-      <option name="presentableId" value="LOCAL-00156" />
+    <task id="LOCAL-00068" summary="fixing">
+      <created>1487916907761</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
       <option name="project" value="LOCAL" />
-      <updated>1489663869710</updated>
+      <updated>1487916907762</updated>
     </task>
-    <task id="LOCAL-00157" summary="fixing">
-      <created>1489720930249</created>
-      <option name="number" value="00157" />
-      <option name="presentableId" value="LOCAL-00157" />
+    <task id="LOCAL-00069" summary="fixing">
+      <created>1487917205346</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
       <option name="project" value="LOCAL" />
-      <updated>1489720930250</updated>
+      <updated>1487917205346</updated>
     </task>
-    <task id="LOCAL-00158" summary="fixing">
-      <created>1489729969273</created>
-      <option name="number" value="00158" />
-      <option name="presentableId" value="LOCAL-00158" />
+    <task id="LOCAL-00070" summary="fixing">
+      <created>1487917601483</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
       <option name="project" value="LOCAL" />
-      <updated>1489729969273</updated>
+      <updated>1487917601483</updated>
     </task>
-    <task id="LOCAL-00159" summary="fixing">
-      <created>1489730278385</created>
-      <option name="number" value="00159" />
-      <option name="presentableId" value="LOCAL-00159" />
+    <task id="LOCAL-00071" summary="fixing">
+      <created>1487923326879</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
       <option name="project" value="LOCAL" />
-      <updated>1489730278385</updated>
+      <updated>1487923326879</updated>
     </task>
-    <task id="LOCAL-00160" summary="fixing">
-      <created>1489730291633</created>
-      <option name="number" value="00160" />
-      <option name="presentableId" value="LOCAL-00160" />
+    <task id="LOCAL-00072" summary="fixing">
+      <created>1487923553264</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
       <option name="project" value="LOCAL" />
-      <updated>1489730291633</updated>
+      <updated>1487923553264</updated>
     </task>
-    <task id="LOCAL-00161" summary="fixing">
-      <created>1489731432181</created>
-      <option name="number" value="00161" />
-      <option name="presentableId" value="LOCAL-00161" />
+    <task id="LOCAL-00073" summary="fixing">
+      <created>1487923590551</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
       <option name="project" value="LOCAL" />
-      <updated>1489731432181</updated>
+      <updated>1487923590551</updated>
     </task>
-    <task id="LOCAL-00162" summary="fixing">
-      <created>1489731514269</created>
-      <option name="number" value="00162" />
-      <option name="presentableId" value="LOCAL-00162" />
+    <task id="LOCAL-00074" summary="fixing">
+      <created>1487923673197</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
       <option name="project" value="LOCAL" />
-      <updated>1489731514269</updated>
+      <updated>1487923673197</updated>
     </task>
-    <task id="LOCAL-00163" summary="fixing">
-      <created>1489739301460</created>
-      <option name="number" value="00163" />
-      <option name="presentableId" value="LOCAL-00163" />
+    <task id="LOCAL-00075" summary="fixing">
+      <created>1487928293848</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
       <option name="project" value="LOCAL" />
-      <updated>1489739301460</updated>
+      <updated>1487928293848</updated>
     </task>
-    <task id="LOCAL-00164" summary="fixing">
-      <created>1489739364197</created>
-      <option name="number" value="00164" />
-      <option name="presentableId" value="LOCAL-00164" />
+    <task id="LOCAL-00076" summary="fixing">
+      <created>1487928424677</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
       <option name="project" value="LOCAL" />
-      <updated>1489739364197</updated>
+      <updated>1487928424677</updated>
     </task>
-    <task id="LOCAL-00165" summary="fixing">
-      <created>1489740235800</created>
-      <option name="number" value="00165" />
-      <option name="presentableId" value="LOCAL-00165" />
+    <task id="LOCAL-00077" summary="fixing">
+      <created>1488099101319</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
       <option name="project" value="LOCAL" />
-      <updated>1489740235800</updated>
+      <updated>1488099101320</updated>
     </task>
-    <task id="LOCAL-00166" summary="fixing">
-      <created>1489743189248</created>
-      <option name="number" value="00166" />
-      <option name="presentableId" value="LOCAL-00166" />
+    <task id="LOCAL-00078" summary="fixing">
+      <created>1488383276214</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
       <option name="project" value="LOCAL" />
-      <updated>1489743189248</updated>
+      <updated>1488383276215</updated>
     </task>
-    <option name="localTasksCounter" value="167" />
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1307,15 +1404,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="0" width="1920" height="1044" extended-state="6" />
-    <editor active="false" />
+    <frame x="1912" y="-8" width="1616" height="876" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19850586" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20822622" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.504896" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32839838" sideWeight="0.5025707" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32839838" sideWeight="0.4974293" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839838" sideWeight="0.48457584" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1324,35 +1422,13 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32922733" sideWeight="0.49510404" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.49510404" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20380738" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20323014" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.504896" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32922733" sideWeight="0.49510404" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20991433" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20380738" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -1369,6 +1445,55 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3/test1.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3/init.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/states_test/jinjafile.jinja">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install/slave/slaveconst/freemem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3_2/test1.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/states_test/init.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="8" lean-forward="true" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/init.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/common_utils.py" />
     <entry file="file://$PROJECT_DIR$/tests/master_const/test2/test2_1" />
     <entry file="file://$PROJECT_DIR$/tests/master_const/test1/test1.yml">
@@ -1392,6 +1517,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/master_const/high.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/master_utils_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -1406,10 +1538,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_master_event.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_master.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/master_const/test2/test2.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3_2/test2.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/test1.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1427,6 +1587,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3_1/test1.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="37" column="29" lean-forward="false" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install/slave/slave.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install/master/master.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="34" column="25" lean-forward="false" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1434,7 +1622,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/test1.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bin/install-devops.py" />
+    <entry file="file://$PROJECT_DIR$/bin/do-keys.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="717">
+          <caret line="57" column="29" lean-forward="false" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/version.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -1442,10 +1644,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="38" column="43" lean-forward="false" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/db_sqlite3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="461">
           <caret line="33" column="49" lean-forward="false" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/states_test/high.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="6" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1463,263 +1679,139 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/test1.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/states_test/init.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="8" lean-forward="true" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/test1.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3_2/test2.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3_2/test1.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/states_test/level1/level2/level3_1/test1.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/sub.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/dev-ops.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_master_event.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/template_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="34" column="47" lean-forward="false" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/debug.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/crypt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/do-logs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="56" column="17" lean-forward="false" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/install/slave/slave.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/template.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="91" column="86" lean-forward="false" selection-start-line="91" selection-start-column="86" selection-end-line="91" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/slave/s_subscriber.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2016">
-          <caret line="113" column="21" lean-forward="false" selection-start-line="113" selection-start-column="21" selection-end-line="113" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/master_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1764">
-          <caret line="100" column="127" lean-forward="false" selection-start-line="100" selection-start-column="127" selection-end-line="100" selection-end-column="127" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/slave_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="39" column="8" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/states_test/high.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="6" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/install.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2286">
-          <caret line="132" column="17" lean-forward="false" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/processor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
+        <state relative-caret-position="323">
           <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/do-keys.py">
+    <entry file="file://$PROJECT_DIR$/tests/template_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="57" column="29" lean-forward="false" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
+        <state relative-caret-position="561">
+          <caret line="34" column="47" lean-forward="false" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/master/m_publisher.py">
+    <entry file="file://$PROJECT_DIR$/bin/do-logs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="37" column="22" lean-forward="false" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+        <state relative-caret-position="306">
+          <caret line="19" column="108" lean-forward="false" selection-start-line="19" selection-start-column="108" selection-end-line="19" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="https://github.com/shrinidhi666/rbhus.git">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/debug.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/transport.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="45" column="9" lean-forward="false" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/do-states.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+        <state relative-caret-position="1292">
+          <caret line="84" column="26" lean-forward="false" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
           <folding>
-            <marker date="1489731509673" expanded="true" signature="2005:2147" ph="insert into log... " />
+            <marker date="1491023085784" expanded="true" signature="844:919" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/master_const/high.yml">
+    <entry file="file://$PROJECT_DIR$/master/m_publisher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/install/master/master.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_master.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="29" column="22" lean-forward="false" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_master_filedownload.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="94" lean-forward="false" selection-start-line="19" selection-start-column="94" selection-end-line="19" selection-end-column="94" />
+        <state relative-caret-position="697">
+          <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/master/m_rest_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="59" column="36" lean-forward="false" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+        <state relative-caret-position="1224">
+          <caret line="74" column="29" lean-forward="false" selection-start-line="75" selection-start-column="76" selection-end-line="75" selection-end-column="83" />
           <folding>
-            <marker date="1489743183580" expanded="true" signature="2954:3041" ph="insert into slaves... " />
-            <marker date="1489743183580" expanded="true" signature="3260:3332" ph="insert into slaves... " />
-            <marker date="1489743183580" expanded="true" signature="3615:3649" ph="select * fro... slaves" />
+            <marker date="1491023085800" expanded="true" signature="568:680" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/do-states.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding>
+            <marker date="1491023085706" expanded="true" signature="2005:2147" ph="insert into log... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slave/s_subscriber.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2278">
+          <caret line="135" column="51" lean-forward="false" selection-start-line="135" selection-start-column="51" selection-end-line="135" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/master_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="42" column="108" lean-forward="false" selection-start-line="42" selection-start-column="108" selection-end-line="42" selection-end-column="108" />
+          <folding>
+            <marker date="1491023085768" expanded="true" signature="511:545" ph="select * fro... slaves" />
+            <marker date="1491023085768" expanded="true" signature="696:730" ph="select * fro... slaves" />
+            <marker date="1491023085768" expanded="true" signature="835:869" ph="select * fro... slaves" />
+            <marker date="1491023085768" expanded="true" signature="970:990" ph="select * fro... slaves" />
+            <marker date="1491023085768" expanded="true" signature="1117:1151" ph="select * fro... slaves" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/slave_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="75" column="17" lean-forward="true" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
+          <folding>
+            <marker date="1491023085768" expanded="true" signature="458:1728" ph="..." />
+            <marker date="1491023085768" expanded="true" signature="746:1142" ph="..." />
+            <marker date="1491023085768" expanded="true" signature="1176:1728" ph="..." />
+            <marker date="1491023085768" expanded="true" signature="1253:1703" ph="..." />
+            <marker date="1491023085768" expanded="true" signature="1353:1703" ph="..." />
+            <marker date="1491023085768" expanded="true" signature="1379:1703" ph="..." />
+            <marker date="1491023085768" expanded="true" signature="1746:1876" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/template.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="91" column="51" lean-forward="false" selection-start-line="91" selection-start-column="51" selection-end-line="91" selection-end-column="51" />
+          <folding>
+            <marker date="1491023085768" expanded="true" signature="1216:4145" ph="..." />
+            <marker date="1491023085768" expanded="true" signature="2042:4145" ph="..." />
+            <marker date="1491023085768" expanded="true" signature="2259:4115" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/modules.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
-          <caret line="48" column="49" lean-forward="false" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/install/supervisor/master/devops-master.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/install/supervisor/slave/devops-slave.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        <state relative-caret-position="267">
+          <caret line="51" column="90" lean-forward="false" selection-start-line="51" selection-start-column="90" selection-end-line="51" selection-end-column="90" />
           <folding />
         </state>
       </provider>

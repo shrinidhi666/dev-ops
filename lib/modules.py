@@ -42,13 +42,14 @@ class cmd(object):
     """
     returner = {}
     cwd = os.getcwd()
-
+    if(env):
+      os.environ.update(env)
     if(path):
       os.chdir(path)
     for cmd in command:
       lib.debug.info("running : {0}".format(cmd))
       try:
-        p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=shell,cwd=path,universal_newlines=True,env=env)
+        p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=shell)
         (stdout, stderr) = p.communicate()
         returner[cmd] = [(stdout,stderr), p.returncode]
       except:
