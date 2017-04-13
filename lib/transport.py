@@ -351,7 +351,7 @@ class client(object):
     lib.debug.info("Sending request {0} …".format(request_id))
 
     timestarted = time.time()
-    hostdetails = simplejson.dumps({'hostname':lib.hostname_ip.hostname, 'ip':lib.constants.ip})
+    hostdetails = simplejson.dumps({'hostname':lib.hostname_ip.hostname, 'ip':lib.hostname_ip.ip})
     send_msg = simplejson.dumps(self.process(message_type, message_type_args,hostdetails))
     socket.send_multipart([bytes(unicode(request_id)), bytes(unicode(hostdetails)), bytes(unicode(message_type)), bytes(unicode(send_msg))])
     while(True):
