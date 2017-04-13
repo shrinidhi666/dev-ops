@@ -34,18 +34,18 @@ m_keys_sqlite3_file = os.path.join(masterdir, "sqlite", "keys.sqlite3")
 m_dostates_sqlite3_file = os.path.join(masterdir, "sqlite", "do-states.sqlite3")
 s_slaveconst_dir = os.path.join(slavedir, "slaveconst")
 s_backup_dir = os.path.join(slavedir, "backup")
-hostname = socket.gethostname()
-while(hostname.find("localhost") >= 0):
-  time.sleep(1)
-  hostname = socket.gethostname()
-
-while(True):
-  try:
-    ip = socket.gethostbyname(hostname)
-    break
-  except:
-    time.sleep(1)
-
+# hostname = socket.gethostname()
+# while(hostname.find("localhost") >= 0):
+#   time.sleep(1)
+#   hostname = socket.gethostname()
+#
+# while(True):
+#   try:
+#     ip = socket.gethostbyname(hostname)
+#     break
+#   except:
+#     time.sleep(1)
+#
 
 
 

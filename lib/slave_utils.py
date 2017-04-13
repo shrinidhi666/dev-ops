@@ -11,6 +11,7 @@ sys.path.append(os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]))
 import lib.config
 import lib.constants
 import lib.debug
+import lib.hostname_ip
 if(os.path.exists(lib.constants.s_slaveconst_dir)):
   sys.path.append(lib.constants.s_slaveconst_dir)
 
@@ -32,7 +33,7 @@ class slaveconst(object):
 
   def __get_preset_consts(self):
     retdict = {}
-    retdict['hostname'] = lib.constants.hostname
+    retdict['hostname'] = lib.hostname_ip.hostname
     retdict['ip'] = lib.constants.ip
     retdict['platform'] = platform.system()
     retdict['architecture'] = platform.architecture()
@@ -66,7 +67,7 @@ def hostid():
   if(lib.config.slave_conf.has_key('id')):
     return(lib.config.slave_conf['hostid'])
   else:
-    return(lib.constants.hostname)
+    return(lib.hostname_ip.hostname)
 
 
 

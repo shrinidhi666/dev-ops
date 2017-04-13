@@ -17,6 +17,7 @@ import lib.config
 import requests
 import lib.constants
 import lib.slave_utils
+import lib.hostname_ip
 
 def process(request_id,state_name,kwargs,is_local = False,dry_run = False):
   for x in kwargs.keys():
@@ -89,7 +90,7 @@ def process(request_id,state_name,kwargs,is_local = False,dry_run = False):
         for w in cmd_ret:
           lib.debug.debug("{0} : {1}".format(w,cmd_ret[w]))
           to_rest = {}
-          to_rest[request_id] = {lib.constants.hostname :{state_name :{x :{y :{w : cmd_ret[w]}}}}}
+          to_rest[request_id] = {lib.hostname_ip.hostname :{state_name :{x :{y :{w : cmd_ret[w]}}}}}
           if(is_local):
             print(simplejson.dumps(to_rest,indent=4))
           else:
@@ -100,7 +101,7 @@ def process(request_id,state_name,kwargs,is_local = False,dry_run = False):
           #   return(0)
       except:
         to_rest = {}
-        to_rest[request_id] = {lib.constants.hostname: {state_name: {x: {y: [str(sys.exc_info()),1]}}}}
+        to_rest[request_id] = {lib.hostname_ip.hostname: {state_name: {x: {y: [str(sys.exc_info()),1]}}}}
         if(is_local):
           print(simplejson.dumps(to_rest,indent=4))
         else:

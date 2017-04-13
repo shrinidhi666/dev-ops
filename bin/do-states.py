@@ -17,6 +17,7 @@ import lib.transport
 import lib.template
 import lib.master_utils
 import lib.db_sqlite3
+import lib.hostname_ip
 import simplejson
 import re
 import lib.slave_utils
@@ -76,9 +77,9 @@ else:
     lib.debug.debug("testing state : " + args.test)
     slaveconst = lib.slave_utils.slaveconst().slaveconst()
     if (state_name != "high"):
-      r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.constants.hostname + "/" + state_name + "/0", data=simplejson.dumps(slaveconst))
+      r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.hostname_ip.hostname + "/" + state_name + "/0", data=simplejson.dumps(slaveconst))
     else:
-      r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/high/" + lib.constants.hostname, data=simplejson.dumps(slaveconst))
+      r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/high/" + lib.hostname_ip.hostname, data=simplejson.dumps(slaveconst))
 
     rendered_state = simplejson.loads(r.content)
     print (simplejson.dumps(rendered_state,indent=4))

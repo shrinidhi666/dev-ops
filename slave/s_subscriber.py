@@ -16,6 +16,7 @@ import lib.debug
 import lib.config
 import lib.slave_utils
 import lib.processor
+import lib.hostname_ip
 import simplejson
 import requests
 import tempfile
@@ -89,9 +90,9 @@ class slave_sub(lib.transport.subscriber):
     slaveconst = lib.slave_utils.slaveconst().slaveconst()
     ret_value = 1
     if(state_name != "high"):
-      r = requests.post("http://"+ lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.constants.hostname + "/"+ state_name +"/0" , data=simplejson.dumps(slaveconst))
+      r = requests.post("http://"+ lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.hostname_ip.hostname + "/"+ state_name +"/0" , data=simplejson.dumps(slaveconst))
     else:
-      r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/high/" + lib.constants.hostname , data=simplejson.dumps(slaveconst))
+      r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/high/" + lib.hostname_ip.hostname , data=simplejson.dumps(slaveconst))
     r_content = r.content
     lib.debug.debug(r_content)
     try:
@@ -117,7 +118,7 @@ class slave_sub(lib.transport.subscriber):
 def register_host():
   slavedata = {}
   slavedata['hostid'] = lib.slave_utils.hostid()
-  slavedata['hostname'] = lib.constants.hostname
+  slavedata['hostname'] = lib.hostname_ip.hostname
   slavedata['ip'] = lib.constants.ip
   lib.debug.info(slavedata)
   while(True):
