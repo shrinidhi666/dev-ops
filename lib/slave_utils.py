@@ -65,7 +65,7 @@ class slaveconst(object):
 
 def hostid():
   if(lib.config.slave_conf.has_key('id')):
-    return(lib.config.slave_conf['hostid'])
+    return(lib.config.slave_conf['id'])
   else:
     return(lib.hostname_ip.hostname)
 
