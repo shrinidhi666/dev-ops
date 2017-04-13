@@ -14,7 +14,7 @@ import lib.config
 
 if(lib.config.slave_conf.has_key('id')):
   hostname = lib.config.slave_conf['id']
-  ip = 0.0.0.0
+  ip = "0.0.0.0"
 else:
   retry_count = 3
   hostname = socket.gethostname()
