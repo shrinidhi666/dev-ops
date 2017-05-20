@@ -143,6 +143,8 @@ class subscriber(object):
 
   def _start_sub(self):
     self._socket_sub = self._context.socket(zmq.SUB)
+    self._socket_sub.setsockopt(zmq.TCP_KEEPALIVE, True)
+    self._socket_sub.setsockopt(zmq.TCP_KEEPALIVE_IDLE, True)
 
     self._socket_sub.connect("tcp://{0}:{1}".format(self._ip, self._port))
     if(isinstance(self._topic,list)):

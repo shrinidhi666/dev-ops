@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e072f42f-b1e1-47d6-868c-ed9aebc0cf0c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/slave_utils.py" afterPath="$PROJECT_DIR$/lib/slave_utils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/transport.py" afterPath="$PROJECT_DIR$/lib/transport.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,8 +32,28 @@
       <file leaf-file-name="m_publisher.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/master/m_publisher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+            <state relative-caret-position="178">
+              <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modules.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/modules.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="51" column="91" lean-forward="false" selection-start-line="51" selection-start-column="91" selection-end-line="51" selection-end-column="91" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="s_subscriber.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/slave/s_subscriber.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="975">
+              <caret line="121" column="35" lean-forward="false" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -49,53 +69,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="do-states.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/do-states.py">
+      <file leaf-file-name="master_utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/master_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1386">
-              <caret line="81" column="152" lean-forward="false" selection-start-line="81" selection-start-column="152" selection-end-line="81" selection-end-column="152" />
+            <state relative-caret-position="558">
+              <caret line="33" column="4" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
               <folding>
-                <marker date="1492054296310" expanded="true" signature="2028:2170" ph="insert into log... " />
+                <marker date="1489489417672" expanded="true" signature="511:545" ph="select * fro... slaves" />
+                <marker date="1489489417672" expanded="true" signature="696:730" ph="select * fro... slaves" />
+                <marker date="1489489417672" expanded="true" signature="835:869" ph="select * fro... slaves" />
+                <marker date="1489489417672" expanded="true" signature="970:990" ph="select * fro... slaves" />
+                <marker date="1489489417672" expanded="true" signature="1117:1151" ph="select * fro... slaves" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="s_subscriber.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/slave/s_subscriber.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2160">
-              <caret line="121" column="35" lean-forward="false" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="processor.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/processor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1836">
-              <caret line="103" column="46" lean-forward="false" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="slave_utils.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/slave_utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="40" column="28" lean-forward="false" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="transport.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="transport.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/transport.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6210">
-              <caret line="353" column="93" lean-forward="false" selection-start-line="353" selection-start-column="93" selection-end-line="353" selection-end-column="93" />
+            <state relative-caret-position="270">
+              <caret line="146" column="61" lean-forward="true" selection-start-line="146" selection-start-column="61" selection-end-line="146" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -111,14 +105,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hostname_ip.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/hostname_ip.py">
+      <file leaf-file-name="crypt.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/crypt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding>
-                <element signature="e#133#143#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db_sqlite3.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/db_sqlite3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1206">
+              <caret line="68" column="9" lean-forward="false" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -214,9 +216,9 @@
         <option value="$PROJECT_DIR$/lib/processor.py" />
         <option value="$PROJECT_DIR$/lib/constants.py" />
         <option value="$PROJECT_DIR$/slave/s_subscriber.py" />
-        <option value="$PROJECT_DIR$/lib/transport.py" />
         <option value="$PROJECT_DIR$/lib/hostname_ip.py" />
         <option value="$PROJECT_DIR$/lib/slave_utils.py" />
+        <option value="$PROJECT_DIR$/lib/transport.py" />
       </list>
     </option>
   </component>
@@ -249,7 +251,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -476,7 +478,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="NBKnowledgePane" />
     </panes>
   </component>
@@ -864,13 +866,6 @@
       <option name="presentableId" value="Default" />
       <updated>1486396648675</updated>
     </task>
-    <task id="LOCAL-00038" summary="fixing">
-      <created>1487751850545</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1487751850545</updated>
-    </task>
     <task id="LOCAL-00039" summary="fixing">
       <created>1487751932111</created>
       <option name="number" value="00039" />
@@ -1207,7 +1202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492058523989</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="fixing">
+      <created>1493323191094</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1493323191094</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1223,13 +1225,13 @@
     <frame x="1920" y="0" width="1920" height="1040" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2318376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23985043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2030905" sideWeight="0.50427353" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32781458" sideWeight="0.51976496" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.49510404" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23626374" sideWeight="0.48878205" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839838" sideWeight="0.48457584" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289183" sideWeight="0.48023504" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1263,13 +1265,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/states_test/jinjafile.jinja">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/install/slave/slaveconst/freemem.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1448,13 +1443,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/db_sqlite3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="33" column="49" lean-forward="false" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/states_test/high.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -1509,13 +1497,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/master_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="42" column="108" lean-forward="false" selection-start-line="42" selection-start-column="108" selection-end-line="42" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/template.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1620">
@@ -1523,10 +1504,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/modules.py">
+    <entry file="file://$PROJECT_DIR$/bin/do-states.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="51" column="91" lean-forward="false" selection-start-line="51" selection-start-column="91" selection-end-line="51" selection-end-column="91" />
+        <state relative-caret-position="1386">
+          <caret line="81" column="152" lean-forward="false" selection-start-line="81" selection-start-column="152" selection-end-line="81" selection-end-column="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/processor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1836">
+          <caret line="103" column="46" lean-forward="false" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/slave_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="40" column="28" lean-forward="false" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/hostname_ip.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+          <folding>
+            <element signature="e#133#143#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1534,14 +1541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/master/m_publisher.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -1554,24 +1553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/do-states.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="81" column="152" lean-forward="false" selection-start-line="81" selection-start-column="152" selection-end-line="81" selection-end-column="152" />
-          <folding>
-            <marker date="1492054296310" expanded="true" signature="2028:2170" ph="insert into log... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/processor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="103" column="46" lean-forward="false" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/constants.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
@@ -1580,9 +1561,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/crypt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/db_sqlite3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1206">
+          <caret line="68" column="9" lean-forward="false" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/master_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="33" column="4" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+          <folding>
+            <marker date="1489489417672" expanded="true" signature="511:545" ph="select * fro... slaves" />
+            <marker date="1489489417672" expanded="true" signature="696:730" ph="select * fro... slaves" />
+            <marker date="1489489417672" expanded="true" signature="835:869" ph="select * fro... slaves" />
+            <marker date="1489489417672" expanded="true" signature="970:990" ph="select * fro... slaves" />
+            <marker date="1489489417672" expanded="true" signature="1117:1151" ph="select * fro... slaves" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/master/m_publisher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/modules.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="51" column="91" lean-forward="false" selection-start-line="51" selection-start-column="91" selection-end-line="51" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/slave/s_subscriber.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
+        <state relative-caret-position="975">
           <caret line="121" column="35" lean-forward="false" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
           <folding />
         </state>
@@ -1590,26 +1617,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/transport.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6210">
-          <caret line="353" column="93" lean-forward="false" selection-start-line="353" selection-start-column="93" selection-end-line="353" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/hostname_ip.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="e#133#143#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/slave_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="40" column="28" lean-forward="false" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+        <state relative-caret-position="270">
+          <caret line="146" column="61" lean-forward="true" selection-start-line="146" selection-start-column="61" selection-end-line="146" selection-end-column="61" />
           <folding />
         </state>
       </provider>
