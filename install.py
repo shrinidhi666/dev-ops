@@ -36,6 +36,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--slave",dest="slave",action="store_true",help="install config files for slave")
 parser.add_argument("--groups",dest="groups",help="add the slave to comma seperated groups or a single group")
 parser.add_argument("--master",dest="master",action="store_true",help="install config files for master")
+parser.add_argument("--id",dest="id",help="id of the machine if you dont want to use the hostname")
 args = parser.parse_args()
 
 
@@ -128,6 +129,8 @@ if(args.slave):
     slave_conf_dict = yaml.safe_load(sc_fd)
     sc_fd.close()
     slave_conf_dict['slave_group'] = args.groups
+    if(args.id):
+      slave_conf_dict['id'] = args.id
     sc_fd = open(installed_slave_conf, "w")
     yaml.dump(slave_conf_dict, sc_fd, default_flow_style=False)
     sc_fd.flush()
