@@ -76,10 +76,15 @@ else:
     state_name = args.test
     lib.debug.debug("testing state : " + args.test)
     slaveconst = lib.slave_utils.slaveconst().slaveconst()
+    requestStr = ""
     if (state_name != "high"):
-      r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.hostname_ip.hostname + "/" + state_name + "/0", data=simplejson.dumps(slaveconst))
+      requestStr = "http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.hostname_ip.hostname + "/" + state_name + "/0"
+      # r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/states/" + lib.hostname_ip.hostname + "/" + state_name + "/0", data=simplejson.dumps(slaveconst))
     else:
-      r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/high/" + lib.hostname_ip.hostname, data=simplejson.dumps(slaveconst))
+      requestStr = "http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/high/" + lib.hostname_ip.hostname
+      # r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/high/" + lib.hostname_ip.hostname, data=simplejson.dumps(slaveconst))
+
+    r = requests.post(requestStr, data=simplejson.dumps(slaveconst))
     try:
       rendered_state = simplejson.loads(r.content)
       print (simplejson.dumps(rendered_state, indent=4))
