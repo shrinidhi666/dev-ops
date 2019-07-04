@@ -94,7 +94,7 @@ class slave_sub(lib.transport.subscriber):
     else:
       r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/high/" + lib.hostname_ip.hostname , data=simplejson.dumps(slaveconst))
     r_content = r.content
-    lib.debug.debug(r_content)
+    lib.debug.info(r_content)
     try:
       work = simplejson.loads(r_content)
       if(work):
