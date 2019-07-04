@@ -83,7 +83,7 @@ else:
     else:
       requestStr = "http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/high/" + lib.hostname_ip.hostname
       # r = requests.post("http://" + lib.config.slave_conf['master'] + ":" + str(lib.config.slave_conf['master_rest_port']) + "/high/" + lib.hostname_ip.hostname, data=simplejson.dumps(slaveconst))
-
+    lib.debug.info(requestStr)
     r = requests.post(requestStr, data=simplejson.dumps(slaveconst))
     try:
       rendered_state = simplejson.loads(r.content)
