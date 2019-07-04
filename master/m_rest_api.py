@@ -39,7 +39,10 @@ def states(hostid,state,isfile):
     lib.debug.debug(sys.exc_info())
     return(str(sys.exc_info()))
   # lib.debug.debug(ret_state_details)
-  return simplejson.dumps(ret_state_details)
+  try:
+    return simplejson.dumps(ret_state_details)
+  except:
+    return (str(sys.exc_info()))
 
 @app.route('/filesync',methods=['POST'])
 def filesync():
@@ -79,7 +82,11 @@ def high(hostid):
       state_contents.extend(state_x_content)
 
   lib.debug.debug(state_contents)
-  return simplejson.dumps(state_contents)
+  try:
+    return simplejson.dumps(state_contents)
+  except:
+    return (str(sys.exc_info()))
+
 
 
 @app.route('/states/list',methods=['GET'])
